@@ -31,7 +31,6 @@ public class EnemyPylon : EnemyBase
                 GameObject enemyInstance = Instantiate(EnemyList[enemyType], transform.position, Quaternion.identity);
                 EnemyBase enemy = enemyInstance.GetComponent<EnemyBase>();
                 enemy.SetPlayer(Player);
-                enemy.StartAI();
             }
         }
     }
