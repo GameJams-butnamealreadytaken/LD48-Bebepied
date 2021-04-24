@@ -9,24 +9,29 @@ public class EnemyBase : MonoBehaviour
     public float MaxHealth;
     public float MaxSpeed;
 
-    [Header("Physics")]
-    public Rigidbody Body;
-    
     private float CurrentHealth;
 
+    protected Rigidbody Body;
     private NavMeshAgent NavigationAgent;
     
     protected virtual void Start()
     {
         InitializeCharacteristics();
-
+        
         NavigationAgent = GetComponent<NavMeshAgent>();
+        Body = GetComponent<Rigidbody>();
+        
         NavigationAgent.acceleration = MaxSpeed;
     }
 
     protected virtual void Update()
     {
         
+    }
+
+    public void SetHealthMultiplier(float multiplier)
+    {
+        CurrentHealth = MaxHealth * multiplier;
     }
 
     public void TakeDamage(float damage)
