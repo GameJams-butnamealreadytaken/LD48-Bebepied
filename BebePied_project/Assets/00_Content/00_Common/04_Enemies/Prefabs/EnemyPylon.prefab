@@ -28,7 +28,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8121279668650116592}
-  - {fileID: 2884591436977264068}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -170,10 +169,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxHealth: 50
   MaxSpeed: 0
-  DeathParticlePrefab: {fileID: 2884591436977264065}
+  DeathParticlePrefab: {fileID: 6350604588751343109, guid: a82ef5aac4eca9f4d8bdb3048be32ac6, type: 3}
+  DeathParticleOffset: {x: 0, y: 7, z: 0}
   DeathSounds:
-  - {fileID: 8300000, guid: 2d8886b338fa29246964309b05db53c9, type: 3}
-  SpawnSounds: []
+  - Clip: {fileID: 8300000, guid: 2d8886b338fa29246964309b05db53c9, type: 3}
+    Volume: 1
+    AttenuationMinDistance: 500
+    AttenuationMaxDistance: 1500
+    AttenuationRollofMode: 1
+  SpawnSounds:
+  - Clip: {fileID: 8300000, guid: c519f18b789506c43b431d237d348e4b, type: 3}
+    Volume: 1
+    AttenuationMinDistance: 1
+    AttenuationMaxDistance: 500
+    AttenuationRollofMode: 0
   Player: {fileID: 0}
   SpawnFrequency: 10
   SpawnFloor: {fileID: 7299673275470314594}
@@ -183,73 +192,6 @@ MonoBehaviour:
   EnemyFlyList:
   - {fileID: 4680596991659183616, guid: 97ebd6fe3b6b7ef41be98c5714a29973, type: 3}
   - {fileID: 4463466415626837614, guid: 8013a2574991eed4b968a310a3c524f9, type: 3}
---- !u!1001 &8082203869407648708
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 5282457535185292101}
-    m_Modifications:
-    - target: {fileID: 6350604588751343104, guid: a82ef5aac4eca9f4d8bdb3048be32ac6, type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6350604588751343104, guid: a82ef5aac4eca9f4d8bdb3048be32ac6, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6350604588751343104, guid: a82ef5aac4eca9f4d8bdb3048be32ac6, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6350604588751343104, guid: a82ef5aac4eca9f4d8bdb3048be32ac6, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6350604588751343104, guid: a82ef5aac4eca9f4d8bdb3048be32ac6, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 6350604588751343104, guid: a82ef5aac4eca9f4d8bdb3048be32ac6, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 6350604588751343104, guid: a82ef5aac4eca9f4d8bdb3048be32ac6, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6350604588751343104, guid: a82ef5aac4eca9f4d8bdb3048be32ac6, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6350604588751343104, guid: a82ef5aac4eca9f4d8bdb3048be32ac6, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: -90
-      objectReference: {fileID: 0}
-    - target: {fileID: 6350604588751343104, guid: a82ef5aac4eca9f4d8bdb3048be32ac6, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6350604588751343104, guid: a82ef5aac4eca9f4d8bdb3048be32ac6, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6350604588751343109, guid: a82ef5aac4eca9f4d8bdb3048be32ac6, type: 3}
-      propertyPath: m_Name
-      value: DeathParticles
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: a82ef5aac4eca9f4d8bdb3048be32ac6, type: 3}
---- !u!1 &2884591436977264065 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6350604588751343109, guid: a82ef5aac4eca9f4d8bdb3048be32ac6, type: 3}
-  m_PrefabInstance: {fileID: 8082203869407648708}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &2884591436977264068 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6350604588751343104, guid: a82ef5aac4eca9f4d8bdb3048be32ac6, type: 3}
-  m_PrefabInstance: {fileID: 8082203869407648708}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8592355347065430555
 PrefabInstance:
   m_ObjectHideFlags: 0
