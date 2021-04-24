@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class EnemyBase : MonoBehaviour
 {
@@ -12,10 +13,15 @@ public class EnemyBase : MonoBehaviour
     public Rigidbody Body;
     
     private float CurrentHealth;
+
+    private NavMeshAgent NavigationAgent;
     
     protected virtual void Start()
     {
         InitializeCharacteristics();
+
+        NavigationAgent = GetComponent<NavMeshAgent>();
+        NavigationAgent.acceleration = MaxSpeed;
     }
 
     protected virtual void Update()
@@ -42,13 +48,25 @@ public class EnemyBase : MonoBehaviour
         }
     }
 
+    protected void SetDestination(Vector3 newDestination)
+    {
+        NavigationAgent.isStopped = false;
+        NavigationAgent.destination = newDestination;
+    }
+
+    protected void StopMovement()
+    {
+        NavigationAgent.isStopped = true;
+        NavigationAgent.destination = transform.position;
+    }
+
     protected virtual void OnDamageTaken(float oldHealth, float newHealth)
     {}
     
     protected virtual void OnDeath()
     {} 
     
-    void OnCollisionEnter(Collision collision)
+    private void OnCollisionEnter(Collision collision)
     {
         if (collision.collider.CompareTag(ObjectTags.Bullet))
         {
