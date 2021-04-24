@@ -33,7 +33,6 @@ public class EnemyBase : MonoBehaviour
     protected AudioSource AudioPlayer;
     protected NavMeshAgent NavigationAgent;
 
-
     private float CurrentHealth;
     private float HealthMultiplier = 1.0f;
     
