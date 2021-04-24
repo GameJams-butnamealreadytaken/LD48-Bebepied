@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using Random = UnityEngine.Random;
@@ -22,10 +23,10 @@ public class EnemyBase : MonoBehaviour
     [Header("Death")]
     public GameObject DeathParticlePrefab;
     public Vector3 DeathParticleOffset = Vector3.zero;
-    public SoundEffect[] DeathSounds;
+    public List<SoundEffect> DeathSounds = new List<SoundEffect>();
 
     [Header("Spawn")] 
-    public SoundEffect[] SpawnSounds;
+    public List<SoundEffect> SpawnSounds = new List<SoundEffect>();
     
     protected Rigidbody Body;
 
@@ -166,11 +167,11 @@ public class EnemyBase : MonoBehaviour
         }
     }
 
-    protected void PlayRandomSoundInArray(SoundEffect[] soundArray, Vector3 position, float volume = 1.0f)
+    protected void PlayRandomSoundInArray(List<SoundEffect> soundArray, Vector3 position, float volume = 1.0f)
     {
-        if (soundArray.Length > 0)
+        if (soundArray.Count > 0)
         {
-            SoundEffect soundEffect = soundArray[Random.Range(0, soundArray.Length)];
+            SoundEffect soundEffect = soundArray[Random.Range(0, soundArray.Count)];
             
             GameObject gameObjectToCreate = new GameObject("One shot audio");
             gameObjectToCreate.transform.position = position;

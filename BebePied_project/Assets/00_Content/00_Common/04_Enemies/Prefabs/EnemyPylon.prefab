@@ -180,9 +180,9 @@ MonoBehaviour:
   SpawnSounds:
   - Clip: {fileID: 8300000, guid: c519f18b789506c43b431d237d348e4b, type: 3}
     Volume: 1
-    AttenuationMinDistance: 1
-    AttenuationMaxDistance: 500
-    AttenuationRollofMode: 0
+    AttenuationMinDistance: 500
+    AttenuationMaxDistance: 1500
+    AttenuationRollofMode: 1
   Player: {fileID: 0}
   SpawnFrequency: 10
   SpawnFloor: {fileID: 7299673275470314594}
