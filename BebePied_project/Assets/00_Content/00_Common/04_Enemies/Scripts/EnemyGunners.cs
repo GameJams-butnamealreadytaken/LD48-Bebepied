@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemyGunners : EnemyBase
 {
+    [Header("AI")]
     public float MinDistanceToPlayer;
     
     private Vector3 CurrentDestination;

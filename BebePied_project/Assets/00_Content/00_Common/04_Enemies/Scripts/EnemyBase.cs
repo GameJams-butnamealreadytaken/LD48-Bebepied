@@ -1,7 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 using UnityEngine.AI;
+using Random = UnityEngine.Random;
 
 public class EnemyBase : MonoBehaviour
 {
@@ -9,7 +9,12 @@ public class EnemyBase : MonoBehaviour
     public float MaxHealth;
     public float MaxSpeed;
 
+    [Header("Death")]
+    public GameObject DeathParticlePrefab;
+    public AudioClip[] DeathSounds; 
+
     protected Rigidbody Body;
+    protected AudioSource AudioPlayer;
     private NavMeshAgent NavigationAgent;
 
     private float CurrentHealth;
@@ -25,6 +30,7 @@ public class EnemyBase : MonoBehaviour
         
         NavigationAgent = GetComponent<NavMeshAgent>();
         Body = GetComponent<Rigidbody>();
+        AudioPlayer = GetComponent<AudioSource>();
 
         if (NavigationAgent)
         {
@@ -87,25 +93,52 @@ public class EnemyBase : MonoBehaviour
 
         if (CurrentHealth <= 0)
         {
+            if (DeathParticlePrefab != null)
+            {
+                GameObject deathParticle = Instantiate(DeathParticlePrefab, DeathParticlePrefab.transform.position, DeathParticlePrefab.transform.rotation, null);
+                ParticleSystem deathParticleSystem = deathParticle.GetComponent<ParticleSystem>();
+                if (deathParticleSystem != null)
+                {
+                    deathParticleSystem.Play();
+                }
+            }
+
+            if (DeathSounds.Length > 0)
+            {
+                AudioClip soundToPlay = DeathSounds[Random.Range(0, DeathSounds.Length)];
+                AudioSource.PlayClipAtPoint(soundToPlay, transform.position);
+            }
+            
             OnDeath();
         }
     }
 
     protected Vector3 GetDestination()
     {
-        return NavigationAgent.destination;
+        if (NavigationAgent)
+        {
+            return NavigationAgent.destination;
+        }
+
+        return Vector3.zero;
     }
 
     protected void SetDestination(Vector3 newDestination)
     {
-        NavigationAgent.isStopped = false;
-        NavigationAgent.destination = newDestination;
+        if (NavigationAgent)
+        {
+            NavigationAgent.isStopped = false;
+            NavigationAgent.destination = newDestination;   
+        }
     }
 
     protected void StopMovement()
     {
-        NavigationAgent.isStopped = true;
-        NavigationAgent.destination = transform.position;
+        if (NavigationAgent)
+        {
+            NavigationAgent.isStopped = true;
+            NavigationAgent.destination = transform.position;
+        }
     }
     
     protected virtual void OnStartAI()
@@ -125,9 +158,14 @@ public class EnemyBase : MonoBehaviour
     
     protected virtual void OnCollisionEnter(Collision collision)
     {
-        if (collision.collider.CompareTag(ObjectTags.Bullet))
+
+    }
+
+    protected void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag(ObjectTags.Bullet))
         {
-            Projectile projectile = collision.collider.GetComponent<Projectile>();
+            Projectile projectile = other.GetComponent<Projectile>();
             TakeDamage(projectile.Damages);
         }
     }
