@@ -16,7 +16,7 @@ public class EnemyLostSoul : EnemyBase
 
     protected override void OnUpdateAI()
     {
-        
+        SetDestination(Player.transform.position);
     }
 
     protected override void OnDamageTaken(float oldHealth, float newHealth)
