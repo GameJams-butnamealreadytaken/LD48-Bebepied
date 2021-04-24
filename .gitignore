@@ -58,3 +58,6 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 
+BebePied_project/.vsconfig
+BebePied_project/.idea
+BebePied_project/UserSettings
