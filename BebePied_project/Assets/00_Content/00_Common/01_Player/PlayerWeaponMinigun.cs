@@ -49,6 +49,6 @@ public class PlayerWeaponMinigun : PlayerWeapon
 
 	protected override void OnShoot()
 	{
-		AudioSource.PlayClipAtPoint(m_shotAudioClips[Random.Range(0, m_shotAudioClips.Count)], transform.position);
+		AudioSource.PlayClipAtPoint(m_shotAudioClips[Random.Range(0, m_shotAudioClips.Count)], transform.position, 0.5f);
 	}
 }
