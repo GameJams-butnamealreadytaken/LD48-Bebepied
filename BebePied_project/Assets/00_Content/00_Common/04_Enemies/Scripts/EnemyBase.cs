@@ -91,6 +91,11 @@ public class EnemyBase : MonoBehaviour
         }
     }
 
+    protected Vector3 GetDestination()
+    {
+        return NavigationAgent.destination;
+    }
+
     protected void SetDestination(Vector3 newDestination)
     {
         NavigationAgent.isStopped = false;
@@ -118,7 +123,7 @@ public class EnemyBase : MonoBehaviour
     protected virtual void OnDeath()
     {} 
     
-    private void OnCollisionEnter(Collision collision)
+    protected virtual void OnCollisionEnter(Collision collision)
     {
         if (collision.collider.CompareTag(ObjectTags.Bullet))
         {

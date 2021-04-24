@@ -28,4 +28,15 @@ public class EnemyLostSoul : EnemyBase
     {
         
     }
+
+    protected override void OnCollisionEnter(Collision collision)
+    {
+        base.OnCollisionEnter(collision);
+
+        if (collision.collider.CompareTag(ObjectTags.Player))
+        {
+            Player playerComponent = collision.collider.GetComponent<Player>();
+            playerComponent.Kill();
+        }
+    }
 }

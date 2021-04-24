@@ -8,12 +8,8 @@ public class EnemyPylon : EnemyBase
     public int SpawnFrequency;
     public GameObject[] EnemyList;
 
-    protected override void Start()
+    public void OnSpawnEnded()
     {
-        base.Start();
-
-        // TODO Wait spawn animation end before starting coroutine
-
         StartCoroutine("SpawnEnemyWave");
     }
 
