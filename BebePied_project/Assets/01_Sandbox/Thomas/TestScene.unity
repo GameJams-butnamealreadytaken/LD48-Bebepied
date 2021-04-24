@@ -263,7 +263,8 @@ PrefabInstance:
       propertyPath: m_IsKinematic
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8910554310772747611, guid: 911f836e4437bb04eb3f1a6aa8cbc99c, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 911f836e4437bb04eb3f1a6aa8cbc99c, type: 3}
 --- !u!1001 &276207092
 PrefabInstance:
@@ -336,6 +337,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DummyEnemyFly (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8910554310772747611, guid: 911f836e4437bb04eb3f1a6aa8cbc99c, type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 526996571}
     - target: {fileID: 9137362668292210752, guid: 911f836e4437bb04eb3f1a6aa8cbc99c, type: 3}
       propertyPath: m_UseGravity
       value: 0
@@ -1054,7 +1059,7 @@ GameObject:
   - component: {fileID: 1937792286}
   - component: {fileID: 1937792285}
   - component: {fileID: 1937792284}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Ground _fly
   m_TagString: Untagged
   m_Icon: {fileID: 0}
