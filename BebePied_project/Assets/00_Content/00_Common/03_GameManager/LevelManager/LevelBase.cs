@@ -78,7 +78,7 @@ public class LevelBase : MonoBehaviour
 
                     GameObject enemyInstance = Instantiate(enemyTypeNumber.Type, position, Quaternion.identity);
                     
-                    EnemyPylon Pylon = enemyInstance.GetComponent<EnemyPylon>();
+                    EnemyPylon Pylon = enemyInstance.GetComponentInChildren<EnemyPylon>();
                     Pylon.EnemyCounter = EnemyCounter;
 
                     EnemyBase enemy = enemyInstance.GetComponent<EnemyBase>();
