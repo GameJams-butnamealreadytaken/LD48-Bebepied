@@ -91,6 +91,11 @@ public class EnemyBase : MonoBehaviour
         }
     }
 
+    protected Vector3 GetDestination()
+    {
+        return NavigationAgent.destination;
+    }
+
     protected void SetDestination(Vector3 newDestination)
     {
         NavigationAgent.isStopped = false;
