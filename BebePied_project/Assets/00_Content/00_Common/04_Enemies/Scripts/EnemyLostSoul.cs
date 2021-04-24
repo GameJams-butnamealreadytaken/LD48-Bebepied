@@ -6,12 +6,11 @@ public class EnemyLostSoul : EnemyBase
 {
     protected override void OnStartAI()
     {
-        
+        EnemyCounter.UpdateSpawnStats(EnemyType, false);
     }
 
     protected override void OnStopAI()
     {
-        
     }
 
     protected override void OnUpdateAI()
@@ -26,7 +25,7 @@ public class EnemyLostSoul : EnemyBase
 
     protected override void OnDeath()
     {
-        
+        EnemyCounter.UpdateSpawnStats(EnemyType, true);
     }
 
     protected override void OnCollisionEnter(Collision collision)

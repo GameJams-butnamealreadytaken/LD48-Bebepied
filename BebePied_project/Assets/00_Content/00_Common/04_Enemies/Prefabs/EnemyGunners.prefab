@@ -24,6 +24,8 @@ MonoBehaviour:
     AttenuationRollofMode: 0
   SpawnSounds: []
   Player: {fileID: 0}
+  EnemyCounter: {fileID: 0}
+  EnemyType: 1
   MinDistanceToPlayer: 30
 --- !u!65 &1780436303268636780
 BoxCollider:

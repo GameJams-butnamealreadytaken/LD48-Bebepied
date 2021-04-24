@@ -40,12 +40,11 @@ public class EnemyGhast : EnemyBase
 
     protected override void OnStartAI()
     {
-
+        EnemyCounter.UpdateSpawnStats(EnemyType, false);
     }
 
     protected override void OnStopAI()
     {
-
     }
 
     protected override void OnDamageTaken(float oldHealth, float newHealth)
@@ -55,7 +54,7 @@ public class EnemyGhast : EnemyBase
 
     protected override void OnDeath()
     {
-        Destroy(gameObject);
+        EnemyCounter.UpdateSpawnStats(EnemyType, true);
     }
 
     protected override void OnCollisionEnter(Collision collision)
