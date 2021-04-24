@@ -1,19 +1,32 @@
+using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using Random = UnityEngine.Random;
 
 public class EnemyBase : MonoBehaviour
 {
+    [Serializable]
+    public class SoundEffect
+    {
+        public AudioClip Clip;
+        public float Volume = 1.0f;
+        public float AttenuationMinDistance = 1.0f;
+        public float AttenuationMaxDistance = 500.0f;
+        public AudioRolloffMode AttenuationRollofMode = AudioRolloffMode.Logarithmic;
+    }
+    
     [Header("Characteristics")] 
     public float MaxHealth;
     public float MaxSpeed;
 
     [Header("Death")]
     public GameObject DeathParticlePrefab;
-    public AudioClip[] DeathSounds;
+    public Vector3 DeathParticleOffset = Vector3.zero;
+    public List<SoundEffect> DeathSounds = new List<SoundEffect>();
 
     [Header("Spawn")] 
-    public AudioClip[] SpawnSounds;
+    public List<SoundEffect> SpawnSounds = new List<SoundEffect>();
     
     protected Rigidbody Body;
 
@@ -107,7 +120,7 @@ public class EnemyBase : MonoBehaviour
         {
             if (DeathParticlePrefab != null)
             {
-                GameObject deathParticle = Instantiate(DeathParticlePrefab, DeathParticlePrefab.transform.position, DeathParticlePrefab.transform.rotation, null);
+                GameObject deathParticle = Instantiate(DeathParticlePrefab, transform.position + DeathParticleOffset, transform.rotation, null);
                 ParticleSystem deathParticleSystem = deathParticle.GetComponent<ParticleSystem>();
                 if (deathParticleSystem != null)
                 {
@@ -154,12 +167,23 @@ public class EnemyBase : MonoBehaviour
         }
     }
 
-    protected void PlayRandomSoundInArray(AudioClip[] soundArray, Vector3 position, float volume = 1.0f)
+    protected void PlayRandomSoundInArray(List<SoundEffect> soundArray, Vector3 position, float volume = 1.0f)
     {
-        if (soundArray.Length > 0)
+        if (soundArray.Count > 0)
         {
-            AudioClip soundToPlay = soundArray[Random.Range(0, soundArray.Length)];
-            AudioSource.PlayClipAtPoint(soundToPlay, position, volume);   
+            SoundEffect soundEffect = soundArray[Random.Range(0, soundArray.Count)];
+            
+            GameObject gameObjectToCreate = new GameObject("One shot audio");
+            gameObjectToCreate.transform.position = position;
+            AudioSource audioSource = (AudioSource) gameObjectToCreate.AddComponent(typeof (AudioSource));
+            audioSource.clip = soundEffect.Clip;
+            audioSource.spatialBlend = 1f;
+            audioSource.minDistance = soundEffect.AttenuationMinDistance;
+            audioSource.maxDistance = soundEffect.AttenuationMaxDistance;
+            audioSource.rolloffMode = soundEffect.AttenuationRollofMode;
+            audioSource.volume = soundEffect.Volume;
+            audioSource.Play();
+            Destroy(gameObjectToCreate, soundEffect.Clip.length * (Time.timeScale < 0.00999999977648258 ? 0.01f : Time.timeScale));
         }
     }
     

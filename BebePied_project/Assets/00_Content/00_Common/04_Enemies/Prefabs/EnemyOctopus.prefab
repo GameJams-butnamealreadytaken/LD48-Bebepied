@@ -638,8 +638,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxHealth: 100
   MaxSpeed: 80
-  DeathParticlePrefab: {fileID: 0}
-  DeathSounds: []
+  DeathParticlePrefab: {fileID: 6794281507388394713, guid: fd9ed92cf689e444bb1aa788329b3bba, type: 3}
+  DeathParticleOffset: {x: 0, y: 2, z: 0}
+  DeathSounds:
+  - Clip: {fileID: 8300000, guid: dedc358759d9b6d4f8888a4872db489c, type: 3}
+    Volume: 1
+    AttenuationMinDistance: 1
+    AttenuationMaxDistance: 500
+    AttenuationRollofMode: 0
   SpawnSounds: []
   Player: {fileID: 0}
 --- !u!54 &281761084704658730
