@@ -16,8 +16,10 @@ public class EnemyBase : MonoBehaviour
     public AudioClip[] SpawnSounds;
     
     protected Rigidbody Body;
+
     protected AudioSource AudioPlayer;
-    private NavMeshAgent NavigationAgent;
+    protected NavMeshAgent NavigationAgent;
+
 
     private float CurrentHealth;
     private float HealthMultiplier = 1.0f;
