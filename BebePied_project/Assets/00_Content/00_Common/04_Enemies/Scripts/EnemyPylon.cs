@@ -6,7 +6,10 @@ public class EnemyPylon : EnemyBase
 {
     [Header("Spawning")]
     public int SpawnFrequency;
-    public GameObject[] EnemyList;
+    public GameObject SpawnFloor;
+    public GameObject SpawnFly;
+    public GameObject[] EnemyFloorList;
+    public GameObject[] EnemyFlyList;
 
     public void OnSpawnEnded()
     {
@@ -24,8 +27,12 @@ public class EnemyPylon : EnemyBase
 
             for (int i = 0; i < enemyCount; ++i)
             {
-                GameObject enemyInstance = Instantiate(EnemyList[enemyType], transform.position, Quaternion.identity);
+                GameObject enemyInstance = Instantiate(EnemyFloorList[enemyType], SpawnFloor.transform.position, Quaternion.identity);
                 EnemyBase enemy = enemyInstance.GetComponent<EnemyBase>();
+                enemy.SetPlayer(Player);
+
+                enemyInstance = Instantiate(EnemyFlyList[enemyType], SpawnFly.transform.position, Quaternion.identity);
+                enemy = enemyInstance.GetComponent<EnemyBase>();
                 enemy.SetPlayer(Player);
             }
         }
@@ -33,6 +40,6 @@ public class EnemyPylon : EnemyBase
 
     protected override void OnDeath()
     {
-        Destroy(gameObject);
+        
     }
 }

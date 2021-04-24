@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEngine.AI;
 using Random = UnityEngine.Random;
@@ -11,17 +10,23 @@ public class EnemyBase : MonoBehaviour
 
     [Header("Death")]
     public GameObject DeathParticlePrefab;
-    public AudioClip[] DeathSounds; 
+    public AudioClip[] DeathSounds;
 
+    [Header("Spawn")] 
+    public AudioClip[] SpawnSounds;
+    
     protected Rigidbody Body;
+
     protected AudioSource AudioPlayer;
-    private NavMeshAgent NavigationAgent;
+    protected NavMeshAgent NavigationAgent;
+
 
     private float CurrentHealth;
     private float HealthMultiplier = 1.0f;
     
     public GameObject Player;
     private bool AutoStartAI = true;
+    private bool AutoDestroyOnDeath = true;
     private bool AIRunning;
 
     protected virtual void Start()
@@ -41,6 +46,8 @@ public class EnemyBase : MonoBehaviour
         {
             StartAI();
         }
+        
+        PlayRandomSoundInArray(SpawnSounds, transform.position);
     }
 
     protected virtual void Update()
@@ -66,6 +73,11 @@ public class EnemyBase : MonoBehaviour
     public void SetAutoStartAI(bool autoStart)
     {
         AutoStartAI = autoStart;
+    }
+
+    public void SetAutoDestroyOnDeath(bool autoDestroy)
+    {
+        AutoDestroyOnDeath = autoDestroy;
     }
 
     public void SetPlayer(GameObject player)
@@ -103,13 +115,14 @@ public class EnemyBase : MonoBehaviour
                 }
             }
 
-            if (DeathSounds.Length > 0)
-            {
-                AudioClip soundToPlay = DeathSounds[Random.Range(0, DeathSounds.Length)];
-                AudioSource.PlayClipAtPoint(soundToPlay, transform.position);
-            }
+            PlayRandomSoundInArray(DeathSounds, transform.position);
             
             OnDeath();
+
+            if (AutoDestroyOnDeath)
+            {
+                Destroy(gameObject);
+            }
         }
     }
 
@@ -138,6 +151,15 @@ public class EnemyBase : MonoBehaviour
         {
             NavigationAgent.isStopped = true;
             NavigationAgent.destination = transform.position;
+        }
+    }
+
+    protected void PlayRandomSoundInArray(AudioClip[] soundArray, Vector3 position)
+    {
+        if (soundArray.Length > 0)
+        {
+            AudioClip soundToPlay = soundArray[Random.Range(0, soundArray.Length)];
+            AudioSource.PlayClipAtPoint(soundToPlay, position);   
         }
     }
     
