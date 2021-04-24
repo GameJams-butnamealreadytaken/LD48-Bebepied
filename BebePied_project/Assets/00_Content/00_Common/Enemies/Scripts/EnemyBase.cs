@@ -26,7 +26,10 @@ public class EnemyBase : MonoBehaviour
 
         AIRunning = false;
 
-        NavigationAgent.acceleration = MaxSpeed;
+        if (NavigationAgent)
+        {
+            NavigationAgent.acceleration = MaxSpeed;
+        }
     }
 
     protected virtual void Update()

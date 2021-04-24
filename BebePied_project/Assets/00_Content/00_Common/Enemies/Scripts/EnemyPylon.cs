@@ -11,27 +11,24 @@ public class EnemyPylon : EnemyBase
     {
         base.Start();
 
-        // TODO Spawn animation
+        // TODO Wait spawn animation end before starting coroutine
 
-        //Debug
-        SpawnEnemyWave();
+        StartCoroutine("SpawnEnemyWave");
     }
 
-    protected override void Update()
+    IEnumerator SpawnEnemyWave()
     {
-        base.Update();
-
-        //TODO Spawn enemy waves
-    }
-
-    private void SpawnEnemyWave()
-    {
-        int enemyCount = Random.Range(3, 6);
-        int enemyType = 0;
-
-        for (int i = 0; i < enemyCount; ++i)
+        for (;;)
         {
-            Instantiate(EnemyList[enemyType], transform.position, Quaternion.identity);
+            yield return new WaitForSeconds(10.0f);
+
+            int enemyCount = Random.Range(4, 6);
+            int enemyType = 0;
+
+            for (int i = 0; i < enemyCount; ++i)
+            {
+                Instantiate(EnemyList[enemyType], transform.position, Quaternion.identity);
+            }
         }
     }
 }
