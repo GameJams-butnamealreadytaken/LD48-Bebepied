@@ -127,7 +127,8 @@ public class EnemyBase : MonoBehaviour
     {
         if (collision.collider.CompareTag(ObjectTags.Bullet))
         {
-            TakeDamage(5);
+            Projectile projectile = collision.collider.GetComponent<Projectile>();
+            TakeDamage(projectile.Damages);
         }
     }
 

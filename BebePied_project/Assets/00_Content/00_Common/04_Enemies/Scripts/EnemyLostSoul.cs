@@ -26,7 +26,7 @@ public class EnemyLostSoul : EnemyBase
 
     protected override void OnDeath()
     {
-        
+        Destroy(gameObject);
     }
 
     protected override void OnCollisionEnter(Collision collision)
