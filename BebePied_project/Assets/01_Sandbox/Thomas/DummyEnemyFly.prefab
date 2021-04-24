@@ -63,7 +63,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &5392545139332446181
+--- !u!114 &8910554310772747611
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -72,11 +72,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 8396667509852197626}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 785643e3fda9c7f45951d7bd11de1c5f, type: 3}
+  m_Script: {fileID: 11500000, guid: ff0840811d90852488817321c7156a4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   MaxHealth: 100
   MaxSpeed: 80
+  DeathParticlePrefab: {fileID: 0}
+  DeathSounds: []
   Player: {fileID: 0}
 --- !u!1001 &1625060577295989115
 PrefabInstance:
@@ -159,12 +161,24 @@ PrefabInstance:
       propertyPath: m_Name
       value: DummyEnemyFly
       objectReference: {fileID: 0}
+    - target: {fileID: 4347791283574244530, guid: c7f8987f979e65741a2d1673c04a885d, type: 3}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4347791283574244530, guid: c7f8987f979e65741a2d1673c04a885d, type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4764592138094892709, guid: c7f8987f979e65741a2d1673c04a885d, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: -2813467912831258332, guid: eec5e8f6b9781a245b15f64d20ef49a4, type: 3}
     - target: {fileID: 6894438702590219930, guid: c7f8987f979e65741a2d1673c04a885d, type: 3}
       propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6987064237218573700, guid: c7f8987f979e65741a2d1673c04a885d, type: 3}
+      propertyPath: m_Radius
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6987064237218573700, guid: c7f8987f979e65741a2d1673c04a885d, type: 3}
