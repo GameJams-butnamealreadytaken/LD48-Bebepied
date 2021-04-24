@@ -6,22 +6,27 @@ using UnityEngine;
 public class PlayerWeaponMinigun : PlayerWeapon
 {
 
+	public List<AudioClip> m_shotAudioClips = new List<AudioClip>();
 	public GameObject m_barrelGun;
 	private float m_currentSpeed = 0;
 
 
 	protected override void InternalUpdate()
 	{
+		//
+		// Update the speed of the minigum
 		if (Shooting)
 		{
 			m_currentSpeed += 12f;
 			if (m_currentSpeed >= 480f)
 			{
+				m_canShoot = true;	//< THe minigun now can shoot
 				m_currentSpeed = 480f;
 			}
 		}
 		else
 		{
+			m_canShoot = false;	//< We can't shoot until the speed is at maximum
 			m_currentSpeed -= 12f;
 			if (m_currentSpeed <= 0f)
 			{
@@ -40,5 +45,10 @@ public class PlayerWeaponMinigun : PlayerWeapon
 	protected override void StopShooting()
 	{
 		// throw new System.NotImplementedException();
+	}
+
+	protected override void OnShoot()
+	{
+		AudioSource.PlayClipAtPoint(m_shotAudioClips[Random.Range(0, m_shotAudioClips.Count)], transform.position);
 	}
 }

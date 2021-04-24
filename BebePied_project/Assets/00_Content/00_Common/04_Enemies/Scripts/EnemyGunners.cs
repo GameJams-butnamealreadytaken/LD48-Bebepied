@@ -8,15 +8,26 @@ public class EnemyGunners : EnemyBase
     public float MinDistanceToPlayer;
     
     private Vector3 CurrentDestination;
-    
+    protected override void Start()
+    {
+        base.Start();
+
+        // Get distance between fly navmesh and current spawn location to avoid navmesh agent instantly sticking to navmesh height
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position, Vector3.down, out hit, 100.0f, ~LayerMask.NameToLayer("GroundFly")))
+        {
+            NavigationAgent.baseOffset = hit.distance;
+        }
+    }
+
     protected override void OnStartAI()
     {
+        EnemyCounter.UpdateSpawnStats(EnemyType, false);
         CurrentDestination = Vector3.zero;
     }
 
     protected override void OnStopAI()
     {
-        
     }
 
     protected override void OnUpdateAI()
@@ -41,6 +52,6 @@ public class EnemyGunners : EnemyBase
 
     protected override void OnDeath()
     {
-        
+        EnemyCounter.UpdateSpawnStats(EnemyType, true);
     }
 }

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6794281507388394714}
   - component: {fileID: 6794281507388394715}
   - component: {fileID: 6794281507388394712}
+  - component: {fileID: 3032637641485082967}
   m_Layer: 0
   m_Name: BloodExplosionFX
   m_TagString: Untagged
@@ -26,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6794281507388394713}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 44.91925, y: 46.625298, z: 67.8}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -3734,7 +3735,7 @@ ParticleSystem:
     m_Bounce:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 0
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -3846,7 +3847,7 @@ ParticleSystem:
     maxCollisionShapes: 256
     quality: 0
     voxelSize: 0.5
-    collisionMessages: 0
+    collisionMessages: 1
     collidesWithDynamic: 1
     interiorCollisions: 0
   TriggerModule:
@@ -4864,3 +4865,20 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!114 &3032637641485082967
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6794281507388394713}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7d2db78cb10f1e4f928f99ca6598fb2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TimeBeforeDecalApplication: 0.3
+  DecalToCreateList:
+  - {fileID: 5513700486026164234, guid: cf4fa1ecdb96dd54988762279b194ee8, type: 3}
+  - {fileID: 5513700486026164234, guid: c6028bfc25f92284ab9e1a4260d8e219, type: 3}
+  - {fileID: 5513700486026164234, guid: 6efbd9487b00f264399499c83c48e354, type: 3}

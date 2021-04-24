@@ -46,6 +46,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_cannonPosition: {fileID: 2147410307674895155}
+  m_shotAudioClips:
+  - {fileID: 8300000, guid: 6f308ad13aa5f544a9fb3f0db196fb4d, type: 3}
   m_barrelGun: {fileID: 4799873915422828021}
 --- !u!1 &6039658315559893812
 GameObject:
@@ -71,7 +73,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6039658315559893812}
   m_LocalRotation: {x: -0, y: 9.3132246e-10, z: 0.000000029802319, w: 1}
-  m_LocalPosition: {x: 0.016, y: -0.018, z: -0.931}
+  m_LocalPosition: {x: -0, y: 0.1275, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7761164846771138598}
