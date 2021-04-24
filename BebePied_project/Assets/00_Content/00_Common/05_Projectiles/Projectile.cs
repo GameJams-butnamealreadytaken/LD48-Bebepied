@@ -26,17 +26,20 @@ public class Projectile : MonoBehaviour
 		m_livingTime += Time.deltaTime;
 		
 		//
-		// If the living time is superior to 10 seconds, we delete it
-		if (m_livingTime >= 10f)
+		// If the living time is superior to 5 seconds, we delete it
+		if (m_livingTime >= 5f)
 		{
 			Destroy(gameObject);
 		}
 	}
 
-	private void OnCollisionEnter(Collision other)
+	private void OnTriggerEnter(Collider other)
 	{
 		//
-		// Destroy the projectile
-		Destroy(gameObject);
+		// Destroy the projectile only if it is not colliding with another projectile
+		if (!other.transform.CompareTag("Bullet"))
+		{
+			// Destroy(gameObject);
+		}
 	}
 }

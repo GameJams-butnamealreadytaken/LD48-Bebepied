@@ -23,7 +23,7 @@ public class Player : MonoBehaviour
 		// Test if the player is shooting
 		if (GetComponent<PlayerInput>().actions["Shoot"].ReadValue<float>() >= 0.5f)
 		{
-			GetComponentInChildren<PlayerWeapon>().Shoot(m_defaultProjectile);
+			GetComponentInChildren<PlayerWeaponHolder>().Shoot(m_defaultProjectile);
 		}
 	}
 
