@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxHealth: 100
   MaxSpeed: 150
-  DeathParticlePrefab: {fileID: 7928222066580954692}
-  DeathParticleOffset: {x: 0, y: 0, z: 0}
+  DeathParticlePrefab: {fileID: 6794281507388394713, guid: fd9ed92cf689e444bb1aa788329b3bba, type: 3}
+  DeathParticleOffset: {x: 0, y: 2, z: 0}
   DeathSounds:
   - Clip: {fileID: 8300000, guid: dedc358759d9b6d4f8888a4872db489c, type: 3}
     Volume: 1
@@ -122,68 +122,6 @@ GameObject:
 Transform:
   m_CorrespondingSourceObject: {fileID: 7110587207257067652, guid: c7f8987f979e65741a2d1673c04a885d, type: 3}
   m_PrefabInstance: {fileID: 860051597309085798}
-  m_PrefabAsset: {fileID: 0}
---- !u!1001 &3480316033940361885
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 7584736025497508066}
-    m_Modifications:
-    - target: {fileID: 6794281507388394713, guid: fd9ed92cf689e444bb1aa788329b3bba, type: 3}
-      propertyPath: m_Name
-      value: DeathEffect
-      objectReference: {fileID: 0}
-    - target: {fileID: 6794281507388394714, guid: fd9ed92cf689e444bb1aa788329b3bba, type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6794281507388394714, guid: fd9ed92cf689e444bb1aa788329b3bba, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6794281507388394714, guid: fd9ed92cf689e444bb1aa788329b3bba, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.073
-      objectReference: {fileID: 0}
-    - target: {fileID: 6794281507388394714, guid: fd9ed92cf689e444bb1aa788329b3bba, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6794281507388394714, guid: fd9ed92cf689e444bb1aa788329b3bba, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 6794281507388394714, guid: fd9ed92cf689e444bb1aa788329b3bba, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 6794281507388394714, guid: fd9ed92cf689e444bb1aa788329b3bba, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6794281507388394714, guid: fd9ed92cf689e444bb1aa788329b3bba, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6794281507388394714, guid: fd9ed92cf689e444bb1aa788329b3bba, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: -90
-      objectReference: {fileID: 0}
-    - target: {fileID: 6794281507388394714, guid: fd9ed92cf689e444bb1aa788329b3bba, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6794281507388394714, guid: fd9ed92cf689e444bb1aa788329b3bba, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: fd9ed92cf689e444bb1aa788329b3bba, type: 3}
---- !u!1 &7928222066580954692 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6794281507388394713, guid: fd9ed92cf689e444bb1aa788329b3bba, type: 3}
-  m_PrefabInstance: {fileID: 3480316033940361885}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4546482285162344764
 PrefabInstance:
