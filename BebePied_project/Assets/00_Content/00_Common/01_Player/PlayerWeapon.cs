@@ -12,20 +12,22 @@ public abstract class PlayerWeapon : MonoBehaviour
 	[SerializeField] 
 	private Transform m_cannonPosition;
 
-	private float m_timeSinceLastShoot = 0f;
-	private float m_timeToNextShoot = 0f;
-	private bool m_isShooting = false;
+	private float m_timeSinceLastShoot = 0f;	//< The time since the last shoot 
+	private float m_timeToNextShoot = 0f;	//< THe time to wait before next shoot
+	private bool m_isShooting = false;	//< Indicates if the weapon is shooting
+
+	protected bool m_canShoot = false;	//< A boolean that is set in the children to allow the weapon to shoot
 
 	public bool Shooting => m_isShooting;
 
 	private void Update()
 	{
 		//
-		//
+		// Update the children
 		InternalUpdate();
 		
 		//
-		//
+		// Update the time since last shott
 		m_timeSinceLastShoot += Time.deltaTime;
 		
 		//
@@ -52,47 +54,56 @@ public abstract class PlayerWeapon : MonoBehaviour
 			}
 
 			//
-			// Set the time to the next shoot
-			m_timeToNextShoot = projectileData.TimeBetweenFires;
-			
 			//
-			// Reset the time to the next shoot
-			m_timeSinceLastShoot = 0f;
-			
-			//
-			// Instantiate as many projectiles as needed
-			for (int projectileIndex = 0; projectileIndex < projectileData.FireProjectilesCount; ++projectileIndex)
+			if (m_canShoot)
 			{
 				//
-				// Randomize the start position of the bullet
-				Vector3 bulletStartPosition = m_cannonPosition.forward * (Random.insideUnitCircle * 0.3f);
+				// Set the time to the next shoot
+				m_timeToNextShoot = projectileData.TimeBetweenFires;
+			
+				//
+				// Reset the time to the next shoot
+				m_timeSinceLastShoot = 0f;
+			
+				//
+				// Instantiate as many projectiles as needed
+				for (int projectileIndex = 0; projectileIndex < projectileData.FireProjectilesCount; ++projectileIndex)
+				{
+					//
+					// Randomize the start position of the bullet
+					Vector3 bulletStartPosition = m_cannonPosition.forward * (Random.insideUnitCircle * 0.3f);
+				
+					//
+					// Instantiate the projectile
+					GameObject projectileGO = GameObject.Instantiate(projectileData.Prefab, 
+						m_cannonPosition.position + bulletStartPosition, Quaternion.identity);
+				
+					//
+					// Set the forward of the projectile
+					Vector3 bulletDirection = m_cannonPosition.forward + (Random.insideUnitSphere * projectileData.DispersionFactor);
+					projectileGO.transform.forward = bulletDirection;
+				
+					//
+					// Add the projectile component and set its damages
+					Projectile projectileComponent = projectileGO.AddComponent<Projectile>();
+					projectileComponent.Damages = projectileData.Damages;
+				
+					//
+					// Ensure the bullet rigidbody has its rotation constrained so the bullets do not rotate after being fired
+					projectileGO.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
+				
+					//
+					// Set the collider to trigger
+					projectileGO.GetComponent<Collider>().isTrigger = true;
+				
+					//
+					// Eject the projectile
+					projectileGO.GetComponent<Rigidbody>().AddForce(-bulletDirection * projectileData.FireVelocity, ForceMode.Impulse);
+				}
 				
 				//
-				// Instantiate the projectile
-				GameObject projectileGO = GameObject.Instantiate(projectileData.Prefab, 
-					m_cannonPosition.position + bulletStartPosition, Quaternion.identity);
-				
-				//
-				// Set the forward of the projectile
-				Vector3 bulletDirection = m_cannonPosition.forward + (Random.insideUnitSphere * projectileData.DispersionFactor);
-				projectileGO.transform.forward = bulletDirection;
-				
-				//
-				// Add the projectile component and set its damages
-				Projectile projectileComponent = projectileGO.AddComponent<Projectile>();
-				projectileComponent.Damages = projectileData.Damages;
-				
-				//
-				// Ensure the bullet rigidbody has its rotation constrained so the bullets do not rotate after being fired
-				projectileGO.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
-				
-				//
-				// Set the collider to trigger
-				projectileGO.GetComponent<Collider>().isTrigger = true;
-				
-				//
-				// Eject the projectile
-				projectileGO.GetComponent<Rigidbody>().AddForce(-bulletDirection * projectileData.FireVelocity, ForceMode.Impulse);
+				// Call the OnShoot method
+				OnShoot();
 			}
 		}
 	}
@@ -102,6 +113,8 @@ public abstract class PlayerWeapon : MonoBehaviour
 	protected abstract void StartShooting();
 	
 	protected abstract void StopShooting();
+
+	protected abstract void OnShoot();
 
 	private void OnDrawGizmos()
 	{

@@ -46,6 +46,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_cannonPosition: {fileID: 2147410307674895155}
+  m_shotAudioClips:
+  - {fileID: 8300000, guid: dedc358759d9b6d4f8888a4872db489c, type: 3}
   m_barrelGun: {fileID: 4799873915422828021}
 --- !u!1 &6039658315559893812
 GameObject:
