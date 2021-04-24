@@ -17,6 +17,7 @@ MonoBehaviour:
   DeathParticlePrefab: {fileID: 7928222066580954692}
   DeathSounds:
   - {fileID: 8300000, guid: dedc358759d9b6d4f8888a4872db489c, type: 3}
+  SpawnSounds: []
   Player: {fileID: 0}
   MinDistanceToPlayer: 30
 --- !u!65 &1780436303268636780
@@ -42,6 +43,22 @@ PrefabInstance:
     - target: {fileID: 3899817456378533384, guid: c7f8987f979e65741a2d1673c04a885d, type: 3}
       propertyPath: m_Name
       value: EnemyGunners
+      objectReference: {fileID: 0}
+    - target: {fileID: 4347791283574244530, guid: c7f8987f979e65741a2d1673c04a885d, type: 3}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4347791283574244530, guid: c7f8987f979e65741a2d1673c04a885d, type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6987064237218573700, guid: c7f8987f979e65741a2d1673c04a885d, type: 3}
+      propertyPath: m_Height
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6987064237218573700, guid: c7f8987f979e65741a2d1673c04a885d, type: 3}
+      propertyPath: m_Radius
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 7110587207257067652, guid: c7f8987f979e65741a2d1673c04a885d, type: 3}
       propertyPath: m_RootOrder
