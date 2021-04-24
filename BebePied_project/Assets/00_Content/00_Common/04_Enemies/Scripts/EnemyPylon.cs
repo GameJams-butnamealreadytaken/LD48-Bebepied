@@ -40,6 +40,6 @@ public class EnemyPylon : EnemyBase
 
     protected override void OnDeath()
     {
-        Destroy(gameObject);
+        
     }
 }
