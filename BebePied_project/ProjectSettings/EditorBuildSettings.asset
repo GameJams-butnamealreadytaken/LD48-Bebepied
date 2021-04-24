@@ -8,4 +8,10 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/00_Content/00_Common/03_GameManager/_preload.unity
+    guid: fd1803f4c7eee7c40be31bc1c53d263b
+  - enabled: 1
+    path: Assets/01_Sandbox/Th0re/Th0re.unity
+    guid: eb5cee21a43d8184e95d4303cc45dd23
   m_configObjects: {}
