@@ -475,8 +475,12 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 718804433944472283, guid: 8f71d884ba3753f41848d396b9a9a8e2, type: 3}
+      propertyPath: m_Volume
+      value: 0.516
+      objectReference: {fileID: 0}
+    - target: {fileID: 718804433944472283, guid: 8f71d884ba3753f41848d396b9a9a8e2, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1003354775932697757, guid: 8f71d884ba3753f41848d396b9a9a8e2, type: 3}
       propertyPath: m_RootOrder
@@ -525,6 +529,14 @@ PrefabInstance:
     - target: {fileID: 1003354775932697759, guid: 8f71d884ba3753f41848d396b9a9a8e2, type: 3}
       propertyPath: m_Name
       value: GameManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 3562258092518903816, guid: 8f71d884ba3753f41848d396b9a9a8e2, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6381500995890825444, guid: 8f71d884ba3753f41848d396b9a9a8e2, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.971
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f71d884ba3753f41848d396b9a9a8e2, type: 3}
