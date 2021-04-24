@@ -30,10 +30,12 @@ public class EnemyPylon : EnemyBase
                 GameObject enemyInstance = Instantiate(EnemyFloorList[enemyType], SpawnFloor.transform.position, Quaternion.identity);
                 EnemyBase enemy = enemyInstance.GetComponent<EnemyBase>();
                 enemy.SetPlayer(Player);
+                enemy.EnemyCounter = EnemyCounter;
 
                 enemyInstance = Instantiate(EnemyFlyList[enemyType], SpawnFly.transform.position, Quaternion.identity);
                 enemy = enemyInstance.GetComponent<EnemyBase>();
                 enemy.SetPlayer(Player);
+                enemy.EnemyCounter = EnemyCounter;
             }
         }
     }
