@@ -27,21 +27,28 @@ public class EnemyPylon : EnemyBase
 
             for (int i = 0; i < enemyCount; ++i)
             {
-                GameObject enemyInstance = Instantiate(EnemyFloorList[enemyType], SpawnFloor.transform.position, Quaternion.identity);
-                EnemyBase enemy = enemyInstance.GetComponent<EnemyBase>();
-                enemy.SetPlayer(Player);
-                enemy.EnemyCounter = EnemyCounter;
+                if (EnemyFloorList.Length > enemyType)
+                {
+                    GameObject enemyInstance = Instantiate(EnemyFloorList[enemyType], SpawnFloor.transform.position, Quaternion.identity);
+                    EnemyBase enemy = enemyInstance.GetComponent<EnemyBase>();
+                    enemy.SetPlayer(Player);
+                    enemy.EnemyCounter = EnemyCounter;
+                }
 
-                enemyInstance = Instantiate(EnemyFlyList[enemyType], SpawnFly.transform.position, Quaternion.identity);
-                enemy = enemyInstance.GetComponent<EnemyBase>();
-                enemy.SetPlayer(Player);
-                enemy.EnemyCounter = EnemyCounter;
+                if (EnemyFlyList.Length > enemyType)
+                {
+                    GameObject enemyInstance = Instantiate(EnemyFlyList[enemyType], SpawnFly.transform.position, Quaternion.identity);
+                    EnemyBase enemy = enemyInstance.GetComponent<EnemyBase>();
+                    enemy.SetPlayer(Player);
+                    enemy.EnemyCounter = EnemyCounter;
+                }
             }
         }
     }
 
     protected override void OnDeath()
     {
-        
+        SetAutoDestroyOnDeath(false);
+        Destroy(transform.parent.gameObject);
     }
 }
