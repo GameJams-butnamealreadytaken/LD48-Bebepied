@@ -21,14 +21,14 @@ public class ParticlesDecalsCreator : MonoBehaviour
 
     private void CreateDecal()
     {
-        if(NavMesh.SamplePosition(transform.position, out var navHit, 100 , -1))
-        {
-            GameObject decalToCreate = DecalToCreateList[Random.Range(0, DecalToCreateList.Count)];
-            
-            Quaternion decalRotation = decalToCreate.transform.rotation;
-            decalRotation.eulerAngles = new Vector3(decalRotation.eulerAngles.x, transform.rotation.eulerAngles.y, decalRotation.eulerAngles.z);
+        GameObject decalToCreate = DecalToCreateList[Random.Range(0, DecalToCreateList.Count)];
 
-            Instantiate(decalToCreate, navHit.position, decalRotation, null);
-        }
+        Vector3 decalPosition = transform.position;
+        decalPosition.y = 0.55f;
+        
+        Quaternion decalRotation = decalToCreate.transform.rotation;
+        decalRotation.eulerAngles = new Vector3(decalRotation.eulerAngles.x, transform.rotation.eulerAngles.y, decalRotation.eulerAngles.z);
+
+        Instantiate(decalToCreate, decalPosition, decalRotation, null);
     }
 }
