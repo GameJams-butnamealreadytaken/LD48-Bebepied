@@ -26,10 +26,12 @@ public class LevelBase : MonoBehaviour
     private float SecondsSinceLastSpawn = 0;
     private int CurrentEnemyIndex = 0;
 
+    private EnemyCounter EnemyCounter;
+
     // Start is called before the first frame update
     private void Start()
     {
-
+        EnemyCounter = GetComponent<EnemyCounter>();
     }
 
     // Update is called once per frame
@@ -75,6 +77,10 @@ public class LevelBase : MonoBehaviour
                     TakenSpots.Add(roundPosition);
 
                     GameObject enemyInstance = Instantiate(enemyTypeNumber.Type, position, Quaternion.identity);
+                    
+                    EnemyPylon Pylon = enemyInstance.GetComponent<EnemyPylon>();
+                    Pylon.EnemyCounter = EnemyCounter;
+
                     EnemyBase enemy = enemyInstance.GetComponent<EnemyBase>();
                     if (!enemy)
                     {
