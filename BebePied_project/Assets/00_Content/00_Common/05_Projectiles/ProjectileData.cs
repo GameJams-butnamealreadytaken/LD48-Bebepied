@@ -8,7 +8,7 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Bebe Pied/Projectiles/Create Projectile Data", fileName = "Projectile")]
 public class ProjectileData : ScriptableObject
 {
-	
+	[Header("Base")]
 	[SerializeField] 
 	[Tooltip("The damages of the projectile")]
 	private int m_damages;
@@ -20,19 +20,30 @@ public class ProjectileData : ScriptableObject
 	[SerializeField] 
 	private GameObject m_projectilePrefab;
 
-	public int Damages
-	{
-		get => m_damages;
-	}
+	[Header("Emission")] 
+	[SerializeField] 
+	[Tooltip("The number of projectiles that are fired when shooting")]
+	private int m_firedProjectilesCount = 1;
 
-	public float FireVelocity
-	{
-		get => m_fireVelocity;
-	}
+	[SerializeField] 
+	[Tooltip("The time that the weapon must wait to fire again")]
+	private float m_timeBetweenFires = 0.02f;
+
+	[SerializeField] 
+	[Range(0f, 2f)]
+	[Tooltip("Dispersion factor")]
+	private float m_dispersionFactor = 0.0f;
+
+	public int Damages => m_damages;
+
+	public float FireVelocity=> m_fireVelocity;
 	
-	public GameObject Prefab
-	{
-		get => m_projectilePrefab;
-	}
+	public GameObject Prefab => m_projectilePrefab;
+
+	public int FireProjectilesCount => m_firedProjectilesCount;
+
+	public float TimeBetweenFires => m_timeBetweenFires;
+
+	public float DispersionFactor => m_dispersionFactor;
 
 }
