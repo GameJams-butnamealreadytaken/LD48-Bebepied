@@ -348,6 +348,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameManager
       objectReference: {fileID: 0}
+    - target: {fileID: 3562258092518903822, guid: 8f71d884ba3753f41848d396b9a9a8e2, type: 3}
+      propertyPath: m_walkSpeed
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 6381500995890825444, guid: 8f71d884ba3753f41848d396b9a9a8e2, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0.971
@@ -361,6 +365,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 794487945706083817, guid: 07fe255197165dc4286ce9c7519bde8c, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1214949076083373465, guid: 07fe255197165dc4286ce9c7519bde8c, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2158413081110366361, guid: 07fe255197165dc4286ce9c7519bde8c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2871303364339251398, guid: 07fe255197165dc4286ce9c7519bde8c, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3606144058539863913, guid: 07fe255197165dc4286ce9c7519bde8c, type: 3}
       propertyPath: m_RootOrder
       value: 1
