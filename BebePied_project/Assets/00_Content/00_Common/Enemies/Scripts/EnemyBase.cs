@@ -18,10 +18,13 @@ public class EnemyBase : MonoBehaviour
     {
         InitializeCharacteristics();
         
-        NavigationAgent = GetComponent<NavMeshAgent>();
         Body = GetComponent<Rigidbody>();
-        
-        NavigationAgent.acceleration = MaxSpeed;
+
+        NavigationAgent = GetComponent<NavMeshAgent>();
+        if (NavigationAgent)
+        {
+            NavigationAgent.acceleration = MaxSpeed;
+        }
     }
 
     protected virtual void Update()
