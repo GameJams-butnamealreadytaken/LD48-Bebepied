@@ -13,12 +13,12 @@ public class EnemyBase : MonoBehaviour
     
     private float CurrentHealth;
     
-    void Start()
+    protected virtual void Start()
     {
         InitializeCharacteristics();
     }
 
-    void Update()
+    protected virtual void Update()
     {
         
     }
