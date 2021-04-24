@@ -4,18 +4,29 @@ using UnityEngine;
 
 public class EnemyGhast : EnemyBase
 {
+
+    protected override void Start()
+    {
+        base.Start();
+
+        Debug.DrawLine(transform.position, transform.position + Vector3.down * 100.0f, Color.yellow, 2.0f);
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position, Vector3.down, out hit, 100.0f, ~LayerMask.NameToLayer("GroundFly")))
+        {
+            NavigationAgent.baseOffset = hit.distance;
+        }
+    }
+
     protected override void Update()
     {
         base.Update();
 
-        NavigationAgent.baseOffset += Random.Range(-1.0f, 1.0f);
-        NavigationAgent.baseOffset = Mathf.Clamp(NavigationAgent.baseOffset, 0, 5);
+        //NavigationAgent.baseOffset += Random.Range(-1.0f, 1.0f);
+        //NavigationAgent.baseOffset = Mathf.Clamp(NavigationAgent.baseOffset, 0, 5);
     }
 
     protected override void OnUpdateAI()
     {
-        Vector3 vDest = Player.transform.position;
-        vDest.y += 4.0f;
         SetDestination(Player.transform.position);
     }
 
