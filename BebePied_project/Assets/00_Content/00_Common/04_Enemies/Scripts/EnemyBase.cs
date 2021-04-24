@@ -91,6 +91,11 @@ public class EnemyBase : MonoBehaviour
         }
     }
 
+    protected Vector3 GetDestination()
+    {
+        return NavigationAgent.destination;
+    }
+
     protected void SetDestination(Vector3 newDestination)
     {
         NavigationAgent.isStopped = false;
@@ -122,7 +127,8 @@ public class EnemyBase : MonoBehaviour
     {
         if (collision.collider.CompareTag(ObjectTags.Bullet))
         {
-            TakeDamage(5);
+            Projectile projectile = collision.collider.GetComponent<Projectile>();
+            TakeDamage(projectile.Damages);
         }
     }
 
