@@ -13,6 +13,9 @@ public class EnemyBase : MonoBehaviour
 
     protected Rigidbody Body;
     private NavMeshAgent NavigationAgent;
+
+    protected GameObject Player;
+    private bool AIRunning;
     
     protected virtual void Start()
     {
@@ -20,15 +23,37 @@ public class EnemyBase : MonoBehaviour
         
         NavigationAgent = GetComponent<NavMeshAgent>();
         Body = GetComponent<Rigidbody>();
-        
+
+        AIRunning = false;
+
         NavigationAgent.acceleration = MaxSpeed;
     }
 
     protected virtual void Update()
     {
-        
+        if (AIRunning)
+        {
+            OnUpdateAI();
+        }
     }
 
+    public void StartAI()
+    {
+        AIRunning = true;
+        OnStartAI();
+    }
+
+    public void StopAI()
+    {
+        AIRunning = false;
+        OnStopAI();
+    }
+
+    public void SetPlayer(GameObject player)
+    {
+        Player = player;
+    }
+    
     public void SetHealthMultiplier(float multiplier)
     {
         CurrentHealth = MaxHealth * multiplier;
@@ -64,6 +89,15 @@ public class EnemyBase : MonoBehaviour
         NavigationAgent.isStopped = true;
         NavigationAgent.destination = transform.position;
     }
+    
+    protected virtual void OnStartAI()
+    {}
+    
+    protected virtual void OnStopAI()
+    {}
+    
+    protected virtual void OnUpdateAI()
+    {}
 
     protected virtual void OnDamageTaken(float oldHealth, float newHealth)
     {}
