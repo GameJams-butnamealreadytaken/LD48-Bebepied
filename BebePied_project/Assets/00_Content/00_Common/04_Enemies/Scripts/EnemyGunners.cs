@@ -22,12 +22,12 @@ public class EnemyGunners : EnemyBase
 
     protected override void OnStartAI()
     {
+        EnemyCounter.UpdateSpawnStats(EnemyType, false);
         CurrentDestination = Vector3.zero;
     }
 
     protected override void OnStopAI()
     {
-        
     }
 
     protected override void OnUpdateAI()
@@ -52,6 +52,6 @@ public class EnemyGunners : EnemyBase
 
     protected override void OnDeath()
     {
-        
+        EnemyCounter.UpdateSpawnStats(EnemyType, true);
     }
 }
