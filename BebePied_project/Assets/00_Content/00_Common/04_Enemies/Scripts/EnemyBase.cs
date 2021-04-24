@@ -154,12 +154,12 @@ public class EnemyBase : MonoBehaviour
         }
     }
 
-    protected void PlayRandomSoundInArray(AudioClip[] soundArray, Vector3 position)
+    protected void PlayRandomSoundInArray(AudioClip[] soundArray, Vector3 position, float volume = 1.0f)
     {
         if (soundArray.Length > 0)
         {
             AudioClip soundToPlay = soundArray[Random.Range(0, soundArray.Length)];
-            AudioSource.PlayClipAtPoint(soundToPlay, position);   
+            AudioSource.PlayClipAtPoint(soundToPlay, position, volume);   
         }
     }
     
