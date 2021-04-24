@@ -439,6 +439,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyPylon
       objectReference: {fileID: 0}
+    - target: {fileID: 3457730813130728188, guid: 73a3f84473300484099231b6b1fa450f, type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 4600336722531673349, guid: 4edfe31254843fb49b8256e11809b090, type: 3}
     - target: {fileID: 5282457535185292101, guid: 73a3f84473300484099231b6b1fa450f, type: 3}
       propertyPath: m_RootOrder
       value: 1
