@@ -14,7 +14,7 @@ public class EnemyBase : MonoBehaviour
     protected Rigidbody Body;
     private NavMeshAgent NavigationAgent;
 
-    protected GameObject Player;
+    public GameObject Player;
     private bool AIRunning;
     
     protected virtual void Start()

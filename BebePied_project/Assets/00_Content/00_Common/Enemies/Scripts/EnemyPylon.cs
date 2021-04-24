@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class EnemyPylon : EnemyBase
 {
-    [Header("Enemies To Spawn")]
+    [Header("Spawning")]
+    public int SpawnFrequency;
     public GameObject[] EnemyList;
 
     protected override void Start()
@@ -20,14 +21,17 @@ public class EnemyPylon : EnemyBase
     {
         for (;;)
         {
-            yield return new WaitForSeconds(10.0f);
+            yield return new WaitForSeconds(SpawnFrequency);
 
             int enemyCount = Random.Range(4, 6);
             int enemyType = 0;
 
             for (int i = 0; i < enemyCount; ++i)
             {
-                Instantiate(EnemyList[enemyType], transform.position, Quaternion.identity);
+                GameObject enemyInstance = Instantiate(EnemyList[enemyType], transform.position, Quaternion.identity);
+                EnemyBase enemy = enemyInstance.GetComponent<EnemyBase>();
+                enemy.SetPlayer(Player);
+                enemy.StartAI();
             }
         }
     }
