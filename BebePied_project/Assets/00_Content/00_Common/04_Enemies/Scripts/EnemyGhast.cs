@@ -4,18 +4,21 @@ using UnityEngine;
 
 public class EnemyGhast : EnemyBase
 {
-
     private float VerticalMaxSpeed = 0.02f;
+    private float CurrentHeightObjective;
 
     protected override void Start()
     {
         base.Start();
 
+        // Get distance between fly navmesh and current spawn location to avoid navmesh agent instantly sticking to navmesh height
         RaycastHit hit;
         if (Physics.Raycast(transform.position, Vector3.down, out hit, 100.0f, ~LayerMask.NameToLayer("GroundFly")))
         {
             NavigationAgent.baseOffset = hit.distance;
         }
+
+        CurrentHeightObjective = Random.Range(-1.0f, 3.0f);
     }
 
     protected override void Update()
@@ -23,10 +26,10 @@ public class EnemyGhast : EnemyBase
         base.Update();
 
         NavigationAgent.baseOffset -= VerticalMaxSpeed;
-        if (NavigationAgent.baseOffset < 0)
+        if (NavigationAgent.baseOffset < -1.0f)
         {
-            // Avoid going under the navmesh height and colliding with walking enemies
-            NavigationAgent.baseOffset = 0;
+            // Avoid going too low and colliding with walking enemies
+            NavigationAgent.baseOffset = -1.0f;
         }
     }
 
