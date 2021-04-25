@@ -277,7 +277,7 @@ public class Player : MonoBehaviour
 
 	public void ResetWave()
 	{
-		m_currentWave = 1;
+		m_currentWave = 2;
 	}
 	
 	public void OnTriggerEnter(Collider other)

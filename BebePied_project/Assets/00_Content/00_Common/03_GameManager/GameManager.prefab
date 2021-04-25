@@ -80,8 +80,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 7e00d930956029d4daecf436a1fb8e1a, type: 2}
   - {fileID: 11400000, guid: 08616868a0a63424db4d93dd48444f74, type: 2}
   - {fileID: 11400000, guid: 39df36d2572d32e4f8294b75fd5014d1, type: 2}
-  m_ennemyRatioCountForBonus: 15
-  m_ennemyRatioDurationForBonus: 3
 --- !u!1 &5456610549983942432
 GameObject:
   m_ObjectHideFlags: 0
@@ -234,7 +232,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4360345386271947662, guid: 91074692f0fe8a140a323d85724f5d74, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 4360345386271947662, guid: 91074692f0fe8a140a323d85724f5d74, type: 3}
       propertyPath: m_LocalPosition.z
@@ -270,7 +268,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6152766472407409506, guid: 91074692f0fe8a140a323d85724f5d74, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.971
+      value: 0.97099996
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 91074692f0fe8a140a323d85724f5d74, type: 3}

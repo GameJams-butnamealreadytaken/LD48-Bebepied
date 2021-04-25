@@ -15,7 +15,7 @@ MonoBehaviour:
   m_eBonusType: 0
   m_bonusPrefab: {fileID: 2105726643545939360, guid: 8bbf62fa01f0c6f42a996c7e0e699b2b, type: 3}
   m_bonusDurationInSeconds: 10
-  m_newProjectileData: {fileID: 0}
+  m_newProjectileData: {fileID: 11400000, guid: 10b879d5733cd0d4ba0f9c545966990b, type: 2}
   m_additionalDamages: 4
   m_additionalArmor: 0
   m_additionalSpeed: 0
