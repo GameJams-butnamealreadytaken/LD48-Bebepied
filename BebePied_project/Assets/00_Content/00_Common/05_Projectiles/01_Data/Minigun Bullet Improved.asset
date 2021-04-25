@@ -13,11 +13,12 @@ MonoBehaviour:
   m_Name: Minigun Bullet Improved
   m_EditorClassIdentifier: 
   m_damages: 1
+  m_lifeTime: 10
   m_fireVelocity: 60
   m_projectilePrefab: {fileID: 88771603734755773, guid: e3283867c8abc3947af8a2241dd7d463, type: 3}
   m_firedProjectilesCount: 8
   m_timeBetweenFires: 0.15
   m_dispersionFactor: 0.1
   m_constrainProjectileRotation: 1
-  m_deactivatePhysics: 0
+  m_deactivatePhysics: 1
   m_isSausage: 0
