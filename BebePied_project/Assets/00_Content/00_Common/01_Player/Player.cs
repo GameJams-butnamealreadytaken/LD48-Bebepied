@@ -28,6 +28,9 @@ public class Player : MonoBehaviour
 	private BonusData m_currentBonusData = null;	//< The current bonus
 	private int m_additionalDamages = 0;
 	private float m_currentBonusDuration = 0f;
+	private int m_killCountForBonus = 0;
+	private int m_killCountToNextBonus = 0;
+	
 	
 	// Start is called before the first frame update
 	void Start()
@@ -43,6 +46,10 @@ public class Player : MonoBehaviour
 		//
 		// Set default projectile as current
 		m_currentProjectileData = m_defaultProjectile;
+		
+		//
+		//
+		m_killCountToNextBonus = UnityEngine.Random.Range(20, 30);
 	}
 
 	// Update is called once per frame
@@ -105,8 +112,21 @@ public class Player : MonoBehaviour
 		m_sausagesShot = 0;
 	}
 
-	public void IncrementEnemyKilledStat()
+	public void IncrementEnemyKilledStat(Transform enemyPosition)
 	{
+		m_killCountForBonus++;
+		if (m_killCountForBonus >= m_killCountToNextBonus)
+		{
+			// Spawn Bonus
+			int bonusID = UnityEngine.Random.Range(0, GameManager.GetInstance().m_bonusManager.m_ennemyBonusData.Count);
+			GameObject  go = Instantiate(GameManager.GetInstance().m_bonusManager.m_ennemyBonusData[bonusID].Prefab, enemyPosition.position, Quaternion.identity);
+			go.transform.position = enemyPosition.position;
+			BonusBehavior bonusBehaviour = go.AddComponent<BonusBehavior>();
+			bonusBehaviour.m_bonusData = GameManager.GetInstance().m_bonusManager.m_ennemyBonusData[bonusID];
+
+			m_killCountForBonus = 0;
+			m_killCountToNextBonus = UnityEngine.Random.Range(20, 30);
+		}
 		m_ennemiesKilled++;
 	}
 

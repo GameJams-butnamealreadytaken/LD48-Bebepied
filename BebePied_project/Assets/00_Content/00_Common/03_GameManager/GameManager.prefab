@@ -50,7 +50,8 @@ MonoBehaviour:
   Player: {fileID: 3562258092518903819}
   TutoTextGameObject: {fileID: 0}
   m_musicAudioSource: {fileID: 718804433944472283}
-  m_bonusManager: {fileID: 0}
+  m_bonusManager: {fileID: 3565706202556958517}
+  CurrentLevel: {fileID: 0}
 --- !u!114 &3565706202556958517
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -63,6 +64,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e867caa3f279314fa83c680c74e0765, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_towerBonusDatas:
+  - {fileID: 11400000, guid: 2c82dc19b4c0de440a284f38827f61a3, type: 2}
+  - {fileID: 11400000, guid: 43189b6d6c3d7404db3f1025e7d5ee18, type: 2}
+  - {fileID: 11400000, guid: 3201bccbb346e5d4bb505b5a0514d9bb, type: 2}
+  - {fileID: 11400000, guid: 75d7772990a6c334aa9acef305aad46a, type: 2}
+  - {fileID: 11400000, guid: 7e00d930956029d4daecf436a1fb8e1a, type: 2}
+  - {fileID: 11400000, guid: 08616868a0a63424db4d93dd48444f74, type: 2}
+  - {fileID: 11400000, guid: 39df36d2572d32e4f8294b75fd5014d1, type: 2}
+  m_ennemyBonusData:
+  - {fileID: 11400000, guid: 2c82dc19b4c0de440a284f38827f61a3, type: 2}
+  - {fileID: 11400000, guid: 43189b6d6c3d7404db3f1025e7d5ee18, type: 2}
+  - {fileID: 11400000, guid: 3201bccbb346e5d4bb505b5a0514d9bb, type: 2}
+  - {fileID: 11400000, guid: 75d7772990a6c334aa9acef305aad46a, type: 2}
+  - {fileID: 11400000, guid: 7e00d930956029d4daecf436a1fb8e1a, type: 2}
+  - {fileID: 11400000, guid: 08616868a0a63424db4d93dd48444f74, type: 2}
+  - {fileID: 11400000, guid: 39df36d2572d32e4f8294b75fd5014d1, type: 2}
   m_ennemyRatioCountForBonus: 15
   m_ennemyRatioDurationForBonus: 3
 --- !u!1 &5456610549983942432
