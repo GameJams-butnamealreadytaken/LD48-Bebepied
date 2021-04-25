@@ -28,6 +28,8 @@ public class LevelBase : MonoBehaviour
 
     private EnemyCounter EnemyCounter;
 
+    public LevelLogic LevelLogic;
+
     private void Start()
     {
         EnemyCounter = GetComponent<EnemyCounter>();
