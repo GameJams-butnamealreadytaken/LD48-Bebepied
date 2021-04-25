@@ -575,7 +575,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5458084051605509306}
   - component: {fileID: 8384536000097234426}
-  - component: {fileID: 1680540982165813930}
+  - component: {fileID: 8384758668847944987}
   - component: {fileID: 281761084704658730}
   - component: {fileID: 1721399343216186685}
   - component: {fileID: 815617739660935357}
@@ -624,7 +624,7 @@ NavMeshAgent:
   m_BaseOffset: -0.5
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &1680540982165813930
+--- !u!114 &8384758668847944987
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -633,13 +633,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 4680596991659183616}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff0840811d90852488817321c7156a4b, type: 3}
+  m_Script: {fileID: 11500000, guid: b7ec35531afac4044beae7ac6f9adfc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHealth: 100
+  MaxHealth: 3
   MaxSpeed: 80
   HitParticlePrefab: {fileID: 1591858850154547433, guid: f2d233a65a67a25478f1216b8205ceb5, type: 3}
-  HitParticleOffset: {x: 0, y: 2, z: 0}
+  HitParticleOffset: {x: 0, y: 0, z: 0}
   HitSounds:
   - Clip: {fileID: 8300000, guid: 6a22f10b716b748499cf768b330b4ea0, type: 3}
     Volume: 1

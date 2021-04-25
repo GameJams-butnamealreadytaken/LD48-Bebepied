@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b8b2a4b9b60b7545940473ed08efe29, type: 3}
   m_Name: Sausage Gun Bullet
   m_EditorClassIdentifier: 
-  m_damages: 200
+  m_damages: 8
   m_fireVelocity: 80
   m_projectilePrefab: {fileID: 7976367889042405397, guid: 2d92da2717a13e741a95d349e7ffee95, type: 3}
   m_firedProjectilesCount: 30

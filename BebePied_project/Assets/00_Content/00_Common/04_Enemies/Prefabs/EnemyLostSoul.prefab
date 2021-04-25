@@ -13,6 +13,25 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.503365, y: 1.9515327, z: 2.5983987}
   m_Center: {x: -0.08871126, y: 0.97594124, z: 0.03548217}
+--- !u!95 &4140813782922713707
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8396667509852197626}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 22100000, guid: ad7258b722501e14a986f0d0e82edc64, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &5392545139332446181
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 785643e3fda9c7f45951d7bd11de1c5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHealth: 100
+  MaxHealth: 2
   MaxSpeed: 80
   HitParticlePrefab: {fileID: 1591858850154547433, guid: f2d233a65a67a25478f1216b8205ceb5, type: 3}
   HitParticleOffset: {x: 0, y: 2, z: 0}
@@ -62,25 +81,6 @@ MonoBehaviour:
   Player: {fileID: 0}
   EnemyCounter: {fileID: 0}
   EnemyType: 0
---- !u!95 &4140813782922713707
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8396667509852197626}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 22100000, guid: ad7258b722501e14a986f0d0e82edc64, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &1625060577295989115
 PrefabInstance:
   m_ObjectHideFlags: 0

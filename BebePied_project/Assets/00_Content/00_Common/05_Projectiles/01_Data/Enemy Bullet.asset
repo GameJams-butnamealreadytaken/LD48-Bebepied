@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b8b2a4b9b60b7545940473ed08efe29, type: 3}
   m_Name: Enemy Bullet
   m_EditorClassIdentifier: 
-  m_damages: 100
+  m_damages: 1
   m_fireVelocity: 20
   m_projectilePrefab: {fileID: 88771603734755773, guid: e3283867c8abc3947af8a2241dd7d463, type: 3}
   m_firedProjectilesCount: 1
@@ -20,3 +20,4 @@ MonoBehaviour:
   m_dispersionFactor: 0
   m_constrainProjectileRotation: 1
   m_deactivatePhysics: 1
+  m_isSausage: 0

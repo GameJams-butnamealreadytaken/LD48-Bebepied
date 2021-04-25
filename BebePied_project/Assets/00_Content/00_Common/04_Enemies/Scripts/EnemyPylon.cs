@@ -56,6 +56,7 @@ public class EnemyPylon : EnemyBase
         // Spawn Bonus
         int bonusID = Random.Range(0, BonusDataList.Length);
         GameObject  go = Instantiate(BonusDataList[bonusID].Prefab, SpawnFloor.transform.position, Quaternion.identity);
+        go.transform.position = SpawnFloor.transform.position;
         BonusBehavior bonusBehaviour = go.AddComponent<BonusBehavior>();
         bonusBehaviour.m_bonusData = BonusDataList[bonusID];
 

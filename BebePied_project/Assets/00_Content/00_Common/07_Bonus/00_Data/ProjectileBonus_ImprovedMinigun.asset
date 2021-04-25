@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bd34bae6a8ce424a915060a756c3da7, type: 3}
+  m_Name: ProjectileBonus_ImprovedMinigun
+  m_EditorClassIdentifier: 
+  m_eBonusType: 3
+  m_bonusPrefab: {fileID: 1579936924416992649, guid: 6133d4783d6628045b23165b9377f013, type: 3}
+  m_bonusDurationInSeconds: 10
+  m_newProjectileData: {fileID: 11400000, guid: 8aff80e25b2b251429eec7ea0b79df62, type: 2}
+  m_additionalDamages: 0
+  m_additionalArmor: 0
+  m_additionalSpeed: 0
+  m_text: Max minigun (or maxigun)!

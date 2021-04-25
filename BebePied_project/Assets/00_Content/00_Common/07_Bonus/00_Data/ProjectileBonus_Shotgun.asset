@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: ProjectileBonus_Shotgun
   m_EditorClassIdentifier: 
   m_eBonusType: 3
-  m_bonusPrefab: {fileID: 5064389989818973152, guid: 4eac3517acaca294b85a5d6e46eb8f62, type: 3}
+  m_bonusPrefab: {fileID: 1579936924416992649, guid: 6133d4783d6628045b23165b9377f013, type: 3}
   m_bonusDurationInSeconds: 10
   m_newProjectileData: {fileID: 11400000, guid: 8aff80e25b2b251429eec7ea0b79df62, type: 2}
   m_additionalDamages: 0
-  m_additionalArmor: 1
+  m_additionalArmor: 0
   m_additionalSpeed: 0
+  m_text: Shotgun time!
