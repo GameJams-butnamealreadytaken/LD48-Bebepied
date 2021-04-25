@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     public TMP_Text TutoTextGameObject;
     public AudioSource m_musicAudioSource;
     public BonusManager m_bonusManager;
+    public LevelBase CurrentLevel; 
 
     private static GameManager instance;
     public void Awake()

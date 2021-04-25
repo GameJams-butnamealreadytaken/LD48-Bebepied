@@ -122,6 +122,10 @@ public class Player : MonoBehaviour
 				return;
 			}
 		}
+		else if (GameManager.GetInstance().CurrentLevel.IsTuto)
+		{
+			return;
+		}
 		
 		//
 		// Show the UI
