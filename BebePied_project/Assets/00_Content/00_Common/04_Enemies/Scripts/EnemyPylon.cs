@@ -11,7 +11,7 @@ public class EnemyPylon : EnemyBase
     public GameObject[] EnemyFloorList;
     public GameObject[] EnemyFlyList;
 
-    [Header("Bonus")] public GameObject[] BonusList;
+    [Header("Bonus")] public BonusData[] BonusDataList;
 
     public void OnSpawnEnded()
     {
@@ -52,9 +52,12 @@ public class EnemyPylon : EnemyBase
     protected override void OnDeath()
     {
         base.OnDeath();
+        
         // Spawn Bonus
-        int bonusID = Random.Range(0, BonusList.Length);
-        Instantiate(BonusList[bonusID], SpawnFloor.transform.position, Quaternion.identity);
+        int bonusID = Random.Range(0, BonusDataList.Length);
+        GameObject  go = Instantiate(BonusDataList[bonusID].Prefab, SpawnFloor.transform.position, Quaternion.identity);
+        BonusBehavior bonusBehaviour = go.AddComponent<BonusBehavior>();
+        bonusBehaviour.m_bonusData = BonusDataList[bonusID];
 
         SetAutoDestroyOnDeath(false);
         Destroy(transform.parent.gameObject);

@@ -169,6 +169,7 @@ namespace DissidentStudio.Toolkit.FPSController
 		private int m_currentJumpCount = 0;	//< Counts the number of jumps the player has done. It is resetted when the player touches the ground
 
 		private bool m_active = true;	//< Is the character controller active.
+		private float m_overrideWalkSpeed = -1.0f;
 
 		/// <summary>
 		/// The active state of the character controller. If it is inactive then it will not receive any player inputs and stay static
@@ -179,6 +180,8 @@ namespace DissidentStudio.Toolkit.FPSController
 			get => m_active;
 			set => m_active = value;
 		}
+
+		public float WalkSpeed => m_walkSpeed;
 		
 		//
 		// Cheats (only in debug)
@@ -362,7 +365,14 @@ namespace DissidentStudio.Toolkit.FPSController
 			}
 			else
 			{
-				characterSpeed = m_running ? m_runSpeed : m_walkSpeed;	//< Running or not running ? (that is the question)
+				if (m_overrideWalkSpeed != -1.0f)
+				{
+					characterSpeed = m_running ? m_runSpeed : m_overrideWalkSpeed;	//< Running or not running ? (that is the question)
+				}
+				else
+				{
+					characterSpeed = m_running ? m_runSpeed : m_walkSpeed;	//< Running or not running ? (that is the question)
+				}
 			}
 			
 			//
@@ -538,5 +548,15 @@ namespace DissidentStudio.Toolkit.FPSController
 		}
 
 #endregion*/
+
+		public void OverrideSpeed(float overrideSpeed)
+		{
+			m_overrideWalkSpeed = overrideSpeed;
+		}
+
+		public void ResetOverrideSpeed()
+		{
+			m_overrideWalkSpeed = -1.0f;
+		}
 	}
 }

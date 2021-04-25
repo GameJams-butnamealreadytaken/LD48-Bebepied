@@ -20,3 +20,4 @@ MonoBehaviour:
   m_dispersionFactor: 0.3
   m_constrainProjectileRotation: 0
   m_deactivatePhysics: 0
+  m_isSausage: 1
