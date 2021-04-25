@@ -11,7 +11,7 @@ public class LevelLogic : MonoBehaviour
 
     private Animator Animator;
 
-    private bool bIsMapEnded;
+    public bool bIsMapEnded;
     private bool bEndAnimIsTriggered;
 
     public List<TMP_Text> CurrentLevelTexts;

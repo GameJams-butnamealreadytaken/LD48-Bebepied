@@ -288,15 +288,22 @@ public class Player : MonoBehaviour
 		}
 		else if (other.CompareTag(ObjectTags.EndLevel))
         {
-			IncrementWave();
-			if (SceneManager.GetActiveScene().name != "MainMenu")
+			if (GameManager.GetInstance().CurrentLevel.LevelLogic.bIsMapEnded)
 			{
-				GameManager.GetInstance().LoadNextLevel();
+				IncrementWave();
+				if (SceneManager.GetActiveScene().name != "MainMenu")
+				{
+					GameManager.GetInstance().LoadNextLevel();
+				}
+				else
+				{
+					SceneManager.LoadScene("LevelBase");
+				}
 			}
-			else
-			{
-				SceneManager.LoadScene("LevelBase");
-			}
+            else
+            {
+				Kill();
+            }
         }
 	}
 }
