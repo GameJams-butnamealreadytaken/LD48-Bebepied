@@ -4,6 +4,25 @@ using UnityEngine;
 
 public class EnemyLostSoul : EnemyBase
 {
+    private bool Deflating = false;
+    
+    protected override void Update() 
+    {
+        base.Update();
+        if (Deflating)
+        {
+            Vector3 Scale = transform.localScale;
+            Scale.y -= 0.01f;
+            if (Scale.y >= 0)
+            {
+                transform.localScale = Scale;
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
+        }
+    }
     protected override void OnStartAI()
     {
         EnemyCounter.UpdateSpawnStats(EnemyType, false);
@@ -27,6 +46,9 @@ public class EnemyLostSoul : EnemyBase
     {
         base.OnDeath();
         EnemyCounter.UpdateSpawnStats(EnemyType, true);
+        SetAutoDestroyOnDeath(false);
+        Deflating = true;
+        gameObject.GetComponentInChildren<BoxCollider>().enabled = false;
     }
 
     protected override void OnCollisionEnter(Collision collision)
