@@ -35,7 +35,10 @@ public abstract class PlayerWeapon : MonoBehaviour
 		if (m_timeSinceLastShoot > m_timeToNextShoot)
 		{
 			m_isShooting = false;
-			StopShooting();
+			if (m_isShooting)
+			{
+				StopShooting();
+			}
 		}
 	}
 

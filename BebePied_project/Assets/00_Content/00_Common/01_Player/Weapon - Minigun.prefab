@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7761164846771138598}
   - component: {fileID: 2023761519867666913}
+  - component: {fileID: 3843513832114704598}
   m_Layer: 0
   m_Name: Weapon - Minigun
   m_TagString: Untagged
@@ -49,6 +50,84 @@ MonoBehaviour:
   m_shotAudioClips:
   - {fileID: 8300000, guid: 6f308ad13aa5f544a9fb3f0db196fb4d, type: 3}
   m_barrelGun: {fileID: 4799873915422828021}
+--- !u!114 &3843513832114704598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1482177124532594675}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 180ecf9b41d478f468eb3e9083753217, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ImpulseDefinition:
+    m_ImpulseChannel: 2147483647
+    m_RawSignal: {fileID: 11400000, guid: 20a705aea2d80e0478fb89b6f43d8530, type: 2}
+    m_AmplitudeGain: 0.2
+    m_FrequencyGain: 16
+    m_RepeatMode: 0
+    m_Randomize: 1
+    m_TimeEnvelope:
+      m_AttackShape:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0
+          inSlope: 1
+          outSlope: 1
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 1
+          inSlope: 1
+          outSlope: 1
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_DecayShape:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 1
+          inSlope: -1.0435587
+          outSlope: -1.0435587
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0.33333334
+        - serializedVersion: 3
+          time: 1
+          value: 0
+          inSlope: -1.0435587
+          outSlope: -1.0435587
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_AttackTime: 0.125
+      m_SustainTime: 0.125
+      m_DecayTime: 0.125
+      m_ScaleWithImpact: 0
+      m_HoldForever: 0
+    m_ImpactRadius: 2
+    m_DirectionMode: 0
+    m_DissipationMode: 2
+    m_DissipationDistance: 1
+    m_PropagationSpeed: 343
 --- !u!1 &6039658315559893812
 GameObject:
   m_ObjectHideFlags: 0

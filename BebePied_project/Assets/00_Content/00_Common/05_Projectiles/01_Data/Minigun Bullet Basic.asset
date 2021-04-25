@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8b8b2a4b9b60b7545940473ed08efe29, type: 3}
-  m_Name: TestProjectile
+  m_Name: Minigun Bullet Basic
   m_EditorClassIdentifier: 
   m_damages: 100
   m_fireVelocity: 60
-  m_projectilePrefab: {fileID: 88771603734755773, guid: 50ed24753d9d7274abf1b19f766baf38, type: 3}
+  m_projectilePrefab: {fileID: 88771603734755773, guid: e3283867c8abc3947af8a2241dd7d463, type: 3}
   m_firedProjectilesCount: 4
-  m_timeBetweenFires: 0.1
+  m_timeBetweenFires: 0.05
   m_dispersionFactor: 0.1
