@@ -21,6 +21,7 @@ public class BonusBehavior : MonoBehaviour
         {
             // TODO apply effect based on Type
             GameManager.GetInstance().Player.AddBonus(m_bonusData);
+            AudioSource.PlayClipAtPoint(m_bonusData.Clip, transform.position);
             Destroy(gameObject);
         }
     }
