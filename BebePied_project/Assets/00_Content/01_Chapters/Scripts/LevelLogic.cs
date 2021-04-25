@@ -11,10 +11,12 @@ public class LevelLogic : MonoBehaviour
     private Animator Animator;
 
     private bool bIsMapEnded;
+    private bool bEndAnimIsTriggered;
 
     private void Start()
     {
         bIsMapEnded = false;
+        bEndAnimIsTriggered = false;
         Animator = GetComponent<Animator>();
     }
 
@@ -34,8 +36,10 @@ public class LevelLogic : MonoBehaviour
 
     public void TriggerEndChainCollision()
     {
-        if (bIsMapEnded)
+        if (bIsMapEnded && !bEndAnimIsTriggered)
         {
+            bEndAnimIsTriggered = true;
+
             Animator.SetTrigger("ChainHit");
             
             //
