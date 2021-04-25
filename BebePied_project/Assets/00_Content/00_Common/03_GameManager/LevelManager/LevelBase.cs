@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Random = UnityEngine.Random;
 
 public class LevelBase : MonoBehaviour
@@ -42,6 +43,10 @@ public class LevelBase : MonoBehaviour
         TakenSpots.Add(Vector3.zero);
 
         GameManager.GetInstance().TutoTextGameObject.enabled = IsTuto;
+        if (IsTuto)
+        {
+            LevelLogic.HideUpsideFloor();
+        }
 
         m_timeSinceStart = 0f;
     }
@@ -108,11 +113,17 @@ public class LevelBase : MonoBehaviour
         m_timeSinceStart += Time.deltaTime;
         
         //
-        //
-        if (EnemyCounter.GetRemainingEnemyCount() <= 0 && m_timeSinceStart >= 6f)   //< Wait 6 seconds before being able to win the wave
+        // I know this is horrible
+        if (SceneManager.GetActiveScene().name != "MainMenu")
+        {
+            if (EnemyCounter.GetRemainingEnemyCount() <= 0 && m_timeSinceStart >= 6f)   //< Wait 6 seconds before being able to win the wave
+            {
+                LevelLogic.TriggerEndLevel();
+            }
+        }
+        else
         {
             LevelLogic.TriggerEndLevel();
-            GameManager.GetInstance().Player.IncrementWave();
         }
     }
 }

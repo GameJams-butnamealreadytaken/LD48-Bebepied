@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class LevelLogic : MonoBehaviour
 {
+    public List<GameObject> TopBrokenFloorObjects;
+
     private Animator Animator;
 
     private bool bIsMapEnded;
@@ -12,6 +14,14 @@ public class LevelLogic : MonoBehaviour
     {
         bIsMapEnded = false;
         Animator = GetComponent<Animator>();
+    }
+
+    public void HideUpsideFloor()
+    {
+        for (int i = 0; i < TopBrokenFloorObjects.Count; ++i)
+        {
+            TopBrokenFloorObjects[i].SetActive(false);
+        }
     }
 
     public void TriggerEndLevel()

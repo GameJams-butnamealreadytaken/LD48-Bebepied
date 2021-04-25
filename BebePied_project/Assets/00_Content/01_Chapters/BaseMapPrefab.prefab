@@ -3821,7 +3821,7 @@ GameObject:
   - component: {fileID: 6388618853492141648}
   m_Layer: 9
   m_Name: PlayerDetector
-  m_TagString: Untagged
+  m_TagString: EndLevel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4314,6 +4314,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e995039d4ab03c546aeb8b5ffa08d5cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TopBrokenFloorObjects:
+  - {fileID: 2711587442815626628}
+  - {fileID: 1064229734944979643}
+  - {fileID: 6579370225321088969}
+  - {fileID: 316027953047768895}
+  - {fileID: 849710327476165763}
 --- !u!1 &6019055827561534409
 GameObject:
   m_ObjectHideFlags: 0
