@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 281761084704658730}
   - component: {fileID: 815617739660935357}
   - component: {fileID: 5458030386991060118}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: EnemyMushroom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -191,6 +191,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -4536824069868863944, guid: 594fb4a0f8758cd46842741eeab2ada6, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: -1453422408199423872, guid: 594fb4a0f8758cd46842741eeab2ada6, type: 3}
       propertyPath: m_LocalRotation.w
       value: 0.71374035
@@ -207,9 +211,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -88.92
       objectReference: {fileID: 0}
+    - target: {fileID: -1201504834443579779, guid: 594fb4a0f8758cd46842741eeab2ada6, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: -1018664272722485354, guid: 594fb4a0f8758cd46842741eeab2ada6, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 594fb4a0f8758cd46842741eeab2ada6, type: 3}
       propertyPath: m_Name
       value: Mushroom
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 594fb4a0f8758cd46842741eeab2ada6, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 594fb4a0f8758cd46842741eeab2ada6, type: 3}

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_damages: 1
   m_fireVelocity: 20
-  m_projectilePrefab: {fileID: 88771603734755773, guid: e3283867c8abc3947af8a2241dd7d463, type: 3}
+  m_projectilePrefab: {fileID: 88771603734755773, guid: dcce7171d07fb394bad0a0b074d1f9f3, type: 3}
   m_firedProjectilesCount: 1
   m_timeBetweenFires: 0.2
   m_dispersionFactor: 0

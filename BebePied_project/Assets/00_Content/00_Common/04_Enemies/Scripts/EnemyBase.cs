@@ -202,6 +202,47 @@ public class EnemyBase : MonoBehaviour
             Destroy(gameObjectToCreate, soundEffect.Clip.length * (Time.timeScale < 0.00999999977648258 ? 0.01f : Time.timeScale));
         }
     }
+
+    protected void ShotTowardPlayer(ProjectileData projectileData, Vector3 startPosition)
+    {
+        //
+        // Instantiate the projectile
+        GameObject projectileGO = GameObject.Instantiate(projectileData.Prefab, startPosition, Quaternion.identity);
+			
+        //
+        // Set the forward of the projectile
+        Vector3 bulletDirection = (Player.transform.position - startPosition).normalized;
+        projectileGO.transform.forward = -bulletDirection;
+			
+        //
+        // Add the projectile component and set its damages
+        Projectile projectileComponent = projectileGO.AddComponent<Projectile>();
+        projectileComponent.Damages = projectileData.Damages;
+			
+        //
+        // Ensure the bullet rigidbody has its rotation constrained so the bullets do not rotate after being fired
+        // Only if it is not deactivated in the projectile
+        if (projectileData.ConstrainProjectilesRotation)
+        {
+            projectileGO.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
+        }
+
+        //
+        // Deactivate the physics on the projectile if it is asked
+        if (projectileData.DeactivatePhysics)
+        {
+            projectileGO.GetComponent<Rigidbody>().useGravity = false;
+        }
+			
+        //
+        // Set the collider to trigger
+        projectileGO.GetComponent<Collider>().isTrigger = true;
+				
+			
+        //
+        // Eject the projectile
+        projectileGO.GetComponent<Rigidbody>().AddForce(bulletDirection * projectileData.FireVelocity, ForceMode.Impulse);
+    }
     
     protected virtual void OnStartAI()
     {}
