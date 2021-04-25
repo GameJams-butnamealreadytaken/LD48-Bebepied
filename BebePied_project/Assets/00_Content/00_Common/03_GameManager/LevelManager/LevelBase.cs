@@ -28,13 +28,11 @@ public class LevelBase : MonoBehaviour
 
     private EnemyCounter EnemyCounter;
 
-    // Start is called before the first frame update
     private void Start()
     {
         EnemyCounter = GetComponent<EnemyCounter>();
     }
 
-    // Update is called once per frame
     private void Update()
     {
         if (CurrentEnemyIndex < EnemyList.Length)
