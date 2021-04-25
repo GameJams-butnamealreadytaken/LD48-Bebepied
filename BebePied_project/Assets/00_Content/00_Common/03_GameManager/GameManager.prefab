@@ -47,6 +47,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FirstSceneToLoad: 
   Player: {fileID: 3562258092518903819}
+  TutoTextGameObject: {fileID: 0}
 --- !u!1 &5456610549983942432
 GameObject:
   m_ObjectHideFlags: 0
@@ -92,7 +93,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 0.4
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0

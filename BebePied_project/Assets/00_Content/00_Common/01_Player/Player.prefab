@@ -2085,7 +2085,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 0.9189189, y: 1}
+    m_SensorSize: {x: 2.062977, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -2147,7 +2147,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_scoreScreenUI: {fileID: 5153449554307574323}
-  m_defaultProjectile: {fileID: 11400000, guid: 8aff80e25b2b251429eec7ea0b79df62, type: 2}
+  m_defaultProjectile: {fileID: 11400000, guid: 9ded86da5f77f424e85731c1fd3579f6, type: 2}
 --- !u!136 &4360345386271947660
 CapsuleCollider:
   m_ObjectHideFlags: 0
