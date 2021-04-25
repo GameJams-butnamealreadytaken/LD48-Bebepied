@@ -57,8 +57,11 @@ public class EnemyGhast : EnemyBase
         
         if (distanceToPlayer > MinDistanceToPlayer && TimeSinceLastShot >= TimeBetweenShots)
         {
-            TimeSinceLastShot = 0.0f;
-            Animator.SetTrigger("Attack");
+            if (RotateTowardPlayer(1.0f, 10.0f))
+            {
+                TimeSinceLastShot = 0.0f;
+                Animator.SetTrigger("Attack");   
+            }
         }
     }
     public void OnShootFromAnimation()
