@@ -307,7 +307,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 543939167446481156}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.47100002, z: 0}
+  m_LocalPosition: {x: 0, y: 0.971, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8504386423739988920}
@@ -710,12 +710,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 4
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
+    m_SelectOnLeft: {fileID: 6410275278199501013}
+    m_SelectOnRight: {fileID: 6410275278199501013}
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
@@ -1477,12 +1477,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 4
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
+    m_SelectOnLeft: {fileID: 5679153762582901255}
+    m_SelectOnRight: {fileID: 5679153762582901255}
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
@@ -1843,6 +1843,7 @@ MonoBehaviour:
   m_ennemiesKilledScoreText: {fileID: 8482771158403367953}
   m_bulletsShotScoreText: {fileID: 4922682606046759625}
   m_sausagesShotScoreText: {fileID: 398264853726127683}
+  m_firstSelected: {fileID: 6410275278199501013}
 --- !u!222 &2442112780106994639
 CanvasRenderer:
   m_ObjectHideFlags: 0

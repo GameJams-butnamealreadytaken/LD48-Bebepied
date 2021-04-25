@@ -41,7 +41,9 @@ public class LevelBase : MonoBehaviour
     {
         EnemyCounter = GetComponent<EnemyCounter>();
         TakenSpots.Add(Vector3.zero);
-
+        
+        GameManager.GetInstance().CurrentLevel = this;
+            
         GameManager.GetInstance().TutoTextGameObject.enabled = IsTuto;
         if (IsTuto)
         {
@@ -123,6 +125,7 @@ public class LevelBase : MonoBehaviour
             if (EnemyCounter.GetRemainingEnemyCount() <= 0 && m_timeSinceStart >= 6f)   //< Wait 6 seconds before being able to win the wave
             {
                 GameManager.GetInstance().Player.RemoveBonus();
+                GameManager.GetInstance().Player.GetComponentInChildren<UIInGame>().StartBonus("Wave cleared! Shoot the red blinking chain", 4);
                 LevelLogic.TriggerEndLevel();
             }
         }
