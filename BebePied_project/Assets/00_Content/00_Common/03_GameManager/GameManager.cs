@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -8,6 +9,7 @@ public class GameManager : MonoBehaviour
 {
     public string FirstSceneToLoad;
     public Player Player;
+    public TMP_Text TutoTextGameObject;
     
     private static GameManager instance;
     public void Awake()
