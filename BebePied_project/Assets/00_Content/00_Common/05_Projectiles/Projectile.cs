@@ -37,7 +37,7 @@ public class Projectile : MonoBehaviour
 	{
 		//
 		// Destroy the projectile only if it is not colliding with another projectile
-		if (!other.transform.CompareTag(ObjectTags.Bullet))
+		if (!other.transform.CompareTag(ObjectTags.Bullet) || (transform.CompareTag(ObjectTags.BulletEnemy) && other.transform.CompareTag(ObjectTags.Bullet)))
 		{
 			Destroy(gameObject);
 		}

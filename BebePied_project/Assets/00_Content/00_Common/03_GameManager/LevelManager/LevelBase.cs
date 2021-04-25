@@ -122,6 +122,7 @@ public class LevelBase : MonoBehaviour
         {
             if (EnemyCounter.GetRemainingEnemyCount() <= 0 && m_timeSinceStart >= 6f)   //< Wait 6 seconds before being able to win the wave
             {
+                GameManager.GetInstance().Player.RemoveBonus();
                 LevelLogic.TriggerEndLevel();
             }
         }

@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     public string FirstSceneToLoad;
     public Player Player;
     public TMP_Text TutoTextGameObject;
+    public AudioSource m_musicAudioSource;
     
     private static GameManager instance;
     public void Awake()
@@ -40,5 +41,15 @@ public class GameManager : MonoBehaviour
     public void LoadNextLevel()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);   
+    }
+
+    public void StartMusic()
+    {
+        m_musicAudioSource.Play();
+    }
+
+    public void StopMusic()
+    {
+        m_musicAudioSource.Stop();
     }
 }

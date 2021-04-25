@@ -23,6 +23,10 @@ public class UIScoreScreen : MonoBehaviour
 	public void Show(int enemyKilled, int bulletsShot, int sausagesShot)
 	{
 		//
+		// Stop the in game music
+		GameManager.GetInstance().StopMusic();
+		
+		//
 		// Unlock the cursor
 		Cursor.lockState = CursorLockMode.None;
 		
@@ -43,6 +47,10 @@ public class UIScoreScreen : MonoBehaviour
 		SceneManager.LoadScene("LevelBase");
 		m_backgroundImage.gameObject.SetActive(false);
 		GameManager.GetInstance().Player.Activate();	//< Re-activate the player
+		
+		//
+		// Replay the music
+		GameManager.GetInstance().StartMusic();
 	}
 
 	public void GoToMainMenu()

@@ -37,6 +37,10 @@ public class LevelLogic : MonoBehaviour
         if (bIsMapEnded)
         {
             Animator.SetTrigger("ChainHit");
+            
+            //
+            // Repaly the music
+            GameManager.GetInstance().StartMusic();
         }
     }
 }
