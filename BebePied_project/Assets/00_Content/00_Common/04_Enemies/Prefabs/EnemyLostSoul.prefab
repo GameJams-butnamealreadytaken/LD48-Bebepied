@@ -79,15 +79,36 @@ MonoBehaviour:
   MaxSpeed: 80
   HitParticlePrefab: {fileID: 1591858850154547433, guid: f2d233a65a67a25478f1216b8205ceb5, type: 3}
   HitParticleOffset: {x: 0, y: 2, z: 0}
-  DeathParticlePrefab: {fileID: 6308724674279082189, guid: 970857d24698dac49bc91f3db89a252b, type: 3}
-  DeathParticleOffset: {x: 0, y: 2, z: 0}
-  DeathSounds:
-  - Clip: {fileID: 8300000, guid: dedc358759d9b6d4f8888a4872db489c, type: 3}
+  HitSounds:
+  - Clip: {fileID: 8300000, guid: 6a22f10b716b748499cf768b330b4ea0, type: 3}
     Volume: 1
     AttenuationMinDistance: 1
     AttenuationMaxDistance: 500
     AttenuationRollofMode: 0
-  SpawnSounds: []
+  DeathParticlePrefab: {fileID: 6308724674279082189, guid: 970857d24698dac49bc91f3db89a252b, type: 3}
+  DeathParticleOffset: {x: 0, y: 2, z: 0}
+  DeathSounds:
+  - Clip: {fileID: 8300000, guid: bbb1af3eeef030a4d9b1662d3c2beaca, type: 3}
+    Volume: 1
+    AttenuationMinDistance: 1
+    AttenuationMaxDistance: 500
+    AttenuationRollofMode: 0
+  SpawnSounds:
+  - Clip: {fileID: 8300000, guid: 1e9cd09ab9659db459b1ee02db091559, type: 3}
+    Volume: 1
+    AttenuationMinDistance: 1
+    AttenuationMaxDistance: 500
+    AttenuationRollofMode: 0
+  - Clip: {fileID: 8300000, guid: d8c18f3ff4dbaee4998947e01832a22e, type: 3}
+    Volume: 1
+    AttenuationMinDistance: 1
+    AttenuationMaxDistance: 500
+    AttenuationRollofMode: 0
+  - Clip: {fileID: 8300000, guid: 17d5faad587a29f49a4dc4ab64245234, type: 3}
+    Volume: 1
+    AttenuationMinDistance: 1
+    AttenuationMaxDistance: 500
+    AttenuationRollofMode: 0
   Player: {fileID: 0}
   EnemyCounter: {fileID: 0}
   EnemyType: 0

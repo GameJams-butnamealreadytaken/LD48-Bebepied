@@ -23,6 +23,7 @@ public class EnemyBase : MonoBehaviour
     [Header("Hit")] 
     public GameObject HitParticlePrefab;
     public Vector3 HitParticleOffset = Vector3.zero;
+    public List<SoundEffect> HitSounds;
     
     [Header("Death")]
     public GameObject DeathParticlePrefab;
@@ -124,6 +125,7 @@ public class EnemyBase : MonoBehaviour
         OnDamageTaken(oldHealth, CurrentHealth);
         
         PlayParticleSystem(HitParticlePrefab, HitParticleOffset);
+        PlayRandomSoundInArray(HitSounds, transform.position);
 
         if (CurrentHealth <= 0)
         {
