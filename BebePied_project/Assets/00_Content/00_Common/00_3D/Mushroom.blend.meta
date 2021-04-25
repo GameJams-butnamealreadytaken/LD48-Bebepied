@@ -9,7 +9,12 @@ ModelImporter:
   - first:
       74: -1158726129008117130
     second: Helice_anim
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material_Hat
+    second: {fileID: 2100000, guid: cae17467299fd474bb9a1c5bbb12b847, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

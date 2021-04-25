@@ -24,7 +24,8 @@ public class EnemyPylon : EnemyBase
 
         for (;;)
         {
-            int enemyCount = Random.Range(4, 6);
+            int enemyCount = Random.Range(1 * GameManager.GetInstance().Player.GetCurrentWave(), 2 * GameManager.GetInstance().Player.GetCurrentWave());
+            // int enemyCount = 100;
 
             for (int i = 0; i < enemyCount; ++i)
             {
@@ -43,9 +44,10 @@ public class EnemyPylon : EnemyBase
                     enemy.Player =Player;
                     enemy.EnemyCounter = EnemyCounter;
                 }
-
-                yield return new WaitForSeconds(SpawnFrequency);
+                
             }
+            
+            yield return new WaitForSeconds(SpawnFrequency);
         }
     }
 
