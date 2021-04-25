@@ -31,7 +31,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a52f6e6d2d038940becf4c3ae4cd24b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHealth: 100
+  MaxHealth: 1
   MaxSpeed: 150
   HitParticlePrefab: {fileID: 1591858850154547433, guid: f2d233a65a67a25478f1216b8205ceb5, type: 3}
   HitParticleOffset: {x: 0, y: 2, z: 0}
