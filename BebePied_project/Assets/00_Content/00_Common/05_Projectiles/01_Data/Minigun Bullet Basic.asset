@@ -15,8 +15,8 @@ MonoBehaviour:
   m_damages: 1
   m_fireVelocity: 60
   m_projectilePrefab: {fileID: 88771603734755773, guid: e3283867c8abc3947af8a2241dd7d463, type: 3}
-  m_firedProjectilesCount: 4
-  m_timeBetweenFires: 0.15
+  m_firedProjectilesCount: 1
+  m_timeBetweenFires: 0.1
   m_dispersionFactor: 0.01
   m_constrainProjectileRotation: 1
   m_deactivatePhysics: 0
