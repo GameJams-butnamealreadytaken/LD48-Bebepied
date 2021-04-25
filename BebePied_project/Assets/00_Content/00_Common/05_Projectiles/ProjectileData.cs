@@ -34,6 +34,16 @@ public class ProjectileData : ScriptableObject
 	[Tooltip("Dispersion factor")]
 	private float m_dispersionFactor = 0.0f;
 
+	[Header("Physic")] 
+	[SerializeField]
+	[Tooltip("Activate the constrain of the rotation of the projectiles. Should be false for all projectiles except the sausages")]
+	private bool m_constrainProjectileRotation = true;
+
+	[SerializeField] 
+	[Tooltip("Set to false to deactivate the physics of the projectile")]
+	private bool m_deactivatePhysics = false;
+	
+
 	public int Damages => m_damages;
 
 	public float FireVelocity=> m_fireVelocity;
@@ -45,5 +55,9 @@ public class ProjectileData : ScriptableObject
 	public float TimeBetweenFires => m_timeBetweenFires;
 
 	public float DispersionFactor => m_dispersionFactor;
+
+	public bool ConstrainProjectilesRotation => m_constrainProjectileRotation;
+
+	public bool DeactivatePhysics => m_deactivatePhysics;
 
 }
