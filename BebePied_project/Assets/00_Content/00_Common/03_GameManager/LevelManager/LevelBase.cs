@@ -34,12 +34,16 @@ public class LevelBase : MonoBehaviour
 
     public LevelLogic LevelLogic;
 
+    private float m_timeSinceStart = 0f;
+
     private void Start()
     {
         EnemyCounter = GetComponent<EnemyCounter>();
         TakenSpots.Add(Vector3.zero);
 
         GameManager.GetInstance().TutoTextGameObject.enabled = IsTuto;
+
+        m_timeSinceStart = 0f;
     }
 
     private void Update()
@@ -98,8 +102,17 @@ public class LevelBase : MonoBehaviour
                     enemy.SetPlayer(GameManager.GetInstance().Player.gameObject);
                     enemy.EnemyCounter = EnemyCounter;
                 }
-
             }
+        }
+
+        m_timeSinceStart += Time.deltaTime;
+        
+        //
+        //
+        if (EnemyCounter.GetRemainingEnemyCount() <= 0 && m_timeSinceStart >= 6f)   //< Wait 6 seconds before being able to win the wave
+        {
+            LevelLogic.TriggerEndLevel();
+            GameManager.GetInstance().Player.IncrementWave();
         }
     }
 }
