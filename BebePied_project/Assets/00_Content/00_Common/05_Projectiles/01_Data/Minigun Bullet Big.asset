@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_damages: 1
   m_lifeTime: 10
-  m_fireVelocity: 60
+  m_fireVelocity: 200
   m_projectilePrefab: {fileID: 88771603734755773, guid: c2778547b00ed0f40a29318a46a74e0e, type: 3}
   m_firedProjectilesCount: 1
   m_timeBetweenFires: 0.1
