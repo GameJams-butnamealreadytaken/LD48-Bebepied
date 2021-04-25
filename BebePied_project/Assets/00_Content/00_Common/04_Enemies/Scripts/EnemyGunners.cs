@@ -4,10 +4,14 @@ using UnityEngine;
 
 public class EnemyGunners : EnemyBase
 {
-    [Header("AI")]
+    [Header("AI")] 
+    public ProjectileData MunitionType;
     public float MinDistanceToPlayer;
+    public float TimeBetweenShots;
+    public GameObject ShotPoint;
     
     private Vector3 CurrentDestination;
+    private float TimeSinceLastShot = 100000;
 
     protected override void OnStartAI()
     {
@@ -21,6 +25,8 @@ public class EnemyGunners : EnemyBase
 
     protected override void OnUpdateAI()
     {
+        TimeSinceLastShot += Time.deltaTime;
+        
         float distanceToPlayer = Vector3.Distance(transform.position, Player.transform.position);
         float destinationDistanceToPlayer = Vector3.Distance(GetDestination(), Player.transform.position);
 
@@ -31,6 +37,12 @@ public class EnemyGunners : EnemyBase
             CurrentDestination += transform.position;
             
             SetDestination(CurrentDestination);
+        }
+        
+        if (distanceToPlayer > MinDistanceToPlayer && TimeSinceLastShot >= TimeBetweenShots)
+        {
+            TimeSinceLastShot = 0.0f;
+            ShotTowardPlayer(MunitionType, ShotPoint.transform.position);
         }
     }
 
