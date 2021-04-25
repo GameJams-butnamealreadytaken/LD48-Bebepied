@@ -59,11 +59,17 @@ public class EnemyPylon : EnemyBase
         base.OnDeath();
         
         // Spawn Bonus
-        int bonusID = Random.Range(0, BonusDataList.Length);
-        GameObject  go = Instantiate(BonusDataList[bonusID].Prefab, SpawnFloor.transform.position, Quaternion.identity);
+        // int bonusID = Random.Range(0, BonusDataList.Length);
+        // GameObject  go = Instantiate(BonusDataList[bonusID].Prefab, SpawnFloor.transform.position, Quaternion.identity);
+        // go.transform.position = SpawnFloor.transform.position;
+        // BonusBehavior bonusBehaviour = go.AddComponent<BonusBehavior>();
+        // bonusBehaviour.m_bonusData = BonusDataList[bonusID];
+        // Spawn Bonus
+        int bonusID = UnityEngine.Random.Range(0, GameManager.GetInstance().m_bonusManager.m_towerBonusDatas.Count);
+        GameObject  go = Instantiate(GameManager.GetInstance().m_bonusManager.m_towerBonusDatas[bonusID].Prefab, SpawnFloor.transform.position, Quaternion.identity);
         go.transform.position = SpawnFloor.transform.position;
         BonusBehavior bonusBehaviour = go.AddComponent<BonusBehavior>();
-        bonusBehaviour.m_bonusData = BonusDataList[bonusID];
+        bonusBehaviour.m_bonusData = GameManager.GetInstance().m_bonusManager.m_towerBonusDatas[bonusID];
 
         SetAutoDestroyOnDeath(false);
         Destroy(transform.parent.gameObject);
