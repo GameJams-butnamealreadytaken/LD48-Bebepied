@@ -18,4 +18,5 @@ MonoBehaviour:
   m_newProjectileData: {fileID: 0}
   m_additionalDamages: 0
   m_additionalArmor: 0
-  m_additionalSpeed: 4
+  m_additionalSpeed: 20
+  m_text: INCREDIBLE SPEED!
