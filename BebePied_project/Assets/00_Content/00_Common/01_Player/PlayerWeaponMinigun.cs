@@ -50,7 +50,7 @@ public class PlayerWeaponMinigun : PlayerWeapon
 	float LastEventTime = 0;
 	protected override void OnShoot()
 	{
-		AudioSource.PlayClipAtPoint(m_shotAudioClips[Random.Range(0, m_shotAudioClips.Count)], transform.position);
+		AudioSource.PlayClipAtPoint(m_shotAudioClips[Random.Range(0, m_shotAudioClips.Count)], transform.position, 0.5f);
 		
 		//
 		// Beurk, shake the camera by accessing the player, can be done in a much more beautiful way
