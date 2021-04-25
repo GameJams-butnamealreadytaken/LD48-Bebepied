@@ -254,5 +254,10 @@ public class Player : MonoBehaviour
 		{
 			Kill();
 		}
+		else if (other.CompareTag(ObjectTags.EndLevel))
+        {
+			IncrementWave();
+			GameManager.GetInstance().LoadNextLevel();
+		}
 	}
 }

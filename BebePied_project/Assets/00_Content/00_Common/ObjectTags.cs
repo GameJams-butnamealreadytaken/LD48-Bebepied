@@ -5,4 +5,5 @@ public static class ObjectTags
     public static string Bullet = "Bullet";
     public static string BulletEnemy = "BulletEnemy";
     public static string NavmeshFly = "GroundFly";
+    public static string EndLevel = "EndLevel";
 }
