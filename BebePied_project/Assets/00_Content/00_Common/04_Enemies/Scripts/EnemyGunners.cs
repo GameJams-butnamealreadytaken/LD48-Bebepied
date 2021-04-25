@@ -14,7 +14,7 @@ public class EnemyGunners : EnemyBase
 
         // Get distance between fly navmesh and current spawn location to avoid navmesh agent instantly sticking to navmesh height
         RaycastHit hit;
-        if (Physics.Raycast(transform.position, Vector3.down, out hit, 100.0f, ~LayerMask.NameToLayer("GroundFly")))
+        if (Physics.Raycast(transform.position, Vector3.down, out hit, 100.0f, ~LayerMask.NameToLayer(ObjectTags.NavmeshFly)))
         {
             NavigationAgent.baseOffset = hit.distance;
         }
@@ -52,6 +52,7 @@ public class EnemyGunners : EnemyBase
 
     protected override void OnDeath()
     {
+        base.OnDeath();
         EnemyCounter.UpdateSpawnStats(EnemyType, true);
     }
 }

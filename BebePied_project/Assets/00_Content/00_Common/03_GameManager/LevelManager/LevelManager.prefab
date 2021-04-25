@@ -45,6 +45,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EnemyList: []
+  BonusList:
+  - {fileID: 2105726643545939360, guid: 8bbf62fa01f0c6f42a996c7e0e699b2b, type: 3}
+  - {fileID: 5604015213486360606, guid: f0d8bb0102ab720429485d2e70f21276, type: 3}
+  - {fileID: 5064389989818973152, guid: 4eac3517acaca294b85a5d6e46eb8f62, type: 3}
+  - {fileID: 1579936924416992649, guid: 24c78a06e19640d4da322f9d4bcc184f, type: 3}
   Width: 100
   Height: 100
   LevelCenter: {x: 0, y: 0, z: 0}
