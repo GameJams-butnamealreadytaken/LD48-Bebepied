@@ -130,6 +130,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 965366303419469685, guid: 8f71d884ba3753f41848d396b9a9a8e2, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1003354775932697757, guid: 8f71d884ba3753f41848d396b9a9a8e2, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -176,11 +180,34 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1003354775932697758, guid: 8f71d884ba3753f41848d396b9a9a8e2, type: 3}
       propertyPath: FirstSceneToLoad
-      value: LevelBase
+      value: MainMenu
       objectReference: {fileID: 0}
+    - target: {fileID: 1003354775932697758, guid: 8f71d884ba3753f41848d396b9a9a8e2, type: 3}
+      propertyPath: TutoTextGameObject
+      value: 
+      objectReference: {fileID: 908079898}
     - target: {fileID: 1003354775932697759, guid: 8f71d884ba3753f41848d396b9a9a8e2, type: 3}
       propertyPath: m_Name
       value: GameManager
       objectReference: {fileID: 0}
+    - target: {fileID: 3837532324728760959, guid: 8f71d884ba3753f41848d396b9a9a8e2, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4747403389153411072, guid: 8f71d884ba3753f41848d396b9a9a8e2, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 933.89
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f71d884ba3753f41848d396b9a9a8e2, type: 3}
+--- !u!114 &908079898 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2521843530610564087, guid: 8f71d884ba3753f41848d396b9a9a8e2, type: 3}
+  m_PrefabInstance: {fileID: 25956344}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
