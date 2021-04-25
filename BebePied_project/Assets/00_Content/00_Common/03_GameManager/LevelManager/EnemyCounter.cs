@@ -30,6 +30,17 @@ public class EnemyCounter : MonoBehaviour
         EnemyCount[(int)eEnemyType] += bDead ? -1 : 1;
     }
 
+    public int GetRemainingEnemyCount()
+    {
+        int count = 0;
+        foreach (var enemyType in EnemyCount)
+        {
+            count += enemyType;
+        }
+
+        return count;
+    }
+
     public EEnemyType GetPriorityEnemyTypeToSpawn()
     {
         return EEnemyType.SpawnedWalkMelee; // TODO

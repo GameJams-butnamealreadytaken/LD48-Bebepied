@@ -114,11 +114,11 @@ public abstract class PlayerWeapon : MonoBehaviour
 					//
 					// Eject the projectile
 					projectileGO.GetComponent<Rigidbody>().AddForce(-bulletDirection * projectileData.FireVelocity, ForceMode.Impulse);
-					
-					//
-					// Call the OnShoot method
-					OnShoot();
 				}
+				
+				//
+				// Call the OnShoot method
+				OnShoot();
 			}
 		}
 	}
