@@ -178,7 +178,7 @@ MonoBehaviour:
     AttenuationMaxDistance: 1500
     AttenuationRollofMode: 1
   SpawnSounds:
-  - Clip: {fileID: 8300000, guid: c519f18b789506c43b431d237d348e4b, type: 3}
+  - Clip: {fileID: 8300000, guid: e49a8c94d043a65498540f8bc54fda44, type: 3}
     Volume: 1
     AttenuationMinDistance: 500
     AttenuationMaxDistance: 1500
