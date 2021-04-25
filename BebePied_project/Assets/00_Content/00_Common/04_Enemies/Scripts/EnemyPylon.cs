@@ -11,6 +11,8 @@ public class EnemyPylon : EnemyBase
     public GameObject[] EnemyFloorList;
     public GameObject[] EnemyFlyList;
 
+    [Header("Bonus")] public GameObject[] BonusList;
+
     public void OnSpawnEnded()
     {
         StartCoroutine("SpawnEnemyWave");
@@ -51,6 +53,10 @@ public class EnemyPylon : EnemyBase
     protected override void OnDeath()
     {
         base.OnDeath();
+        // Spawn Bonus
+        int bonusID = Random.Range(0, BonusList.Length);
+        Instantiate(BonusList[bonusID], SpawnFloor.transform.position, Quaternion.identity);
+
         SetAutoDestroyOnDeath(false);
         Destroy(transform.parent.gameObject);
     }
