@@ -54,6 +54,7 @@ public class EnemyGhast : EnemyBase
 
     protected override void OnDeath()
     {
+        base.OnDeath();
         EnemyCounter.UpdateSpawnStats(EnemyType, true);
     }
 

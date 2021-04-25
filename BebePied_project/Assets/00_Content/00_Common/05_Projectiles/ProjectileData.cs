@@ -42,6 +42,11 @@ public class ProjectileData : ScriptableObject
 	[SerializeField] 
 	[Tooltip("Set to false to deactivate the physics of the projectile")]
 	private bool m_deactivatePhysics = false;
+
+	[Header("Other")] 
+	[SerializeField]
+	[Tooltip("Is this projectile a sausage ? Needed for the stats")]
+	private bool m_isSausage = false;
 	
 
 	public int Damages => m_damages;
@@ -60,4 +65,5 @@ public class ProjectileData : ScriptableObject
 
 	public bool DeactivatePhysics => m_deactivatePhysics;
 
+	public bool IsSausage => m_isSausage;
 }

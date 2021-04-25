@@ -50,6 +50,7 @@ public class EnemyPylon : EnemyBase
 
     protected override void OnDeath()
     {
+        base.OnDeath();
         SetAutoDestroyOnDeath(false);
         Destroy(transform.parent.gameObject);
     }
