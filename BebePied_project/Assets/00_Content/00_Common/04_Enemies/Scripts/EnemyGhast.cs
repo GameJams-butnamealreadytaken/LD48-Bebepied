@@ -58,8 +58,12 @@ public class EnemyGhast : EnemyBase
         if (distanceToPlayer > MinDistanceToPlayer && TimeSinceLastShot >= TimeBetweenShots)
         {
             TimeSinceLastShot = 0.0f;
-            ShotTowardPlayer(MunitionType, ShotPoint.transform.position);
+            Animator.SetTrigger("Attack");
         }
+    }
+    public void OnShootFromAnimation()
+    {
+        ShotTowardPlayer(MunitionType, ShotPoint.transform.position);
     }
 
     protected override void OnStartAI()

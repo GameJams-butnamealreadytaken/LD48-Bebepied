@@ -50,6 +50,8 @@ public class EnemyBase : MonoBehaviour
     private bool AutoDestroyOnDeath = true;
     private bool AIRunning;
 
+    protected Animator Animator;
+
     protected virtual void Start()
     {
         InitializeCharacteristics();
@@ -57,6 +59,7 @@ public class EnemyBase : MonoBehaviour
         NavigationAgent = GetComponent<NavMeshAgent>();
         Body = GetComponent<Rigidbody>();
         AudioPlayer = GetComponent<AudioSource>();
+        Animator = GetComponent<Animator>();
 
         if (NavigationAgent)
         {
