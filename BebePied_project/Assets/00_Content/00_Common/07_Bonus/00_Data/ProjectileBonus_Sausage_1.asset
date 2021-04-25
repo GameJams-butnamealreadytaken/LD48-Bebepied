@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8bd34bae6a8ce424a915060a756c3da7, type: 3}
-  m_Name: ProjectileBonus_Shotgun
+  m_Name: ProjectileBonus_Sausage_1
   m_EditorClassIdentifier: 
   m_eBonusType: 3
   m_bonusPrefab: {fileID: 5064389989818973152, guid: 4eac3517acaca294b85a5d6e46eb8f62, type: 3}
