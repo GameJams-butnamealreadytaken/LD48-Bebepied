@@ -1,0 +1,15 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: SnakeAnimControllerOverride
+  m_Controller: {fileID: 9100000, guid: 1cecbe0a064d27b47bfcf7cc8e294a68, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 67f6a49b8ecc581468adc83bd6ca59c0, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 6a8f94e3e248e444db3aaaa424be4697, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 0b3e1dabba91c0f42962890af97e5b65, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: abec94037ea75254fa12e559343cb5b6, type: 2}

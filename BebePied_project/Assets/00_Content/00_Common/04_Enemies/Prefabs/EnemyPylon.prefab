@@ -169,7 +169,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxHealth: 50
   MaxSpeed: 0
-  DeathParticlePrefab: {fileID: 6350604588751343109, guid: a82ef5aac4eca9f4d8bdb3048be32ac6, type: 3}
+  HitParticlePrefab: {fileID: 6350604588751343109, guid: a82ef5aac4eca9f4d8bdb3048be32ac6, type: 3}
+  HitParticleOffset: {x: 0, y: 7, z: 0}
+  HitSounds:
+  - Clip: {fileID: 8300000, guid: eff8bcdebb5ed774598836fc696ee9c4, type: 3}
+    Volume: 1
+    AttenuationMinDistance: 1
+    AttenuationMaxDistance: 500
+    AttenuationRollofMode: 0
+  - Clip: {fileID: 8300000, guid: 9df8b3938fda01641bff92e4488a0f29, type: 3}
+    Volume: 1
+    AttenuationMinDistance: 1
+    AttenuationMaxDistance: 500
+    AttenuationRollofMode: 0
+  - Clip: {fileID: 8300000, guid: c05921ae2313af245ab0558a32498433, type: 3}
+    Volume: 1
+    AttenuationMinDistance: 1
+    AttenuationMaxDistance: 500
+    AttenuationRollofMode: 0
+  DeathParticlePrefab: {fileID: 6350604588751343109, guid: 8d9a4d7d9b90b224eb99fc0ebd2a4040, type: 3}
   DeathParticleOffset: {x: 0, y: 7, z: 0}
   DeathSounds:
   - Clip: {fileID: 8300000, guid: 2d8886b338fa29246964309b05db53c9, type: 3}
