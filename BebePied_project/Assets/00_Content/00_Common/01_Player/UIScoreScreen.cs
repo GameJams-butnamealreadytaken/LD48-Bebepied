@@ -77,6 +77,10 @@ public class UIScoreScreen : MonoBehaviour
 
 	public void GoToMainMenu()
 	{
+		//
+		// Relock the cursor
+		Cursor.lockState = CursorLockMode.Locked;
+		
 		SceneManager.LoadScene("MainMenu");
 		GameManager.GetInstance().Player.Activate();	//< Re-activate the player
 		m_backgroundImage.gameObject.SetActive(false);
