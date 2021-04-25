@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: ProjectileBonus_Sausage_1
   m_EditorClassIdentifier: 
   m_eBonusType: 3
-  m_bonusPrefab: {fileID: 5064389989818973152, guid: 4eac3517acaca294b85a5d6e46eb8f62, type: 3}
+  m_bonusPrefab: {fileID: 1579936924416992649, guid: 24c78a06e19640d4da322f9d4bcc184f, type: 3}
   m_bonusDurationInSeconds: 10
   m_newProjectileData: {fileID: 11400000, guid: 2ae1767a2b4552742a85bac3cdc1f508, type: 2}
   m_additionalDamages: 0

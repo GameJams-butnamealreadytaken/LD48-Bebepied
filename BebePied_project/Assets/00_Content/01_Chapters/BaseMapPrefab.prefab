@@ -4117,7 +4117,7 @@ GameObject:
   - component: {fileID: 2715285248672720008}
   - component: {fileID: 9020862217730573047}
   - component: {fileID: 2837460493150180744}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: FloorFly
   m_TagString: Untagged
   m_Icon: {fileID: 0}
