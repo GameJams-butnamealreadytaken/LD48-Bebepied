@@ -105,7 +105,12 @@ MonoBehaviour:
   MaxSpeed: 80
   HitParticlePrefab: {fileID: 1591858850154547433, guid: f2d233a65a67a25478f1216b8205ceb5, type: 3}
   HitParticleOffset: {x: 0, y: 2, z: 0}
-  HitSounds: []
+  HitSounds:
+  - Clip: {fileID: 8300000, guid: 6a22f10b716b748499cf768b330b4ea0, type: 3}
+    Volume: 1
+    AttenuationMinDistance: 1
+    AttenuationMaxDistance: 500
+    AttenuationRollofMode: 0
   DeathParticlePrefab: {fileID: 6308724674279082189, guid: 970857d24698dac49bc91f3db89a252b, type: 3}
   DeathParticleOffset: {x: 0, y: 2, z: 0}
   DeathSounds:
@@ -120,7 +125,7 @@ MonoBehaviour:
   EnemyType: 2
   MinDistanceToPlayer: 30
   MunitionType: {fileID: 11400000, guid: 0e2ef8b45f1b1eb40aa553a90c54048f, type: 2}
-  TimeBetweenShots: 8
+  TimeBetweenShots: 15
   ShotPoint: {fileID: 3608021389571859009}
 --- !u!54 &281761084704658730
 Rigidbody:
