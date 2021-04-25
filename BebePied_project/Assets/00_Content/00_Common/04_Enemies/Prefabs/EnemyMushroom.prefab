@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1680540982165813930}
   - component: {fileID: 281761084704658730}
   - component: {fileID: 815617739660935357}
+  - component: {fileID: 5458030386991060118}
   m_Layer: 0
   m_Name: EnemyMushroom
   m_TagString: Untagged
@@ -73,6 +74,7 @@ MonoBehaviour:
   MaxSpeed: 80
   HitParticlePrefab: {fileID: 1591858850154547433, guid: f2d233a65a67a25478f1216b8205ceb5, type: 3}
   HitParticleOffset: {x: 0, y: 2, z: 0}
+  HitSounds: []
   DeathParticlePrefab: {fileID: 6308724674279082189, guid: 970857d24698dac49bc91f3db89a252b, type: 3}
   DeathParticleOffset: {x: 0, y: 2, z: 0}
   DeathSounds:
@@ -114,14 +116,14 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.5301747, y: 2.9595914, z: 2.469675}
   m_Center: {x: 0.0062816143, y: 2.2611825, z: 0.38828373}
---- !u!95 &1735804741222175137
+--- !u!95 &5458030386991060118
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7965675952579523614}
+  m_GameObject: {fileID: 4680596991659183616}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 1cecbe0a064d27b47bfcf7cc8e294a68, type: 2}
@@ -189,8 +191,20 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -1453422408199423872, guid: 594fb4a0f8758cd46842741eeab2ada6, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.71374035
+      objectReference: {fileID: 0}
+    - target: {fileID: -1453422408199423872, guid: 594fb4a0f8758cd46842741eeab2ada6, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -1453422408199423872, guid: 594fb4a0f8758cd46842741eeab2ada6, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.7004105
+      objectReference: {fileID: 0}
+    - target: {fileID: -1453422408199423872, guid: 594fb4a0f8758cd46842741eeab2ada6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: -71.999985
+      value: -88.92
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 594fb4a0f8758cd46842741eeab2ada6, type: 3}
       propertyPath: m_Name
@@ -198,11 +212,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 594fb4a0f8758cd46842741eeab2ada6, type: 3}
---- !u!1 &7965675952579523614 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 594fb4a0f8758cd46842741eeab2ada6, type: 3}
-  m_PrefabInstance: {fileID: 7082664416106416463}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7331883007016431268 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 594fb4a0f8758cd46842741eeab2ada6, type: 3}
