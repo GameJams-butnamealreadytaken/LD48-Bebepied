@@ -26,6 +26,9 @@ public class BonusData : ScriptableObject
 	
 	[SerializeField] 
 	private int m_additionalSpeed;
+
+	[SerializeField] 
+	[TextArea] private string m_text;
 	
 	
 	public EBonusType Type => m_eBonusType;
@@ -42,4 +45,5 @@ public class BonusData : ScriptableObject
 	
 	public int Speed => m_additionalSpeed;
 
+	public string Text => m_text;
 }
