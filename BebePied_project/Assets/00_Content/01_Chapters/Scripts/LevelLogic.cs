@@ -22,7 +22,7 @@ public class LevelLogic : MonoBehaviour
         bEndAnimIsTriggered = false;
         Animator = GetComponent<Animator>();
 
-        UpdateCurrentLevel(GameManager.GetInstance().Player.GetCurrentWave());
+        UpdateCurrentLevel(GameManager.GetInstance().Player.GetCurrentWave() - 1);
     }
 
     public void UpdateCurrentLevel(int currentLevel)
