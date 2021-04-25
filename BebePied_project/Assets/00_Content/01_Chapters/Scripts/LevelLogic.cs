@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class LevelLogic : MonoBehaviour
@@ -13,11 +14,23 @@ public class LevelLogic : MonoBehaviour
     private bool bIsMapEnded;
     private bool bEndAnimIsTriggered;
 
+    public List<TMP_Text> CurrentLevelTexts;
+
     private void Start()
     {
         bIsMapEnded = false;
         bEndAnimIsTriggered = false;
         Animator = GetComponent<Animator>();
+
+        UpdateCurrentLevel(GameManager.GetInstance().Player.GetCurrentWave());
+    }
+
+    public void UpdateCurrentLevel(int currentLevel)
+    {
+        for (int i = 0; i < CurrentLevelTexts.Count; ++i)
+        {
+            CurrentLevelTexts[i].text = "" + currentLevel;
+        }
     }
 
     public void HideUpsideFloor()
