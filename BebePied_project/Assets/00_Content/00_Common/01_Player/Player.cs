@@ -113,6 +113,14 @@ public class Player : MonoBehaviour
 	/// </summary>
 	public void Kill()
 	{
+		if (m_currentBonusData)
+		{
+			if (m_currentBonusData.Type == EBonusType.Armor)
+			{
+				return;
+			}
+		}
+		
 		//
 		// Show the UI
 		m_scoreScreenUI.Show(m_ennemiesKilled, m_bulletsShot, m_sausagesShot);

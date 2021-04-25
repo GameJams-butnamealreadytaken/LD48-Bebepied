@@ -1,11 +1,26 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!111 &8790955716589116609
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1876924551026335615}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: e03eb6d46a6631b44b956db4965c0696, type: 2}
+  m_Animations: []
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1001 &1643045574505620014
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 8168567236197079368}
+    m_TransformParent: {fileID: 264035581553956370}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 2496f84508112634c9eee19cfd618f30, type: 3}
       propertyPath: m_RootOrder
@@ -25,7 +40,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2496f84508112634c9eee19cfd618f30, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2496f84508112634c9eee19cfd618f30, type: 3}
       propertyPath: m_LocalPosition.y
@@ -69,6 +84,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2496f84508112634c9eee19cfd618f30, type: 3}
+--- !u!1 &1876924551026335615 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 2496f84508112634c9eee19cfd618f30, type: 3}
+  m_PrefabInstance: {fileID: 1643045574505620014}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8574891677036043194
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -134,12 +154,16 @@ PrefabInstance:
       objectReference: {fileID: -2813467912831258332, guid: eec5e8f6b9781a245b15f64d20ef49a4, type: 3}
     - target: {fileID: 7128409651553123891, guid: 624305c7f158e9840897c4e2cbb1b9be, type: 3}
       propertyPath: m_Name
-      value: BonusBaseProjectile
+      value: BonusProjectile
+      objectReference: {fileID: 0}
+    - target: {fileID: 8406576159088283048, guid: 624305c7f158e9840897c4e2cbb1b9be, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 624305c7f158e9840897c4e2cbb1b9be, type: 3}
---- !u!4 &8168567236197079368 stripped
+--- !u!4 &264035581553956370 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 458441455749563122, guid: 624305c7f158e9840897c4e2cbb1b9be, type: 3}
+  m_CorrespondingSourceObject: {fileID: 8406576159088283048, guid: 624305c7f158e9840897c4e2cbb1b9be, type: 3}
   m_PrefabInstance: {fileID: 8574891677036043194}
   m_PrefabAsset: {fileID: 0}
