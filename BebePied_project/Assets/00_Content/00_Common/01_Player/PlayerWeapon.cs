@@ -93,11 +93,23 @@ public abstract class PlayerWeapon : MonoBehaviour
 				
 					//
 					// Ensure the bullet rigidbody has its rotation constrained so the bullets do not rotate after being fired
-					projectileGO.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
+					// Only if it is not deactivated in the projectile
+					if (projectileData.ConstrainProjectilesRotation)
+					{
+						projectileGO.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
+					}
+
+					//
+					// Deactivate the physics on the projectile if it is asked
+					if (projectileData.DeactivatePhysics)
+					{
+						projectileGO.GetComponent<Rigidbody>().useGravity = false;
+					}
 				
 					//
 					// Set the collider to trigger
 					projectileGO.GetComponent<Collider>().isTrigger = true;
+					
 				
 					//
 					// Eject the projectile
