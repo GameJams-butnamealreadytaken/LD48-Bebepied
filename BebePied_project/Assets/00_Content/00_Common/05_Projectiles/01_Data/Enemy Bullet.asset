@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Enemy Bullet
   m_EditorClassIdentifier: 
   m_damages: 1
+  m_lifeTime: 20
   m_fireVelocity: 20
   m_projectilePrefab: {fileID: 731286472684325290, guid: e6c27413e66afe94881118453679f742, type: 3}
   m_firedProjectilesCount: 1

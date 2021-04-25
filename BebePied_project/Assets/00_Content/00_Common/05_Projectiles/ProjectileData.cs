@@ -13,6 +13,10 @@ public class ProjectileData : ScriptableObject
 	[Tooltip("The damages of the projectile")]
 	private int m_damages;
 
+	[SerializeField]
+	[Tooltip("The life time of the projectile")]
+	private float m_lifeTime = 10.0f;
+
 	[SerializeField] 
 	[Tooltip("The velocity with which the projectile is fired")]
 	private float m_fireVelocity = 40f;
@@ -50,6 +54,7 @@ public class ProjectileData : ScriptableObject
 
 
 	public int Damages => m_damages;
+	public float LifeTime => m_lifeTime;
 
 	public float FireVelocity=> m_fireVelocity;
 	
