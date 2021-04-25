@@ -638,7 +638,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxHealth: 100
   MaxSpeed: 80
-  DeathParticlePrefab: {fileID: 6794281507388394713, guid: fd9ed92cf689e444bb1aa788329b3bba, type: 3}
+  HitParticlePrefab: {fileID: 1591858850154547433, guid: f2d233a65a67a25478f1216b8205ceb5, type: 3}
+  HitParticleOffset: {x: 0, y: 2, z: 0}
+  DeathParticlePrefab: {fileID: 6308724674279082189, guid: 970857d24698dac49bc91f3db89a252b, type: 3}
   DeathParticleOffset: {x: 0, y: 2, z: 0}
   DeathSounds:
   - Clip: {fileID: 8300000, guid: dedc358759d9b6d4f8888a4872db489c, type: 3}

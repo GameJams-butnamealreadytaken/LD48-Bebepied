@@ -25,21 +25,20 @@ public class EnemyPylon : EnemyBase
         for (;;)
         {
             int enemyCount = Random.Range(4, 6);
-            int enemyType = 0;
 
             for (int i = 0; i < enemyCount; ++i)
             {
-                if (EnemyFloorList.Length > enemyType)
+                if (EnemyFloorList.Length > 0)
                 {
-                    GameObject enemyInstance = Instantiate(EnemyFloorList[enemyType], SpawnFloor.transform.position, Quaternion.identity);
+                    GameObject enemyInstance = Instantiate(EnemyFloorList[Random.Range(0, EnemyFloorList.Length)], SpawnFloor.transform.position, Quaternion.identity);
                     EnemyBase enemy = enemyInstance.GetComponent<EnemyBase>();
                     enemy.Player = Player;
                     enemy.EnemyCounter = EnemyCounter;
                 }
 
-                if (EnemyFlyList.Length > enemyType)
+                if (EnemyFlyList.Length > 0)
                 {
-                    GameObject enemyInstance = Instantiate(EnemyFlyList[enemyType], SpawnFly.transform.position, Quaternion.identity);
+                    GameObject enemyInstance = Instantiate(EnemyFlyList[Random.Range(0, EnemyFlyList.Length)], SpawnFly.transform.position, Quaternion.identity);
                     EnemyBase enemy = enemyInstance.GetComponent<EnemyBase>();
                     enemy.Player =Player;
                     enemy.EnemyCounter = EnemyCounter;
@@ -52,8 +51,9 @@ public class EnemyPylon : EnemyBase
 
     protected override void OnDeath()
     {
+        base.OnDeath();
         // Spawn Bonus
-        int bonusID = 0;
+        int bonusID = Random.Range(0, BonusList.Length);
         Instantiate(BonusList[bonusID], SpawnFloor.transform.position, Quaternion.identity);
 
         SetAutoDestroyOnDeath(false);

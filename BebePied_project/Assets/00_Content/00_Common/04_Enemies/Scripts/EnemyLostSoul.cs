@@ -25,6 +25,7 @@ public class EnemyLostSoul : EnemyBase
 
     protected override void OnDeath()
     {
+        base.OnDeath();
         EnemyCounter.UpdateSpawnStats(EnemyType, true);
     }
 

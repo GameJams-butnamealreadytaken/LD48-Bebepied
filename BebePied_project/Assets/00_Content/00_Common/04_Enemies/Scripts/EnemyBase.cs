@@ -20,6 +20,10 @@ public class EnemyBase : MonoBehaviour
     public float MaxHealth;
     public float MaxSpeed;
 
+    [Header("Hit")] 
+    public GameObject HitParticlePrefab;
+    public Vector3 HitParticleOffset = Vector3.zero;
+    
     [Header("Death")]
     public GameObject DeathParticlePrefab;
     public Vector3 DeathParticleOffset = Vector3.zero;
@@ -118,18 +122,12 @@ public class EnemyBase : MonoBehaviour
         CurrentHealth -= damage;
         
         OnDamageTaken(oldHealth, CurrentHealth);
+        
+        PlayParticleSystem(HitParticlePrefab, HitParticleOffset);
 
         if (CurrentHealth <= 0)
         {
-            if (DeathParticlePrefab != null)
-            {
-                GameObject deathParticle = Instantiate(DeathParticlePrefab, transform.position + DeathParticleOffset, transform.rotation, null);
-                ParticleSystem deathParticleSystem = deathParticle.GetComponent<ParticleSystem>();
-                if (deathParticleSystem != null)
-                {
-                    deathParticleSystem.Play();
-                }
-            }
+            PlayParticleSystem(DeathParticlePrefab, DeathParticleOffset);
 
             PlayRandomSoundInArray(DeathSounds, transform.position);
             
@@ -170,6 +168,19 @@ public class EnemyBase : MonoBehaviour
         }
     }
 
+    protected void PlayParticleSystem(GameObject particleSystemPrefab, Vector3 offset)
+    {
+        if (particleSystemPrefab != null)
+        {
+            GameObject instantiatedObject = Instantiate(particleSystemPrefab, transform.position + offset, transform.rotation, null);
+            ParticleSystem instantiatedParticleSystem = instantiatedObject.GetComponentInChildren<ParticleSystem>();
+            if (instantiatedParticleSystem != null)
+            {
+                instantiatedParticleSystem.Play();
+            }
+        }
+    }
+
     protected void PlayRandomSoundInArray(List<SoundEffect> soundArray, Vector3 position, float volume = 1.0f)
     {
         if (soundArray.Count > 0)
@@ -201,9 +212,13 @@ public class EnemyBase : MonoBehaviour
 
     protected virtual void OnDamageTaken(float oldHealth, float newHealth)
     {}
-    
+
     protected virtual void OnDeath()
-    {} 
+    {
+        //
+        // Increment the enemy killed stat
+        GameManager.GetInstance().Player.IncrementEnemyKilledStat();
+    } 
     
     protected virtual void OnCollisionEnter(Collision collision)
     {
