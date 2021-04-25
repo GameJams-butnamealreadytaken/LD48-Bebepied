@@ -24,7 +24,6 @@ public class LevelLogic : MonoBehaviour
     {
         if (bIsMapEnded)
         {
-            Debug.Log("chain hit trigger");
             Animator.SetTrigger("ChainHit");
         }
     }
