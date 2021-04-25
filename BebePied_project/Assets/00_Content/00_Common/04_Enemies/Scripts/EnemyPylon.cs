@@ -22,10 +22,13 @@ public class EnemyPylon : EnemyBase
     {
         yield return new WaitForSeconds(Random.Range(0.5f, 3f));
 
+        int maxEnemyInWave = 50 + (25 * (GameManager.GetInstance().Player.GetCurrentWave() - 2));
+
         for (;;)
         {
             int enemyCount = Random.Range(1 * GameManager.GetInstance().Player.GetCurrentWave(), GameManager.GetInstance().Player.GetCurrentWave() + (GameManager.GetInstance().Player.GetCurrentWave() / 2));
-            // int enemyCount = 100;
+            enemyCount = Mathf.Min(maxEnemyInWave - EnemyCounter.GetRemainingEnemyCount(), enemyCount);
+            
 
             for (int i = 0; i < enemyCount; ++i)
             {
