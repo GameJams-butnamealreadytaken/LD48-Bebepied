@@ -66,6 +66,7 @@ public class UIScoreScreen : MonoBehaviour
 		Cursor.lockState = CursorLockMode.Locked;
 		
 		GameManager.GetInstance().Player.ResetStats();
+		GameManager.GetInstance().Player.ResetWave();
 		SceneManager.LoadScene("LevelBase");
 		m_backgroundImage.gameObject.SetActive(false);
 		GameManager.GetInstance().Player.Activate();	//< Re-activate the player

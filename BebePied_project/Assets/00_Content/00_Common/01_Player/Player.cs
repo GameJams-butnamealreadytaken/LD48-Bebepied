@@ -203,6 +203,7 @@ public class Player : MonoBehaviour
 			case EBonusType.Damage:
 			{
 				m_additionalDamages = m_currentBonusData.Damages;
+				m_currentProjectileData = m_currentBonusData.Projectile;	//< Damage also overrides the projectile
 			}break;
 			case EBonusType.Speed:
 			{
@@ -243,6 +244,7 @@ public class Player : MonoBehaviour
 			case EBonusType.Damage:
 			{
 				m_additionalDamages = 0;
+				m_currentProjectileData = m_defaultProjectile;
 			}break;
 			case EBonusType.Speed:
 			{
@@ -271,6 +273,11 @@ public class Player : MonoBehaviour
 	public void IncrementWave()
 	{
 		m_currentWave++;
+	}
+
+	public void ResetWave()
+	{
+		m_currentWave = 1;
 	}
 	
 	public void OnTriggerEnter(Collider other)
