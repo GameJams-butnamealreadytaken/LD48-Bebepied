@@ -2,14 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyGhast : EnemyBase
+public class EnemyOctopus : EnemyBase
 {
-    [Header("AI")]
-    public float MinDistanceToPlayer;
-
     private float VerticalMaxSpeed = 0.02f;
-
-    private Vector3 CurrentDestination;
+    private float CurrentHeightObjective;
 
     protected override void Start()
     {
@@ -21,6 +17,8 @@ public class EnemyGhast : EnemyBase
         {
             NavigationAgent.baseOffset = hit.distance;
         }
+
+        CurrentHeightObjective = Random.Range(-1.0f, 3.0f);
     }
 
     protected override void Update()
@@ -37,17 +35,7 @@ public class EnemyGhast : EnemyBase
 
     protected override void OnUpdateAI()
     {
-        float distanceToPlayer = Vector3.Distance(transform.position, Player.transform.position);
-        float destinationDistanceToPlayer = Vector3.Distance(GetDestination(), Player.transform.position);
-
-        if (CurrentDestination == Vector3.zero || (distanceToPlayer < MinDistanceToPlayer && destinationDistanceToPlayer < MinDistanceToPlayer))
-        {
-            CurrentDestination = (transform.position - Player.transform.position).normalized * (MinDistanceToPlayer - distanceToPlayer + 1);
-            CurrentDestination = Quaternion.Euler(0, Random.Range(-50, 50), 0) * CurrentDestination;
-            CurrentDestination += transform.position;
-
-            SetDestination(CurrentDestination);
-        }
+        SetDestination(Player.transform.position);
     }
 
     protected override void OnStartAI()
