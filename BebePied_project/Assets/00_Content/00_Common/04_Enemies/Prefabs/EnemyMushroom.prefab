@@ -125,7 +125,7 @@ MonoBehaviour:
   EnemyType: 2
   MinDistanceToPlayer: 30
   MunitionType: {fileID: 11400000, guid: 0e2ef8b45f1b1eb40aa553a90c54048f, type: 2}
-  TimeBetweenShots: 8
+  TimeBetweenShots: 15
   ShotPoint: {fileID: 3608021389571859009}
 --- !u!54 &281761084704658730
 Rigidbody:
