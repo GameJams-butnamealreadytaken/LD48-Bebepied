@@ -41,7 +41,9 @@ public class LevelBase : MonoBehaviour
     {
         EnemyCounter = GetComponent<EnemyCounter>();
         TakenSpots.Add(Vector3.zero);
-
+        
+        GameManager.GetInstance().CurrentLevel = this;
+            
         GameManager.GetInstance().TutoTextGameObject.enabled = IsTuto;
         if (IsTuto)
         {
