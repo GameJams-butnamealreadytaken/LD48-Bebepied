@@ -201,9 +201,13 @@ public class EnemyBase : MonoBehaviour
 
     protected virtual void OnDamageTaken(float oldHealth, float newHealth)
     {}
-    
+
     protected virtual void OnDeath()
-    {} 
+    {
+        //
+        // Increment the enemy killed stat
+        GameManager.GetInstance().Player.IncrementEnemyKilledStat();
+    } 
     
     protected virtual void OnCollisionEnter(Collision collision)
     {
