@@ -59,5 +59,9 @@ PrefabInstance:
       propertyPath: EnemyFloorList.Array.size
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6373197229487926450, guid: 73a3f84473300484099231b6b1fa450f, type: 3}
+      propertyPath: EnemyFlyList.Array.data[1]
+      value: 
+      objectReference: {fileID: 4680596991659183616, guid: 7b3333293efc5364baa53f2068f52329, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 73a3f84473300484099231b6b1fa450f, type: 3}

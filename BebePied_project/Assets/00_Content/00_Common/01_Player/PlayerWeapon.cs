@@ -42,7 +42,7 @@ public abstract class PlayerWeapon : MonoBehaviour
 		}
 	}
 
-	public void Shoot(ProjectileData projectileData)
+	public void Shoot(ProjectileData projectileData, int additionalDamages)
 	{
 		//
 		// Is it ok to shoot now ?
@@ -89,7 +89,7 @@ public abstract class PlayerWeapon : MonoBehaviour
 					//
 					// Add the projectile component and set its damages
 					Projectile projectileComponent = projectileGO.AddComponent<Projectile>();
-					projectileComponent.Damages = projectileData.Damages;
+					projectileComponent.Damages = projectileData.Damages + additionalDamages;	//< Don't forget to add additional damages
 				
 					//
 					// Ensure the bullet rigidbody has its rotation constrained so the bullets do not rotate after being fired

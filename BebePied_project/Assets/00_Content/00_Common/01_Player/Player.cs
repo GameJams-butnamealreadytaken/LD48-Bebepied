@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Cinemachine;
@@ -12,13 +13,19 @@ public class Player : MonoBehaviour
 	[SerializeField] 
 	private UIScoreScreen m_scoreScreenUI;
 	
-	// TODO: Remove
+	[SerializeField]
+	[Tooltip("The projectile that the player has at the beginning of the game")]
 	public ProjectileData m_defaultProjectile;
+	
 
 	private bool m_isActive = false;	//< Is the player active (can shoot mainly)
 	private int m_ennemiesKilled;	//< The number of ennemies killed
 	private int m_bulletsShot;	//< The number of bullets shot
 	private int m_sausagesShot;	//< The number of sausages shot
+	private ProjectileData m_currentProjectileData;
+	private BonusData m_currentBonusData = null;	//< The current bonus
+	private int m_additionalDamages = 0;
+	private float m_currentBonusDuration = 0f;
 	
 	// Start is called before the first frame update
 	void Start()
@@ -30,6 +37,10 @@ public class Player : MonoBehaviour
 		//
 		// Activate the player
 		Activate();
+		
+		//
+		// Set default projectile as current
+		m_currentProjectileData = m_defaultProjectile;
 	}
 
 	// Update is called once per frame
@@ -43,19 +54,30 @@ public class Player : MonoBehaviour
 		}
 		
 		//
+		// Update duration and remove bonus if duration has finished
+		if (m_currentBonusData)
+		{
+			m_currentBonusDuration += Time.deltaTime;
+			if (m_currentBonusDuration >= m_currentBonusData.Duration)
+			{
+				RemoveBonus();
+			}
+		}
+
+		//
 		// Test if the player is shooting
 		if (GetComponent<PlayerInput>().actions["Shoot"].ReadValue<float>() >= 0.5f)
 		{
 			//
 			// Shoot with the weapon
-			GetComponentInChildren<PlayerWeaponHolder>().Shoot(m_defaultProjectile);
+			GetComponentInChildren<PlayerWeaponHolder>().Shoot(m_currentProjectileData, m_additionalDamages);
 			
 			//
 			// Update the stats
-			m_bulletsShot += m_defaultProjectile.FireProjectilesCount;
-			if (m_defaultProjectile.IsSausage)
+			m_bulletsShot += m_currentProjectileData.FireProjectilesCount;
+			if (m_currentProjectileData.IsSausage)
 			{
-				m_sausagesShot += m_defaultProjectile.FireProjectilesCount;
+				m_sausagesShot += m_currentProjectileData.FireProjectilesCount;
 			}
 		}
 	}
@@ -127,5 +149,83 @@ public class Player : MonoBehaviour
 		//
 		// Reapply the start intensity
 		GetComponentInChildren<CinemachineVirtualCamera>().GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_AmplitudeGain = 0f;
-	}  
+	}
+
+	public void AddBonus(BonusData data)
+	{
+		//
+		// Start by removing the effect of the current bonus
+		RemoveBonus();
+		
+		//
+		// Set bonus text in ui
+		GetComponentInChildren<UIInGame>().StartBonus(data.Text, data.Duration);
+		
+		//
+		// Add the effect of the new bonus
+		m_currentBonusData = data;
+		switch (m_currentBonusData.Type)
+		{
+			case EBonusType.Damage:
+			{
+				m_additionalDamages = m_currentBonusData.Damages;
+			}break;
+			case EBonusType.Speed:
+			{
+				GetComponent<CharacterController>().OverrideSpeed(GetComponent<CharacterController>().WalkSpeed + m_currentBonusData.Speed);
+			}break;
+			case EBonusType.Armor:
+				break;
+			case EBonusType.Projectile:
+			{
+				m_currentProjectileData = m_currentBonusData.Projectile;
+			}break;
+			case EBonusType.Max:
+				break;
+			default:
+				throw new ArgumentOutOfRangeException();
+		}
+		
+		//
+		//
+		m_currentBonusDuration = 0f;
+	}
+
+	public void RemoveBonus()
+	{
+		//
+		// We do nothing if we don't have an active bonus
+		if (!m_currentBonusData)
+		{
+			return;
+		}
+		
+		//
+		// Reset bonus text in ui
+		GetComponentInChildren<UIInGame>().ResetBonus();
+		
+		switch (m_currentBonusData.Type)
+		{
+			case EBonusType.Damage:
+			{
+				m_additionalDamages = 0;
+			}break;
+			case EBonusType.Speed:
+			{
+				GetComponent<CharacterController>().ResetOverrideSpeed();
+			}break;
+			case EBonusType.Armor:
+			{
+				// TODO:
+			}break;
+			case EBonusType.Projectile:
+			{
+				m_currentProjectileData = m_defaultProjectile;
+			}break;
+			case EBonusType.Max:
+				break;
+			default:
+				throw new ArgumentOutOfRangeException();
+		}
+	}
 }

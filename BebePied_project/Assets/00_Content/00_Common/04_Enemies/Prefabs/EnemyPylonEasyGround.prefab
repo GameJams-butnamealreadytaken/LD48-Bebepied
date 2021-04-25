@@ -64,8 +64,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6373197229487926450, guid: 73a3f84473300484099231b6b1fa450f, type: 3}
+      propertyPath: EnemyFloorList.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6373197229487926450, guid: 73a3f84473300484099231b6b1fa450f, type: 3}
       propertyPath: EnemyFloorList.Array.data[0]
       value: 
       objectReference: {fileID: 8396667509852197626, guid: 6cc8f89a7b129df45a5a891d7f400c2a, type: 3}
+    - target: {fileID: 6373197229487926450, guid: 73a3f84473300484099231b6b1fa450f, type: 3}
+      propertyPath: EnemyFloorList.Array.data[1]
+      value: 
+      objectReference: {fileID: 4463466415626837614, guid: 8013a2574991eed4b968a310a3c524f9, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 73a3f84473300484099231b6b1fa450f, type: 3}

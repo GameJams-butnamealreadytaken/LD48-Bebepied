@@ -640,6 +640,12 @@ MonoBehaviour:
   MaxSpeed: 80
   HitParticlePrefab: {fileID: 1591858850154547433, guid: f2d233a65a67a25478f1216b8205ceb5, type: 3}
   HitParticleOffset: {x: 0, y: 2, z: 0}
+  HitSounds:
+  - Clip: {fileID: 8300000, guid: 6a22f10b716b748499cf768b330b4ea0, type: 3}
+    Volume: 1
+    AttenuationMinDistance: 1
+    AttenuationMaxDistance: 500
+    AttenuationRollofMode: 0
   DeathParticlePrefab: {fileID: 6308724674279082189, guid: 970857d24698dac49bc91f3db89a252b, type: 3}
   DeathParticleOffset: {x: 0, y: 2, z: 0}
   DeathSounds:
@@ -678,7 +684,7 @@ Animator:
   m_GameObject: {fileID: 4680596991659183616}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 0ff3b6ca6dc9e834e8b4de7bd9c0c9e7, type: 2}
+  m_Controller: {fileID: 22100000, guid: 11312efb48934a0408412868b4f0bf7a, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

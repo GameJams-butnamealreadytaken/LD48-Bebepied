@@ -169,7 +169,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxHealth: 50
   MaxSpeed: 0
-  DeathParticlePrefab: {fileID: 6350604588751343109, guid: a82ef5aac4eca9f4d8bdb3048be32ac6, type: 3}
+  HitParticlePrefab: {fileID: 6350604588751343109, guid: a82ef5aac4eca9f4d8bdb3048be32ac6, type: 3}
+  HitParticleOffset: {x: 0, y: 7, z: 0}
+  HitSounds:
+  - Clip: {fileID: 8300000, guid: eff8bcdebb5ed774598836fc696ee9c4, type: 3}
+    Volume: 1
+    AttenuationMinDistance: 1
+    AttenuationMaxDistance: 500
+    AttenuationRollofMode: 0
+  - Clip: {fileID: 8300000, guid: 9df8b3938fda01641bff92e4488a0f29, type: 3}
+    Volume: 1
+    AttenuationMinDistance: 1
+    AttenuationMaxDistance: 500
+    AttenuationRollofMode: 0
+  - Clip: {fileID: 8300000, guid: c05921ae2313af245ab0558a32498433, type: 3}
+    Volume: 1
+    AttenuationMinDistance: 1
+    AttenuationMaxDistance: 500
+    AttenuationRollofMode: 0
+  DeathParticlePrefab: {fileID: 6350604588751343109, guid: 8d9a4d7d9b90b224eb99fc0ebd2a4040, type: 3}
   DeathParticleOffset: {x: 0, y: 7, z: 0}
   DeathSounds:
   - Clip: {fileID: 8300000, guid: 2d8886b338fa29246964309b05db53c9, type: 3}
@@ -194,11 +212,11 @@ MonoBehaviour:
   EnemyFlyList:
   - {fileID: 4680596991659183616, guid: 97ebd6fe3b6b7ef41be98c5714a29973, type: 3}
   - {fileID: 4463466415626837614, guid: 8013a2574991eed4b968a310a3c524f9, type: 3}
-  BonusList:
-  - {fileID: 2105726643545939360, guid: 8bbf62fa01f0c6f42a996c7e0e699b2b, type: 3}
-  - {fileID: 5604015213486360606, guid: f0d8bb0102ab720429485d2e70f21276, type: 3}
-  - {fileID: 5064389989818973152, guid: 4eac3517acaca294b85a5d6e46eb8f62, type: 3}
-  - {fileID: 1579936924416992649, guid: 24c78a06e19640d4da322f9d4bcc184f, type: 3}
+  BonusDataList:
+  - {fileID: 11400000, guid: 43189b6d6c3d7404db3f1025e7d5ee18, type: 2}
+  - {fileID: 11400000, guid: 7e00d930956029d4daecf436a1fb8e1a, type: 2}
+  - {fileID: 11400000, guid: 08616868a0a63424db4d93dd48444f74, type: 2}
+  - {fileID: 11400000, guid: 39df36d2572d32e4f8294b75fd5014d1, type: 2}
 --- !u!1001 &8592355347065430555
 PrefabInstance:
   m_ObjectHideFlags: 0
