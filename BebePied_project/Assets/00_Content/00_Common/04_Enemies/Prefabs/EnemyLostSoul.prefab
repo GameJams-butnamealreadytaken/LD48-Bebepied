@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!65 &3032881725483977548
+--- !u!65 &8603325116520129778
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -11,8 +11,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.7309833, y: 1.7526921, z: 1.2245896}
-  m_Center: {x: -0.00000008940697, y: -0.010854511, z: 0.6183032}
+  m_Size: {x: 2.503365, y: 1.9515327, z: 2.5983987}
+  m_Center: {x: -0.08871126, y: 0.97594124, z: 0.03548217}
 --- !u!33 &1791744366188112336
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -137,19 +137,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: eec5e8f6b9781a245b15f64d20ef49a4, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7071067
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: eec5e8f6b9781a245b15f64d20ef49a4, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.7071068
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: eec5e8f6b9781a245b15f64d20ef49a4, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: eec5e8f6b9781a245b15f64d20ef49a4, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: eec5e8f6b9781a245b15f64d20ef49a4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
