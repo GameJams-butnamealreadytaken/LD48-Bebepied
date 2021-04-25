@@ -33,11 +33,14 @@ public class EnemyBase : MonoBehaviour
     protected AudioSource AudioPlayer;
     protected NavMeshAgent NavigationAgent;
 
-
     private float CurrentHealth;
     private float HealthMultiplier = 1.0f;
     
     public GameObject Player;
+
+    public EnemyCounter EnemyCounter;
+    public EEnemyType EnemyType;
+
     private bool AutoStartAI = true;
     private bool AutoDestroyOnDeath = true;
     private bool AIRunning;

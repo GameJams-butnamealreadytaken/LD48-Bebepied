@@ -18,28 +18,39 @@ public class EnemyPylon : EnemyBase
 
     IEnumerator SpawnEnemyWave()
     {
+        yield return new WaitForSeconds(0.5f);
+
         for (;;)
         {
-            yield return new WaitForSeconds(SpawnFrequency);
-
             int enemyCount = Random.Range(4, 6);
             int enemyType = 0;
 
             for (int i = 0; i < enemyCount; ++i)
             {
-                GameObject enemyInstance = Instantiate(EnemyFloorList[enemyType], SpawnFloor.transform.position, Quaternion.identity);
-                EnemyBase enemy = enemyInstance.GetComponent<EnemyBase>();
-                enemy.SetPlayer(Player);
+                if (EnemyFloorList.Length > enemyType)
+                {
+                    GameObject enemyInstance = Instantiate(EnemyFloorList[enemyType], SpawnFloor.transform.position, Quaternion.identity);
+                    EnemyBase enemy = enemyInstance.GetComponent<EnemyBase>();
+                    enemy.Player = Player;
+                    enemy.EnemyCounter = EnemyCounter;
+                }
 
-                enemyInstance = Instantiate(EnemyFlyList[enemyType], SpawnFly.transform.position, Quaternion.identity);
-                enemy = enemyInstance.GetComponent<EnemyBase>();
-                enemy.SetPlayer(Player);
+                if (EnemyFlyList.Length > enemyType)
+                {
+                    GameObject enemyInstance = Instantiate(EnemyFlyList[enemyType], SpawnFly.transform.position, Quaternion.identity);
+                    EnemyBase enemy = enemyInstance.GetComponent<EnemyBase>();
+                    enemy.Player =Player;
+                    enemy.EnemyCounter = EnemyCounter;
+                }
+
+                yield return new WaitForSeconds(SpawnFrequency);
             }
         }
     }
 
     protected override void OnDeath()
     {
-        
+        SetAutoDestroyOnDeath(false);
+        Destroy(transform.parent.gameObject);
     }
 }

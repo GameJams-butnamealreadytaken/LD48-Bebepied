@@ -648,6 +648,8 @@ MonoBehaviour:
     AttenuationRollofMode: 0
   SpawnSounds: []
   Player: {fileID: 0}
+  EnemyCounter: {fileID: 0}
+  EnemyType: 2
 --- !u!54 &281761084704658730
 Rigidbody:
   m_ObjectHideFlags: 0

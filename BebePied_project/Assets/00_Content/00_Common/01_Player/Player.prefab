@@ -492,7 +492,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17fef8b3826899442a5e275d4c482bb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_defaultProjectile: {fileID: 11400000, guid: 9ded86da5f77f424e85731c1fd3579f6, type: 2}
+  m_defaultProjectile: {fileID: 11400000, guid: 8842edba85d06b049b7fae9bf03667b7, type: 2}
 --- !u!136 &4360345386271947660
 CapsuleCollider:
   m_ObjectHideFlags: 0
