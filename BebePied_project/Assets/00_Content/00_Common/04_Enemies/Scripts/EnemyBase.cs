@@ -290,7 +290,7 @@ public class EnemyBase : MonoBehaviour
     {
         //
         // Increment the enemy killed stat
-        GameManager.GetInstance().Player.IncrementEnemyKilledStat();
+        GameManager.GetInstance().Player.IncrementEnemyKilledStat(transform);
     } 
     
     protected virtual void OnCollisionEnter(Collision collision)
