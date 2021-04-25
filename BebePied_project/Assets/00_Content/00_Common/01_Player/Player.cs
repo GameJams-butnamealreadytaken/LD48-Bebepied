@@ -5,6 +5,7 @@ using Cinemachine;
 using DissidentStudio.Toolkit.FPSController;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 using CharacterController = DissidentStudio.Toolkit.FPSController.CharacterController;
 
 public class Player : MonoBehaviour
@@ -257,7 +258,14 @@ public class Player : MonoBehaviour
 		else if (other.CompareTag(ObjectTags.EndLevel))
         {
 			IncrementWave();
-			GameManager.GetInstance().LoadNextLevel();
-		}
+			if (SceneManager.GetActiveScene().name != "MainMenu")
+			{
+				GameManager.GetInstance().LoadNextLevel();
+			}
+			else
+			{
+				SceneManager.LoadScene("LevelBase");
+			}
+        }
 	}
 }
