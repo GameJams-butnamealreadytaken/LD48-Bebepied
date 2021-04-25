@@ -158,6 +158,10 @@ public class Player : MonoBehaviour
 		RemoveBonus();
 		
 		//
+		// Set bonus text in ui
+		GetComponentInChildren<UIInGame>().StartBonus(data.Text, data.Duration);
+		
+		//
 		// Add the effect of the new bonus
 		m_currentBonusData = data;
 		switch (m_currentBonusData.Type)
@@ -195,6 +199,10 @@ public class Player : MonoBehaviour
 		{
 			return;
 		}
+		
+		//
+		// Reset bonus text in ui
+		GetComponentInChildren<UIInGame>().ResetBonus();
 		
 		switch (m_currentBonusData.Type)
 		{
