@@ -30,6 +30,10 @@ public class BonusData : ScriptableObject
 	[SerializeField] 
 	[TextArea] private string m_text;
 	
+	[SerializeField]
+	[Tooltip("The audio clip to play when taking the bonus")]
+	private AudioClip m_audioClip;	
+	
 	
 	public EBonusType Type => m_eBonusType;
 	
@@ -46,4 +50,6 @@ public class BonusData : ScriptableObject
 	public int Speed => m_additionalSpeed;
 
 	public string Text => m_text;
+	
+	public AudioClip Clip => m_audioClip;
 }

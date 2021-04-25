@@ -47,7 +47,7 @@ public class ProjectileData : ScriptableObject
 	[SerializeField]
 	[Tooltip("Is this projectile a sausage ? Needed for the stats")]
 	private bool m_isSausage = false;
-	
+
 
 	public int Damages => m_damages;
 

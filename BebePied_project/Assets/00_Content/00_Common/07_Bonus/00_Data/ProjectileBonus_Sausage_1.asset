@@ -20,3 +20,4 @@ MonoBehaviour:
   m_additionalArmor: 1
   m_additionalSpeed: 0
   m_text: Sausage tonight sausage!
+  m_audioClip: {fileID: 8300000, guid: b601b6a49934e9e4f80e2bc8b48afb53, type: 3}
