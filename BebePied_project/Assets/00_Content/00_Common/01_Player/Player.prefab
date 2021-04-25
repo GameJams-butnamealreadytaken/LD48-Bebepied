@@ -65,18 +65,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Moving: WASD (QWERTY) / ZQSD (AZERTY)
-
-    Jumping: Spacebar
-
-    Looking
-    Around: Mouse
-
-    Firing: Left mouse (keep pressed)
-
-
-    Seek the red blinking
-    chain and fire at it to start!'
+  m_text: "Moving: WASD (QWERTY) \n\t/ ZQSD (AZERTY)\nJumping: Spacebar\nLooking
+    Around: Mouse\nFiring: Left mouse (keep pressed)\n\nSeek the red blinking chain
+    and \nfire at it to start!"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 70b2725ad6390e649b996149f1d8b5d8, type: 2}
   m_sharedMaterial: {fileID: -8863903418522214914, guid: 70b2725ad6390e649b996149f1d8b5d8, type: 2}
@@ -307,7 +298,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 543939167446481156}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.47100002, z: 0}
+  m_LocalPosition: {x: 0, y: 0.971, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8504386423739988920}
@@ -710,12 +701,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 4
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
+    m_SelectOnLeft: {fileID: 6410275278199501013}
+    m_SelectOnRight: {fileID: 6410275278199501013}
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
@@ -1477,12 +1468,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 4
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
+    m_SelectOnLeft: {fileID: 5679153762582901255}
+    m_SelectOnRight: {fileID: 5679153762582901255}
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
@@ -1843,6 +1834,7 @@ MonoBehaviour:
   m_ennemiesKilledScoreText: {fileID: 8482771158403367953}
   m_bulletsShotScoreText: {fileID: 4922682606046759625}
   m_sausagesShotScoreText: {fileID: 398264853726127683}
+  m_firstSelected: {fileID: 6410275278199501013}
 --- !u!222 &2442112780106994639
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3366,6 +3358,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a6316267c2622c049a39250e30d4f331, type: 3}
+--- !u!4 &2020417649330542071 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7761164846771138598, guid: a6316267c2622c049a39250e30d4f331, type: 3}
+  m_PrefabInstance: {fileID: 8627988051522233809}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &7757763762926191664 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2023761519867666913, guid: a6316267c2622c049a39250e30d4f331, type: 3}
@@ -3377,8 +3374,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17b9491fe251f0a45862284db8480994, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!4 &2020417649330542071 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7761164846771138598, guid: a6316267c2622c049a39250e30d4f331, type: 3}
-  m_PrefabInstance: {fileID: 8627988051522233809}
-  m_PrefabAsset: {fileID: 0}

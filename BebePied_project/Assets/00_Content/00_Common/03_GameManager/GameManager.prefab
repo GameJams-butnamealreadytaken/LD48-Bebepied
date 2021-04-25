@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1003354775932697757}
   - component: {fileID: 1003354775932697758}
+  - component: {fileID: 3565706202556958517}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -49,6 +50,21 @@ MonoBehaviour:
   Player: {fileID: 3562258092518903819}
   TutoTextGameObject: {fileID: 0}
   m_musicAudioSource: {fileID: 718804433944472283}
+  m_bonusManager: {fileID: 0}
+--- !u!114 &3565706202556958517
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1003354775932697759}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e867caa3f279314fa83c680c74e0765, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ennemyRatioCountForBonus: 15
+  m_ennemyRatioDurationForBonus: 3
 --- !u!1 &5456610549983942432
 GameObject:
   m_ObjectHideFlags: 0
