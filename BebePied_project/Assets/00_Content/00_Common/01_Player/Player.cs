@@ -1,13 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using Cinemachine;
+using DissidentStudio.Toolkit.FPSController;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using CharacterController = DissidentStudio.Toolkit.FPSController.CharacterController;
 
 public class Player : MonoBehaviour
 {
 
+	[SerializeField] 
+	private UIScoreScreen m_scoreScreenUI;
+	
+	// TODO: Remove
 	public ProjectileData m_defaultProjectile;
+
+	private bool m_isActive = false;	//< Is the player active (can shoot mainly)
+	private int m_ennemiesKilled;	//< The number of ennemies killed
+	private int m_bulletsShot;	//< The number of bullets shot
+	private int m_sausagesShot;	//< The number of sausages shot
 	
 	// Start is called before the first frame update
 	void Start()
@@ -15,17 +26,64 @@ public class Player : MonoBehaviour
 		//
 		// Lock the cursor 
 		Cursor.lockState = CursorLockMode.Locked;
+		
+		//
+		// Activate the player
+		Activate();
 	}
 
 	// Update is called once per frame
 	void Update()
 	{
 		//
+		// If the player is not active we do nothing
+		if (!m_isActive)
+		{
+			return;
+		}
+		
+		//
 		// Test if the player is shooting
 		if (GetComponent<PlayerInput>().actions["Shoot"].ReadValue<float>() >= 0.5f)
 		{
+			//
+			// Shoot with the weapon
 			GetComponentInChildren<PlayerWeaponHolder>().Shoot(m_defaultProjectile);
+			
+			//
+			// Update the stats
+			m_bulletsShot += m_defaultProjectile.FireProjectilesCount;
+			if (m_defaultProjectile.IsSausage)
+			{
+				m_sausagesShot += m_defaultProjectile.FireProjectilesCount;
+			}
 		}
+	}
+
+	public void Activate()
+	{
+		m_isActive = true;
+		GetComponent<CharacterController>().Active = true;
+		GetComponentInChildren<CameraController>().Active = true;
+	}
+
+	public void Deactivate()
+	{
+		m_isActive = false;
+		GetComponent<CharacterController>().Active = false;
+		GetComponentInChildren<CameraController>().Active = false;
+	}
+	
+	public void ResetStats()
+	{
+		m_ennemiesKilled = 0;
+		m_bulletsShot = 0;
+		m_sausagesShot = 0;
+	}
+
+	public void IncrementEnemyKilledStat()
+	{
+		m_ennemiesKilled++;
 	}
 
 	/// <summary>
@@ -33,7 +91,13 @@ public class Player : MonoBehaviour
 	/// </summary>
 	public void Kill()
 	{
-		Debug.Log("You is dead");
+		//
+		// Show the UI
+		m_scoreScreenUI.Show(m_ennemiesKilled, m_bulletsShot, m_sausagesShot);
+		
+		//
+		// Deactivate the player
+		Deactivate();
 	}
 
 	/// <summary>
