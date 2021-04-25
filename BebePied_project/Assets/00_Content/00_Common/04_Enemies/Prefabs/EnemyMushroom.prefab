@@ -87,6 +87,7 @@ MonoBehaviour:
   Player: {fileID: 0}
   EnemyCounter: {fileID: 0}
   EnemyType: 2
+  MinDistanceToPlayer: 30
 --- !u!54 &281761084704658730
 Rigidbody:
   m_ObjectHideFlags: 0
