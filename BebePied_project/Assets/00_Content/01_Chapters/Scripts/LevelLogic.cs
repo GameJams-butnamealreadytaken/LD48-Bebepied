@@ -5,6 +5,8 @@ using UnityEngine;
 public class LevelLogic : MonoBehaviour
 {
     public List<GameObject> TopBrokenFloorObjects;
+    
+    public GameObject PlayerSpawn;
 
     private Animator Animator;
 

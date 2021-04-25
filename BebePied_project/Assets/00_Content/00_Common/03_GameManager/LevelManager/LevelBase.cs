@@ -47,6 +47,10 @@ public class LevelBase : MonoBehaviour
         {
             LevelLogic.HideUpsideFloor();
         }
+        else
+        {
+            GameManager.GetInstance().Player.transform.position = LevelLogic.PlayerSpawn.transform.position;
+        }
 
         m_timeSinceStart = 0f;
     }
