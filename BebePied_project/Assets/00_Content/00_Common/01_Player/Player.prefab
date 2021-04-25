@@ -28,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 543939167446481156}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.97099996, z: 0}
+  m_LocalPosition: {x: 0, y: 0.9710007, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4360345386271947662}
@@ -175,14 +175,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1872364810358181604}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.007, z: -0.12064719}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.007000625, z: -0.120643616}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2795430545507504817}
   - {fileID: 2020417649330542071}
   m_Father: {fileID: 4360345385335340153}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8568108740656584463
 MonoBehaviour:
@@ -209,6 +209,7 @@ GameObject:
   - component: {fileID: 4360345385186223976}
   - component: {fileID: 4360345385186223975}
   - component: {fileID: 4360345385186223974}
+  - component: {fileID: 2148781885284008128}
   m_Layer: 0
   m_Name: cm
   m_TagString: Untagged
@@ -291,6 +292,23 @@ MonoBehaviour:
   m_YawDamping: 0
   m_RollDamping: 0
   m_AngularDamping: 0
+--- !u!114 &2148781885284008128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4360345385186223972}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68bb026fafb42b14791938953eaace77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_NoiseProfile: {fileID: 11400000, guid: 69ce8388f6785dd4c8c39915efece2f4, type: 2}
+  m_PivotOffset: {x: 0, y: 0, z: 0}
+  m_AmplitudeGain: 0
+  m_FrequencyGain: 1
+  mNoiseOffsets: {x: 24.045135, y: -394.4324, z: 116.81357}
 --- !u!1 &4360345385335340152
 GameObject:
   m_ObjectHideFlags: 0
@@ -320,8 +338,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0.971, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 4360345385578029665}
   - {fileID: 4659533814597522495}
+  - {fileID: 4360345385578029665}
   m_Father: {fileID: 4360345386271947662}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -351,7 +369,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_enableSmoothing: 0
   m_smoothingFactor: 0.2
-  m_sensitivity: 2
+  m_sensitivity: 1
   m_invertVerticalAxis: 0
 --- !u!1 &4360345385578029664
 GameObject:
@@ -383,7 +401,7 @@ Transform:
   m_Children:
   - {fileID: 4360345385186223973}
   m_Father: {fileID: 4360345385335340153}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4360345385578029666
 MonoBehaviour:
@@ -559,7 +577,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a17d1969ae06a2449a848519d7e0e67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_walkSpeed: 6
+  m_walkSpeed: 10
   m_canRun: 0
   m_runSpeed: 2
   m_canCrouch: 0
@@ -568,7 +586,7 @@ MonoBehaviour:
   m_crouchingAndStandUpDuration: 1.7
   m_canJump: 1
   m_additionalJumps: 1
-  m_jumpForce: 4
+  m_jumpForce: 6
   m_enableAirControl: 1
   m_limitCharacterSpeedBackward: 0
   m_characterSpeedReductionFactorBackward: 1
@@ -756,11 +774,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a6316267c2622c049a39250e30d4f331, type: 3}
---- !u!4 &2020417649330542071 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7761164846771138598, guid: a6316267c2622c049a39250e30d4f331, type: 3}
-  m_PrefabInstance: {fileID: 8627988051522233809}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &7757763762926191664 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2023761519867666913, guid: a6316267c2622c049a39250e30d4f331, type: 3}
@@ -772,3 +785,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17b9491fe251f0a45862284db8480994, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &2020417649330542071 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7761164846771138598, guid: a6316267c2622c049a39250e30d4f331, type: 3}
+  m_PrefabInstance: {fileID: 8627988051522233809}
+  m_PrefabAsset: {fileID: 0}

@@ -704,9 +704,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2148781885284008128, guid: 91074692f0fe8a140a323d85724f5d74, type: 3}
+      propertyPath: m_AmplitudeGain
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4360345385578029666, guid: 91074692f0fe8a140a323d85724f5d74, type: 3}
       propertyPath: m_Lens.m_SensorSize.x
-      value: 2.6340694
+      value: 2.0019083
       objectReference: {fileID: 0}
     - target: {fileID: 4360345386271947655, guid: 91074692f0fe8a140a323d85724f5d74, type: 3}
       propertyPath: m_Name
@@ -756,9 +760,57 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4821703855063659783, guid: 91074692f0fe8a140a323d85724f5d74, type: 3}
+      propertyPath: m_ImpulseDefinition.m_ImpactRadius
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4821703855063659783, guid: 91074692f0fe8a140a323d85724f5d74, type: 3}
+      propertyPath: m_ImpulseDefinition.m_AmplitudeGain
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4821703855063659783, guid: 91074692f0fe8a140a323d85724f5d74, type: 3}
+      propertyPath: m_ImpulseDefinition.m_DissipationMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4821703855063659783, guid: 91074692f0fe8a140a323d85724f5d74, type: 3}
+      propertyPath: m_ImpulseDefinition.m_TimeEnvelope.m_ScaleWithImpact
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6152766472407409506, guid: 91074692f0fe8a140a323d85724f5d74, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6152766472407409506, guid: 91074692f0fe8a140a323d85724f5d74, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0.9710007
+      objectReference: {fileID: 0}
+    - target: {fileID: 6152766472407409506, guid: 91074692f0fe8a140a323d85724f5d74, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6152766472407409506, guid: 91074692f0fe8a140a323d85724f5d74, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6152766472407409506, guid: 91074692f0fe8a140a323d85724f5d74, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6152766472407409506, guid: 91074692f0fe8a140a323d85724f5d74, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6152766472407409506, guid: 91074692f0fe8a140a323d85724f5d74, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6576120529712282845, guid: 91074692f0fe8a140a323d85724f5d74, type: 3}
+      propertyPath: m_Use2DDistance
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9023632794708351999, guid: 91074692f0fe8a140a323d85724f5d74, type: 3}
+      propertyPath: m_AmplitudeGain
+      value: 0.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 91074692f0fe8a140a323d85724f5d74, type: 3}

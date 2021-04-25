@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Cinemachine;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -46,9 +47,13 @@ public class PlayerWeaponMinigun : PlayerWeapon
 	{
 		// throw new System.NotImplementedException();
 	}
-
+	float LastEventTime = 0;
 	protected override void OnShoot()
 	{
 		AudioSource.PlayClipAtPoint(m_shotAudioClips[Random.Range(0, m_shotAudioClips.Count)], transform.position);
+		
+		//
+		// Beurk, shake the camera by accessing the player, can be done in a much more beautiful way
+		GetComponentInParent<Player>().ShakeCamera(1f, 0.3f);
 	}
 }
