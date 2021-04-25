@@ -20,3 +20,4 @@ MonoBehaviour:
   m_additionalArmor: 0
   m_additionalSpeed: 12
   m_text: Incredible speed!
+  m_audioClip: {fileID: 8300000, guid: 8c740cfdd3d66aa4fad251ca105cd2df, type: 3}

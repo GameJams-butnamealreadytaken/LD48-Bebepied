@@ -20,3 +20,4 @@ MonoBehaviour:
   m_additionalArmor: 0
   m_additionalSpeed: 0
   m_text: Max minigun (or maxigun)!
+  m_audioClip: {fileID: 8300000, guid: 2b1931245c045f7448197f17a49422ff, type: 3}
