@@ -125,7 +125,7 @@ public class Player : MonoBehaviour
 		
 		//
 		// Show the UI
-		m_scoreScreenUI.Show(m_ennemiesKilled, m_bulletsShot, m_sausagesShot);
+		m_scoreScreenUI.Show(m_currentWave - 1, m_ennemiesKilled, m_bulletsShot, m_sausagesShot);
 		
 		//
 		// Deactivate the player
