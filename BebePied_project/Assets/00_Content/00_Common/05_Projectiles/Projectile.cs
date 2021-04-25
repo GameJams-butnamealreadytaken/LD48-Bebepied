@@ -9,7 +9,7 @@ public class Projectile : MonoBehaviour
 	private int m_damages;	//< The damages that this projectile deals
 	
 	private float m_lifeTime;	//< The time this projectile will leave
-	private float m_currentLivingTime;	//< The time this projectile has been living
+	private float m_currentLivingTime = 0.0f;	//< The time this projectile has been living
 
 	/// <summary>
 	/// Return the damages that this projectiles inflicts

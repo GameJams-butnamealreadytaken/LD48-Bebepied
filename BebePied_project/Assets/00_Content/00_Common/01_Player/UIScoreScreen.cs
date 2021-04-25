@@ -11,6 +11,7 @@ public class UIScoreScreen : MonoBehaviour
 	
 	[SerializeField] private Image m_backgroundImage;
 	
+	[SerializeField] private TMP_Text m_reachedLevelText;
 	[SerializeField] private TMP_Text m_ennemiesKilledScoreText;
 	[SerializeField] private TMP_Text m_bulletsShotScoreText;
 	[SerializeField] private TMP_Text m_sausagesShotScoreText;
@@ -20,7 +21,7 @@ public class UIScoreScreen : MonoBehaviour
 		m_backgroundImage.gameObject.SetActive(false);
 	}
 
-	public void Show(int enemyKilled, int bulletsShot, int sausagesShot)
+	public void Show(int reachedLevel, int enemyKilled, int bulletsShot, int sausagesShot)
 	{
 		//
 		// Stop the in game music
@@ -29,9 +30,10 @@ public class UIScoreScreen : MonoBehaviour
 		//
 		// Unlock the cursor
 		Cursor.lockState = CursorLockMode.None;
-		
+
 		//
 		// Set the data
+		m_reachedLevelText.text = "" + reachedLevel;
 		m_ennemiesKilledScoreText.text = "" + enemyKilled;
 		m_bulletsShotScoreText.text = "" + bulletsShot;
 		m_sausagesShotScoreText.text = "" + sausagesShot;
