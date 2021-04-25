@@ -243,7 +243,8 @@ public class EnemyBase : MonoBehaviour
         // Add the projectile component and set its damages
         Projectile projectileComponent = projectileGO.AddComponent<Projectile>();
         projectileComponent.Damages = projectileData.Damages;
-			
+        projectileComponent.LifeTime = projectileData.LifeTime;
+
         //
         // Ensure the bullet rigidbody has its rotation constrained so the bullets do not rotate after being fired
         // Only if it is not deactivated in the projectile
