@@ -7,20 +7,20 @@ public enum EBonusType
     Damage,
     Speed,
     Armor,
-    Sausage,
+    Projectile,
     Max
 }
 
 public class BonusBehavior : MonoBehaviour
 {
-    public EBonusType Type;
+    public BonusData m_bonusData;
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag(ObjectTags.Player))
         {
             // TODO apply effect based on Type
-            //GameManager.GetInstance().Player.ApplyEffect(Type);
+            GameManager.GetInstance().Player.AddBonus(m_bonusData);
             Destroy(gameObject);
         }
     }

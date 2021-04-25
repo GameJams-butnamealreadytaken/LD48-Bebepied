@@ -19,11 +19,11 @@ public class PlayerWeaponHolder : MonoBehaviour
 		m_currentWeapon = m_startWeapon;
 	}
 
-	public void Shoot(ProjectileData projectileData)
+	public void Shoot(ProjectileData projectileData, int additionalDamages)
 	{
 		if (null != m_currentWeapon)
 		{
-			m_currentWeapon.Shoot(projectileData);
+			m_currentWeapon.Shoot(projectileData, additionalDamages);
 		}
 	}
 }

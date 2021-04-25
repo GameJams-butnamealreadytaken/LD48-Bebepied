@@ -1630,7 +1630,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_scoreScreenUI: {fileID: 5153449554307574323}
-  m_defaultProjectile: {fileID: 11400000, guid: 2ae1767a2b4552742a85bac3cdc1f508, type: 2}
+  m_defaultProjectile: {fileID: 11400000, guid: 9ded86da5f77f424e85731c1fd3579f6, type: 2}
 --- !u!136 &4360345386271947660
 CapsuleCollider:
   m_ObjectHideFlags: 0
