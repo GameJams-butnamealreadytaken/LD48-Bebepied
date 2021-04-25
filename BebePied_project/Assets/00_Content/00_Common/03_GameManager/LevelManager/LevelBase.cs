@@ -46,7 +46,7 @@ public class LevelBase : MonoBehaviour
             {
                 SecondsSinceLastSpawn = 0;
                 ++CurrentEnemyIndex;
-                for (int enemyCount = 0; enemyCount < enemyTypeNumber.Count; enemyCount++)
+                for (int enemyCount = 0; enemyCount < enemyTypeNumber.Count + GameManager.GetInstance().Player.GetCurrentWave(); enemyCount++)
                 {
 
                     Vector3 position;
@@ -80,6 +80,7 @@ public class LevelBase : MonoBehaviour
                     
                     EnemyPylon Pylon = enemyInstance.GetComponentInChildren<EnemyPylon>();
                     Pylon.EnemyCounter = EnemyCounter;
+                    Pylon.MaxHealth += GameManager.GetInstance().Player.GetCurrentWave() * 2; 
 
                     EnemyBase enemy = enemyInstance.GetComponent<EnemyBase>();
                     if (!enemy)
