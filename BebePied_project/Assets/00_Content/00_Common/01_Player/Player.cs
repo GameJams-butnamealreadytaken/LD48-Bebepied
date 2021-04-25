@@ -22,6 +22,7 @@ public class Player : MonoBehaviour
 	private int m_ennemiesKilled;	//< The number of ennemies killed
 	private int m_bulletsShot;	//< The number of bullets shot
 	private int m_sausagesShot;	//< The number of sausages shot
+	private int m_currentWave = 20;
 	private ProjectileData m_currentProjectileData;
 	private BonusData m_currentBonusData = null;	//< The current bonus
 	private int m_additionalDamages = 0;
@@ -237,6 +238,16 @@ public class Player : MonoBehaviour
 		}
 	}
 
+	public int GetCurrentWave()
+	{
+		return m_currentWave;
+	}
+
+	public void IncrementWave()
+	{
+		m_currentWave++;
+	}
+	
 	public void OnTriggerEnter(Collider other)
 	{
 		if (other.CompareTag(ObjectTags.BulletEnemy))
