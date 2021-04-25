@@ -298,9 +298,9 @@ GameObject:
   - component: {fileID: 4685268547683901563}
   - component: {fileID: 3832196948340675674}
   - component: {fileID: 58149751632056210}
-  - component: {fileID: 1796233561603644809}
   - component: {fileID: 7159857971008635437}
   - component: {fileID: 1704382955109664782}
+  - component: {fileID: 6910092020886146111}
   m_Layer: 0
   m_Name: Chain.058
   m_TagString: Untagged
@@ -372,20 +372,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &1796233561603644809
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 299980727807958396}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 9003372761496626439, guid: 93cd5732ee2cb104985ec28c182395d0, type: 3}
 --- !u!114 &7159857971008635437
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -414,6 +400,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!65 &6910092020886146111
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 299980727807958396}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 11.5011, y: 7.499998, z: 1.5000002}
+  m_Center: {x: 0.000012159349, y: -0.000002861023, z: 0.0000019073486}
 --- !u!1 &316027953047768895
 GameObject:
   m_ObjectHideFlags: 0
