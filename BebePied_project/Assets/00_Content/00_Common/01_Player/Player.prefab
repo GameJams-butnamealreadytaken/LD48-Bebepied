@@ -65,18 +65,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Moving: WASD (QWERTY) / ZQSD (AZERTY)
-
-    Jumping: Spacebar
-
-    Looking
-    Around: Mouse
-
-    Firing: Left mouse (keep pressed)
-
-
-    Seek the red blinking
-    chain and fire at it to start!'
+  m_text: "Moving: WASD (QWERTY) \n\t/ ZQSD (AZERTY)\nJumping: Spacebar\nLooking
+    Around: Mouse\nFiring: Left mouse (keep pressed)\n\nSeek the red blinking chain
+    and \nfire at it to start!"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 70b2725ad6390e649b996149f1d8b5d8, type: 2}
   m_sharedMaterial: {fileID: -8863903418522214914, guid: 70b2725ad6390e649b996149f1d8b5d8, type: 2}
@@ -3367,6 +3358,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a6316267c2622c049a39250e30d4f331, type: 3}
+--- !u!4 &2020417649330542071 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7761164846771138598, guid: a6316267c2622c049a39250e30d4f331, type: 3}
+  m_PrefabInstance: {fileID: 8627988051522233809}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &7757763762926191664 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2023761519867666913, guid: a6316267c2622c049a39250e30d4f331, type: 3}
@@ -3378,8 +3374,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17b9491fe251f0a45862284db8480994, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!4 &2020417649330542071 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7761164846771138598, guid: a6316267c2622c049a39250e30d4f331, type: 3}
-  m_PrefabInstance: {fileID: 8627988051522233809}
-  m_PrefabAsset: {fileID: 0}
