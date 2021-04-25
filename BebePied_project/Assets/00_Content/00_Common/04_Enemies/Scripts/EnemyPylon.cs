@@ -53,7 +53,7 @@ public class EnemyPylon : EnemyBase
     protected override void OnDeath()
     {
         // Spawn Bonus
-        int bonusID = 0;
+        int bonusID = Random.Range(0, BonusList.Length);
         Instantiate(BonusList[bonusID], SpawnFloor.transform.position, Quaternion.identity);
 
         SetAutoDestroyOnDeath(false);

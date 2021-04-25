@@ -7,7 +7,8 @@ public enum EBonusType
     Damage,
     Speed,
     Armor,
-    Sausage
+    Sausage,
+    Max
 }
 
 public class BonusBehavior : MonoBehaviour
