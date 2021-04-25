@@ -14,16 +14,16 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
-  m_Fog: 1
-  m_FogColor: {r: 0.122641504, g: 0.122641504, b: 0.122641504, a: 1}
+  m_Fog: 0
+  m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   m_FogMode: 3
-  m_FogDensity: 0.0025
+  m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
-  m_AmbientIntensity: 2
+  m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 2100000, guid: 9795533e9c7e2e142932e3750b4a60e6, type: 2}
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.020925336, g: 0.008580113, b: 0.011526567, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -131,27 +131,39 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 3423000284505867463, guid: 0a624240694d85c4a808393d6599c867, type: 3}
-      propertyPath: LevelLogic
-      value: 
-      objectReference: {fileID: 1310950324}
+      propertyPath: IsTuto
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3423000284505867463, guid: 0a624240694d85c4a808393d6599c867, type: 3}
       propertyPath: LevelCenter.y
       value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 3423000284505867463, guid: 0a624240694d85c4a808393d6599c867, type: 3}
       propertyPath: EnemyList.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3423000284505867463, guid: 0a624240694d85c4a808393d6599c867, type: 3}
       propertyPath: EnemyList.Array.data[0].Type
       value: 
-      objectReference: {fileID: 2661381203738439214, guid: c9ebfc17973a27347bfb3c34b2f79c16, type: 3}
+      objectReference: {fileID: 8396667509852197626, guid: 6cc8f89a7b129df45a5a891d7f400c2a, type: 3}
+    - target: {fileID: 3423000284505867463, guid: 0a624240694d85c4a808393d6599c867, type: 3}
+      propertyPath: EnemyList.Array.data[1].Type
+      value: 
+      objectReference: {fileID: 4463466415626837614, guid: 8013a2574991eed4b968a310a3c524f9, type: 3}
     - target: {fileID: 3423000284505867463, guid: 0a624240694d85c4a808393d6599c867, type: 3}
       propertyPath: EnemyList.Array.data[0].Count
-      value: 5
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3423000284505867463, guid: 0a624240694d85c4a808393d6599c867, type: 3}
+      propertyPath: EnemyList.Array.data[1].Count
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3423000284505867463, guid: 0a624240694d85c4a808393d6599c867, type: 3}
       propertyPath: EnemyList.Array.data[0].DelayFromPrevious
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3423000284505867463, guid: 0a624240694d85c4a808393d6599c867, type: 3}
+      propertyPath: EnemyList.Array.data[1].DelayFromPrevious
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4106618982611570854, guid: 0a624240694d85c4a808393d6599c867, type: 3}
@@ -259,13 +271,33 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3298443247868080713, guid: 95c09e85d58627a4eb80760815159c4e, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5280941042184222766, guid: 95c09e85d58627a4eb80760815159c4e, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5355414400191552428, guid: 95c09e85d58627a4eb80760815159c4e, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5959515408733482765, guid: 95c09e85d58627a4eb80760815159c4e, type: 3}
       propertyPath: m_Name
       value: BaseMapPrefab
       objectReference: {fileID: 0}
+    - target: {fileID: 5973979050799193939, guid: 95c09e85d58627a4eb80760815159c4e, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6088118904600005283, guid: 95c09e85d58627a4eb80760815159c4e, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6249176414796854012, guid: 95c09e85d58627a4eb80760815159c4e, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9020862217730573047, guid: 95c09e85d58627a4eb80760815159c4e, type: 3}
       propertyPath: m_Enabled
@@ -277,14 +309,3 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 95c09e85d58627a4eb80760815159c4e, type: 3}
---- !u!114 &1310950324 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1887593927023221053, guid: 95c09e85d58627a4eb80760815159c4e, type: 3}
-  m_PrefabInstance: {fileID: 1310950323}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e995039d4ab03c546aeb8b5ffa08d5cf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

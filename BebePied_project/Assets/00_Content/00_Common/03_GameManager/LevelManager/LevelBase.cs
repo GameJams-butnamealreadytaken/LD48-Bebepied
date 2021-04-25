@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using TMPro;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -21,6 +22,9 @@ public class LevelBase : MonoBehaviour
     public int Height = 100;
     public Vector3 LevelCenter = Vector3.zero;
     public int StartDivider = 16;
+    
+    [Header("Tuto")]
+    public bool IsTuto = false;
 
     private List<Vector3> TakenSpots = new List<Vector3>();
     private float SecondsSinceLastSpawn = 0;
@@ -33,6 +37,9 @@ public class LevelBase : MonoBehaviour
     private void Start()
     {
         EnemyCounter = GetComponent<EnemyCounter>();
+        TakenSpots.Add(Vector3.zero);
+
+        GameManager.GetInstance().TutoTextGameObject.enabled = IsTuto;
     }
 
     private void Update()
@@ -46,7 +53,7 @@ public class LevelBase : MonoBehaviour
             {
                 SecondsSinceLastSpawn = 0;
                 ++CurrentEnemyIndex;
-                for (int enemyCount = 0; enemyCount < enemyTypeNumber.Count; enemyCount++)
+                for (int enemyCount = 0; enemyCount < enemyTypeNumber.Count + GameManager.GetInstance().Player.GetCurrentWave(); enemyCount++)
                 {
 
                     Vector3 position;
@@ -80,6 +87,7 @@ public class LevelBase : MonoBehaviour
                     
                     EnemyPylon Pylon = enemyInstance.GetComponentInChildren<EnemyPylon>();
                     Pylon.EnemyCounter = EnemyCounter;
+                    Pylon.MaxHealth += GameManager.GetInstance().Player.GetCurrentWave() * 2; 
 
                     EnemyBase enemy = enemyInstance.GetComponent<EnemyBase>();
                     if (!enemy)
@@ -88,6 +96,7 @@ public class LevelBase : MonoBehaviour
                     }
 
                     enemy.SetPlayer(GameManager.GetInstance().Player.gameObject);
+                    enemy.EnemyCounter = EnemyCounter;
                 }
 
             }

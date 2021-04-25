@@ -20,11 +20,11 @@ public class EnemyPylon : EnemyBase
 
     IEnumerator SpawnEnemyWave()
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(Random.Range(0.5f, 3f));
 
         for (;;)
         {
-            int enemyCount = Random.Range(1 * GameManager.GetInstance().Player.GetCurrentWave(), 2 * GameManager.GetInstance().Player.GetCurrentWave());
+            int enemyCount = Random.Range(1 * GameManager.GetInstance().Player.GetCurrentWave(), GameManager.GetInstance().Player.GetCurrentWave() + (GameManager.GetInstance().Player.GetCurrentWave() / 2));
             // int enemyCount = 100;
 
             for (int i = 0; i < enemyCount; ++i)
