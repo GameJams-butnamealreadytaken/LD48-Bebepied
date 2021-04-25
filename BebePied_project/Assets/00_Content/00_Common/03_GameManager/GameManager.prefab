@@ -183,15 +183,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4360345385578029666, guid: 91074692f0fe8a140a323d85724f5d74, type: 3}
       propertyPath: m_Lens.m_SensorSize.x
-      value: 1.9222904
+      value: 0.5026399
       objectReference: {fileID: 0}
     - target: {fileID: 4360345386271947655, guid: 91074692f0fe8a140a323d85724f5d74, type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 4360345386271947656, guid: 91074692f0fe8a140a323d85724f5d74, type: 3}
-      propertyPath: m_additionalJumps
-      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4360345386271947662, guid: 91074692f0fe8a140a323d85724f5d74, type: 3}
       propertyPath: m_RootOrder
