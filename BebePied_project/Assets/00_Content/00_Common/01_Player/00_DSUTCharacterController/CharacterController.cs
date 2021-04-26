@@ -522,7 +522,6 @@ namespace DissidentStudio.Toolkit.FPSController
 
 		private void Jump()
 		{
-			Debug.Log("Jumping");
 			m_rigidbody.AddForce(0.0f, m_jumpForce, 0.0f, ForceMode.Impulse);
 		}
 
