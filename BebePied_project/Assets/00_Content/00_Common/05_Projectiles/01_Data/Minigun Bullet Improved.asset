@@ -16,9 +16,11 @@ MonoBehaviour:
   m_lifeTime: 10
   m_fireVelocity: 200
   m_projectilePrefab: {fileID: 88771603734755773, guid: e3283867c8abc3947af8a2241dd7d463, type: 3}
-  m_firedProjectilesCount: 8
-  m_timeBetweenFires: 0.15
+  m_firedProjectilesCount: 12
+  m_timeBetweenFires: 0.1
   m_dispersionFactor: 0.1
   m_constrainProjectileRotation: 1
   m_deactivatePhysics: 1
   m_isSausage: 0
+  m_sounds:
+  - {fileID: 8300000, guid: 6f308ad13aa5f544a9fb3f0db196fb4d, type: 3}

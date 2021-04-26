@@ -142,22 +142,6 @@ PrefabInstance:
       propertyPath: LevelCenter.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 3423000284505867463, guid: 0a624240694d85c4a808393d6599c867, type: 3}
-      propertyPath: EnemyList.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3423000284505867463, guid: 0a624240694d85c4a808393d6599c867, type: 3}
-      propertyPath: EnemyList.Array.data[0].Type
-      value: 
-      objectReference: {fileID: 2661381203738439214, guid: c9ebfc17973a27347bfb3c34b2f79c16, type: 3}
-    - target: {fileID: 3423000284505867463, guid: 0a624240694d85c4a808393d6599c867, type: 3}
-      propertyPath: EnemyList.Array.data[0].Count
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3423000284505867463, guid: 0a624240694d85c4a808393d6599c867, type: 3}
-      propertyPath: EnemyList.Array.data[0].DelayFromPrevious
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4106618982611570854, guid: 0a624240694d85c4a808393d6599c867, type: 3}
       propertyPath: m_Name
       value: LevelManager

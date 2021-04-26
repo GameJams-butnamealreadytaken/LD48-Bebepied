@@ -22,3 +22,5 @@ MonoBehaviour:
   m_constrainProjectileRotation: 1
   m_deactivatePhysics: 1
   m_isSausage: 0
+  m_sounds:
+  - {fileID: 8300000, guid: 6f308ad13aa5f544a9fb3f0db196fb4d, type: 3}

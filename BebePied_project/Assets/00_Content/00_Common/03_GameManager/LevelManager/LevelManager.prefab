@@ -46,7 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EnemyList:
   - Type: {fileID: 2661381203738439214, guid: c9ebfc17973a27347bfb3c34b2f79c16, type: 3}
-    Count: 0
+    Count: 1
     DelayFromPrevious: 1
   Width: 200
   Height: 200
