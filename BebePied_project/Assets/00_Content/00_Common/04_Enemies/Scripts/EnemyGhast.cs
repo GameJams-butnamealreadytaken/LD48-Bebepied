@@ -10,7 +10,7 @@ public class EnemyGhast : EnemyBase
     public float TimeBetweenShots;
     public GameObject ShotPoint;
 
-    private float VerticalMaxSpeed = 0.02f;
+    private float VerticalMaxSpeed = 1.0f;
 
     private Vector3 CurrentDestination;
     private float TimeSinceLastShot = 100000;
@@ -31,7 +31,10 @@ public class EnemyGhast : EnemyBase
     {
         base.Update();
 
-        NavigationAgent.baseOffset -= VerticalMaxSpeed;
+        if (Time.timeScale < 1.0f)
+            return;
+
+        NavigationAgent.baseOffset -= VerticalMaxSpeed * Time.deltaTime;
         if (NavigationAgent.baseOffset < -1.0f)
         {
             // Avoid going too low and colliding with walking enemies
