@@ -166,7 +166,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8152788634953456052}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
@@ -201,9 +201,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'PAUSE
-
-'
+  m_text: YOU IS PAUSE
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2aa685f60d7cbfb4faae482f3465c5be, type: 2}
   m_sharedMaterial: {fileID: -8340281414918895594, guid: 2aa685f60d7cbfb4faae482f3465c5be, type: 2}
@@ -2612,7 +2610,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.6403786, y: 1}
+    m_SensorSize: {x: 2.062977, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -2675,6 +2673,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_scoreScreenUI: {fileID: 5153449554307574323}
+  m_inGamePauseUI: {fileID: 5946621877344356757}
   m_defaultProjectile: {fileID: 11400000, guid: 9ded86da5f77f424e85731c1fd3579f6, type: 2}
   m_audioSourceBonusPickUp: {fileID: 8515168427191026024}
   m_bonusEndClip: {fileID: 8300000, guid: 73c0c7b72788e5b42bb545cf4aaf3fe0, type: 3}
@@ -2827,11 +2826,11 @@ RectTransform:
   m_Children:
   - {fileID: 5956207971300010074}
   m_Father: {fileID: 8152788634953456052}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 265}
+  m_AnchoredPosition: {x: 0, y: 190.25}
   m_SizeDelta: {x: 160, y: 40}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!222 &28569004198597587
@@ -2887,10 +2886,10 @@ MonoBehaviour:
   m_Navigation:
     m_Mode: 4
     m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 5679153762582901255}
-    m_SelectOnRight: {fileID: 5679153762582901255}
+    m_SelectOnUp: {fileID: 4510668423341713650}
+    m_SelectOnDown: {fileID: 6465779155676903959}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
@@ -2916,9 +2915,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5153449554307574323}
-        m_TargetAssemblyTypeName: UIScoreScreen, Assembly-CSharp
-        m_MethodName: Retry
+      - m_Target: {fileID: 5946621877344356757}
+        m_TargetAssemblyTypeName: UIInGamePause, Assembly-CSharp
+        m_MethodName: Exit
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3129,13 +3128,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8152788634953456052}
+  - component: {fileID: 5946621877344356757}
   m_Layer: 5
   m_Name: UI - Pause Menu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &8152788634953456052
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3147,6 +3147,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 2462366367246770733}
   - {fileID: 7595316849676750857}
   - {fileID: 8786149595178531788}
   - {fileID: 5463563350801858162}
@@ -3159,6 +3160,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &5946621877344356757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5264167561539105234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f032ee0b9c80ca243b9b8cbafe5dae7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_firstSelectedItem: {fileID: 6465779155676903959}
 --- !u!1 &5660501611209891374
 GameObject:
   m_ObjectHideFlags: 0
@@ -3561,6 +3575,81 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!1 &6505729108459101036
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2462366367246770733}
+  - component: {fileID: 3402640625970061807}
+  - component: {fileID: 6018466790007238271}
+  m_Layer: 5
+  m_Name: Background
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2462366367246770733
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6505729108459101036}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8152788634953456052}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &3402640625970061807
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6505729108459101036}
+  m_CullTransparentMesh: 1
+--- !u!114 &6018466790007238271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6505729108459101036}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.8235294}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &6925091521548547631
 GameObject:
   m_ObjectHideFlags: 0
@@ -4401,11 +4490,11 @@ RectTransform:
   m_Children:
   - {fileID: 767024439991578676}
   m_Father: {fileID: 8152788634953456052}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 315}
+  m_AnchoredPosition: {x: 0, y: 240.25}
   m_SizeDelta: {x: 160, y: 40}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!222 &3735709815877414838
@@ -4461,10 +4550,10 @@ MonoBehaviour:
   m_Navigation:
     m_Mode: 4
     m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 5679153762582901255}
-    m_SelectOnRight: {fileID: 5679153762582901255}
+    m_SelectOnUp: {fileID: 6465779155676903959}
+    m_SelectOnDown: {fileID: 8009948326748085549}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
@@ -4490,9 +4579,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5153449554307574323}
-        m_TargetAssemblyTypeName: UIScoreScreen, Assembly-CSharp
-        m_MethodName: Retry
+      - m_Target: {fileID: 5946621877344356757}
+        m_TargetAssemblyTypeName: UIInGamePause, Assembly-CSharp
+        m_MethodName: GoToMainMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4534,11 +4623,11 @@ RectTransform:
   m_Children:
   - {fileID: 6486439574541701304}
   m_Father: {fileID: 8152788634953456052}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 365}
+  m_AnchoredPosition: {x: 0, y: 290.25}
   m_SizeDelta: {x: 160, y: 40}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!222 &8705619233907548475
@@ -4594,10 +4683,10 @@ MonoBehaviour:
   m_Navigation:
     m_Mode: 4
     m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 5679153762582901255}
-    m_SelectOnRight: {fileID: 5679153762582901255}
+    m_SelectOnUp: {fileID: 8009948326748085549}
+    m_SelectOnDown: {fileID: 4510668423341713650}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
@@ -4623,9 +4712,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5153449554307574323}
-        m_TargetAssemblyTypeName: UIScoreScreen, Assembly-CSharp
-        m_MethodName: Retry
+      - m_Target: {fileID: 5946621877344356757}
+        m_TargetAssemblyTypeName: UIInGamePause, Assembly-CSharp
+        m_MethodName: Continue
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

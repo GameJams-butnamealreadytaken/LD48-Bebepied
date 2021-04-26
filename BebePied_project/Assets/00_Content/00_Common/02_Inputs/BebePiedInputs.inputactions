@@ -36,6 +36,14 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "Pause",
+                    "type": "Button",
+                    "id": "c503e807-c143-4e7d-b70d-91b777989a88",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -225,6 +233,28 @@
                     "action": "Shoot",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0693932c-3d26-4715-bf2d-07cff68d0769",
+                    "path": "<Gamepad>/start",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "Pause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c650ac2b-49e7-4732-8114-485079d4a04a",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard+Mouse",
+                    "action": "Pause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         },
@@ -268,6 +298,14 @@
                     "name": "Click",
                     "type": "PassThrough",
                     "id": "34455465-704b-406d-895a-88dbd4a8054d",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "ExitPause",
+                    "type": "Button",
+                    "id": "a08dcf51-4193-413f-a0a6-adc741cacb15",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
@@ -433,7 +471,7 @@
                     "id": "bd9303de-3cfb-4139-a8ab-6b573bb99e5c",
                     "path": "<Gamepad>/leftStick",
                     "interactions": "",
-                    "processors": "",
+                    "processors": "StickDeadzone(min=0.7,max=0.7)",
                     "groups": "Gamepad",
                     "action": "Navigate",
                     "isComposite": false,
@@ -469,6 +507,28 @@
                     "processors": "",
                     "groups": "Gamepad",
                     "action": "Cancel",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "66db47c0-e0e4-4c06-9060-c1b20c3eda22",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard+Mouse",
+                    "action": "ExitPause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f33eceeb-d3d4-4e1b-988d-ecdc7928f41a",
+                    "path": "<Gamepad>/start",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "ExitPause",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

@@ -15,6 +15,9 @@ public class Player : MonoBehaviour
 	[SerializeField] 
 	private UIScoreScreen m_scoreScreenUI;
 	
+	[SerializeField] 
+	private UIInGamePause m_inGamePauseUI;
+	
 	[SerializeField]
 	[Tooltip("The projectile that the player has at the beginning of the game")]
 	public ProjectileData m_defaultProjectile;
@@ -71,6 +74,13 @@ public class Player : MonoBehaviour
 		}
 		
 		//
+		//
+		if (GetComponent<PlayerInput>().actions["Pause"].triggered)
+		{
+			m_inGamePauseUI.Show();
+		}
+		
+		//
 		// Update duration and remove bonus if duration has finished
 		if (m_currentBonusData)
 		{
@@ -78,6 +88,7 @@ public class Player : MonoBehaviour
 			if (m_currentBonusElapsedTime >= m_currentBonusDuration)
 			{
 				RemoveBonus();
+				m_currentBonusData = null;
 			}
 		}
 
