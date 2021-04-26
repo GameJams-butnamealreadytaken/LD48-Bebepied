@@ -25,7 +25,7 @@ public class UIScoreScreen : MonoBehaviour
 		m_backgroundImage.gameObject.SetActive(false);
 	}
 
-	public void Show(int reachedLevel, int enemyKilled, int bulletsShot, int sausagesShot)
+	public void Show(int reachedLevel, int enemyKilled, int bulletsShot, int bulletHit, int sausagesShot)
 	{
 		//
 		//
@@ -51,9 +51,9 @@ public class UIScoreScreen : MonoBehaviour
 		// Set the data
 		m_reachedLevelText.text = "" + reachedLevel;
 		m_ennemiesKilledScoreText.text = "" + enemyKilled;
-		m_bulletsShotScoreText.text = "" + bulletsShot;
+		m_bulletsShotScoreText.text = "" + bulletsShot + " / " + bulletHit;
 		m_sausagesShotScoreText.text = "" + sausagesShot;
-		m_accuracyText.text = "" + ((float) enemyKilled / (bulletsShot + sausagesShot));
+		m_accuracyText.text = "" + Math.Round(((float)bulletHit / (bulletsShot + sausagesShot )) * 100.0f, 2) + "%";
 		
 		//
 		// Show the background image (and texts because they are children)
