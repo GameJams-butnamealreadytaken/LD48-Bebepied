@@ -12,7 +12,7 @@ public class LevelLogic : MonoBehaviour
     private Animator Animator;
 
     public bool bIsMapEnded;
-    private bool bEndAnimIsTriggered;
+    public bool bEndAnimIsTriggered;
 
     public List<TMP_Text> CurrentLevelTexts;
 
