@@ -132,7 +132,7 @@ public abstract class PlayerWeapon : MonoBehaviour
 
 	protected virtual void OnShoot(ProjectileData shotProjectile)
 	{
-		AudioSource.PlayClipAtPoint(shotProjectile.Sounds[Random.Range(0, shotProjectile.Sounds.Count)], transform.position, 0.5f);
+		AudioSource.PlayClipAtPoint(shotProjectile.Sounds[Random.Range(0, shotProjectile.Sounds.Count)], transform.position, 0.2f);
 	}
 
 	private void OnDrawGizmos()

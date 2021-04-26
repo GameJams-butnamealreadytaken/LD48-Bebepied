@@ -25,12 +25,16 @@ public class UIInGamePause : MonoBehaviour
 		Time.timeScale = 0f;
 		gameObject.SetActive(true);
 		
-		EventSystem.current.SetSelectedGameObject(m_firstSelectedItem.gameObject);
+		
+		if (GetComponentInParent<PlayerInput>().currentControlScheme == "Gamepad")
+		{
+			EventSystem.current.SetSelectedGameObject(m_firstSelectedItem.gameObject);
 			
-		//
-		// We explicitly force selection
-		m_firstSelectedItem.Select();
-		m_firstSelectedItem.OnSelect(null);
+			//
+			// We explicitly force selection
+			m_firstSelectedItem.Select();
+			m_firstSelectedItem.OnSelect(null);
+		}
 	}
 
 	public void Hide()
@@ -41,9 +45,9 @@ public class UIInGamePause : MonoBehaviour
 
 	private void Update()
 	{
-		if (GetComponentInParent<PlayerInput>().actions["ExitPause"].triggered)
+		if (GetComponentInParent<PlayerInput>().actions["Pause"].triggered)
 		{
-			Hide();
+			Continue();
 		}
 	}
 	
@@ -78,7 +82,10 @@ public class UIInGamePause : MonoBehaviour
 		//
 		// Relock the cursor
 		Cursor.lockState = CursorLockMode.Locked;
-		GameManager.GetInstance().StartMusic();
+		if (!GameManager.GetInstance().CurrentLevel.IsTuto)
+		{
+			GameManager.GetInstance().StartMusic();
+		}
 		Hide();
 	}
 }

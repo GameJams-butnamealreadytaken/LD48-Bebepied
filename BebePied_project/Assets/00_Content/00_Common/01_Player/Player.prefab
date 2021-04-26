@@ -977,7 +977,7 @@ MonoBehaviour:
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 6410275278199501013}
-    m_SelectOnRight: {fileID: 6410275278199501013}
+    m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
@@ -2004,7 +2004,7 @@ MonoBehaviour:
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 5679153762582901255}
+    m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 5679153762582901255}
   m_Transition: 1
   m_Colors:
@@ -2842,7 +2842,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Actions: {fileID: -944628639613478452, guid: 5c536111efd22f24da1338bf724788f6, type: 3}
   m_NotificationBehavior: 0
-  m_UIInputModule: {fileID: 0}
+  m_UIInputModule: {fileID: 2603658549525228278}
   m_DeviceLostEvent:
     m_PersistentCalls:
       m_Calls: []
