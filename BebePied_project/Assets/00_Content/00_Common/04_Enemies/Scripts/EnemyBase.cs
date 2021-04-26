@@ -210,6 +210,9 @@ public class EnemyBase : MonoBehaviour
     {
         // Determine which direction to rotate towards
         Vector3 targetDirection = Player.transform.position - transform.position;
+        
+        // Work in 2D plan to avoid workin on a hypotenuse
+        targetDirection.y = 0;
 
         // The step size is equal to speed times frame time.
         float singleStep = speed * Time.deltaTime;
