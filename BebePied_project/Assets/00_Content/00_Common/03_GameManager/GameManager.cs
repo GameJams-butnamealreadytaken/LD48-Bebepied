@@ -61,4 +61,9 @@ public class GameManager : MonoBehaviour
     {
         m_musicAudioSource.Stop();
     }
+
+    public bool IsMusicPlaying()
+    {
+        return m_musicAudioSource.isPlaying;
+    }
 }
