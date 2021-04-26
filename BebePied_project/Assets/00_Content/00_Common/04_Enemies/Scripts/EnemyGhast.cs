@@ -57,14 +57,17 @@ public class EnemyGhast : EnemyBase
 
             SetDestination(CurrentDestination);
         }
-        
-        if (distanceToPlayer >= MinDistanceToPlayer && TimeSinceLastShot >= TimeBetweenShots)
+        else if (distanceToPlayer >= MinDistanceToPlayer && TimeSinceLastShot >= TimeBetweenShots)
         {
             if (RotateTowardPlayer(1.0f, 10.0f))
             {
                 TimeSinceLastShot = 0.0f;
                 Animator.SetTrigger("Attack");   
             }
+        }
+        else
+        {
+            RotateTowardPlayer(1.0f, 10.0f);
         }
     }
 
