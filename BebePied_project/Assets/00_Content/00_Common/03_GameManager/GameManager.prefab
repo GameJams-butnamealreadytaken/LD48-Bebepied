@@ -53,7 +53,6 @@ MonoBehaviour:
   m_musicAudioSource: {fileID: 718804433944472283}
   m_bonusManager: {fileID: 3565706202556958517}
   CurrentLevel: {fileID: 0}
-  bIsPaused: 0
 --- !u!114 &3565706202556958517
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -122,10 +121,10 @@ AudioSource:
   m_GameObject: {fileID: 5456610549983942432}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 5598233994888117170, guid: 7805022fc111f684a91d46b8607e87f8, type: 2}
   m_audioClip: {fileID: 8300000, guid: c2adcc73633d3d74d83c98c0864f53db, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.6
+  m_Volume: 1
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -218,7 +217,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4360345385578029666, guid: 91074692f0fe8a140a323d85724f5d74, type: 3}
       propertyPath: m_Lens.m_SensorSize.x
-      value: 1.0478548
+      value: 2.062977
       objectReference: {fileID: 0}
     - target: {fileID: 4360345386271947655, guid: 91074692f0fe8a140a323d85724f5d74, type: 3}
       propertyPath: m_Name

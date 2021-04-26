@@ -1,35 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &3104006547212122225
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5538984805346263842}
-  m_Layer: 7
-  m_Name: ShotPoint
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &5538984805346263842
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3104006547212122225}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.03, z: 0.702}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 7584736025497508066}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &4454432368935470098
 Animator:
   serializedVersion: 3
@@ -80,6 +50,7 @@ MonoBehaviour:
     AttenuationMaxDistance: 500
     AttenuationRollofMode: 0
   SpawnSounds: []
+  m_soundAudioSource: {fileID: 1771897746656034046}
   Player: {fileID: 0}
   EnemyCounter: {fileID: 0}
   EnemyType: 1
@@ -87,6 +58,36 @@ MonoBehaviour:
   MinDistanceToPlayer: 50
   TimeBetweenShots: 10
   ShotPoint: {fileID: 3104006547212122225}
+--- !u!1 &3104006547212122225
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5538984805346263842}
+  m_Layer: 7
+  m_Name: ShotPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5538984805346263842
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3104006547212122225}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.03, z: 0.702}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7584736025497508066}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &56069078244911270
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -107,6 +108,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1403029348077991064, guid: c7f8987f979e65741a2d1673c04a885d, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: -396356945003159506, guid: 7805022fc111f684a91d46b8607e87f8, type: 2}
     - target: {fileID: 3899817456378533384, guid: c7f8987f979e65741a2d1673c04a885d, type: 3}
       propertyPath: m_Name
       value: EnemyGunners
@@ -189,6 +194,11 @@ GameObject:
 --- !u!4 &7584736025497508066 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7110587207257067652, guid: c7f8987f979e65741a2d1673c04a885d, type: 3}
+  m_PrefabInstance: {fileID: 860051597309085798}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &1771897746656034046 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 1403029348077991064, guid: c7f8987f979e65741a2d1673c04a885d, type: 3}
   m_PrefabInstance: {fileID: 860051597309085798}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8312086436825602368

@@ -78,6 +78,7 @@ MonoBehaviour:
     AttenuationMinDistance: 1
     AttenuationMaxDistance: 500
     AttenuationRollofMode: 0
+  m_soundAudioSource: {fileID: 5899878301586976874}
   Player: {fileID: 0}
   EnemyCounter: {fileID: 0}
   EnemyType: 0
@@ -182,6 +183,10 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 6356266168904006434, guid: eec5e8f6b9781a245b15f64d20ef49a4, type: 3}
+    - target: {fileID: 1403029348077991064, guid: c7f8987f979e65741a2d1673c04a885d, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: -396356945003159506, guid: 7805022fc111f684a91d46b8607e87f8, type: 2}
     - target: {fileID: 3899817456378533384, guid: c7f8987f979e65741a2d1673c04a885d, type: 3}
       propertyPath: m_Name
       value: EnemyLostSoul
@@ -268,5 +273,10 @@ GameObject:
 --- !u!4 &2321036784143438966 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7110587207257067652, guid: c7f8987f979e65741a2d1673c04a885d, type: 3}
+  m_PrefabInstance: {fileID: 4798615967519376626}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &5899878301586976874 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 1403029348077991064, guid: c7f8987f979e65741a2d1673c04a885d, type: 3}
   m_PrefabInstance: {fileID: 4798615967519376626}
   m_PrefabAsset: {fileID: 0}

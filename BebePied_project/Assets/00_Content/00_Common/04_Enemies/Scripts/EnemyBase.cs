@@ -32,6 +32,8 @@ public class EnemyBase : MonoBehaviour
 
     [Header("Spawn")] 
     public List<SoundEffect> SpawnSounds = new List<SoundEffect>();
+
+    [SerializeField] private AudioSource m_soundAudioSource;
     
     protected Rigidbody Body;
 
@@ -191,18 +193,18 @@ public class EnemyBase : MonoBehaviour
         if (soundArray.Count > 0)
         {
             SoundEffect soundEffect = soundArray[Random.Range(0, soundArray.Count)];
-            
-            GameObject gameObjectToCreate = new GameObject("One shot audio");
-            gameObjectToCreate.transform.position = position;
-            AudioSource audioSource = (AudioSource) gameObjectToCreate.AddComponent(typeof (AudioSource));
-            audioSource.clip = soundEffect.Clip;
+
+            GameObject go = new GameObject();
+            AudioSource audioSource = go.AddComponent<AudioSource>();
             audioSource.spatialBlend = 1f;
             audioSource.minDistance = soundEffect.AttenuationMinDistance;
             audioSource.maxDistance = soundEffect.AttenuationMaxDistance;
             audioSource.rolloffMode = soundEffect.AttenuationRollofMode;
             audioSource.volume = soundEffect.Volume;
-            audioSource.Play();
-            Destroy(gameObjectToCreate, soundEffect.Clip.length * (Time.timeScale < 0.00999999977648258 ? 0.01f : Time.timeScale));
+            audioSource.outputAudioMixerGroup = m_soundAudioSource.outputAudioMixerGroup;
+            audioSource.PlayOneShot(soundEffect.Clip);
+            
+            Destroy(go, soundEffect.Clip.length * (Time.timeScale < 0.00999999977648258 ? 0.01f : Time.timeScale));
         }
     }
 

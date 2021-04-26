@@ -25,8 +25,13 @@ public class Player : MonoBehaviour
 	[SerializeField] [Tooltip("The audio source to emit the bonus pick up sound")]
 	private AudioSource m_audioSourceBonusPickUp;
 	
+	[SerializeField] [Tooltip("The audio source to emit shoot sounds")]
+	private AudioSource m_audioSourceShoot;
+	
 	[SerializeField] [Tooltip("The clip played when a bonus ends")]
 	private AudioClip m_bonusEndClip;
+
+	public AudioSource ShootAudioSource => m_audioSourceShoot;
 	
 
 	private bool m_isActive = false;	//< Is the player active (can shoot mainly)
