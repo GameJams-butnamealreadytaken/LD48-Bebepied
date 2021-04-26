@@ -47,7 +47,6 @@ public class PlayerWeaponMinigun : PlayerWeapon
 
 	protected override void StartShooting()
 	{
-		m_muzzleFlashLight.gameObject.SetActive(true);
 		// throw new System.NotImplementedException();
 	}
 
@@ -59,6 +58,8 @@ public class PlayerWeaponMinigun : PlayerWeapon
 	float LastEventTime = 0;
 	protected override void OnShoot(ProjectileData shotProjectile)
 	{
+		m_muzzleFlashLight.gameObject.SetActive(true);
+
 		base.OnShoot(shotProjectile);
 		
 		//
