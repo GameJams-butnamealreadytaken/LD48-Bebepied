@@ -45,6 +45,7 @@ public class LevelBase : MonoBehaviour
         GameManager.GetInstance().CurrentLevel = this;
             
         GameManager.GetInstance().TutoTextGameObject.enabled = IsTuto;
+        GameManager.GetInstance().TutoTitleTextGameObject.enabled = IsTuto;
         if (IsTuto)
         {
             LevelLogic.HideUpsideFloor();

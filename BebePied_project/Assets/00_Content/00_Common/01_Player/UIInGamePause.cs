@@ -20,6 +20,7 @@ public class UIInGamePause : MonoBehaviour
 
 	public void Show()
 	{
+		Cursor.lockState = CursorLockMode.None;
 		GameManager.GetInstance().PauseMusic();
 		Time.timeScale = 0f;
 		gameObject.SetActive(true);
@@ -66,11 +67,17 @@ public class UIInGamePause : MonoBehaviour
 
 	public void Exit()
 	{
+		//
+		// Unlock
+		Cursor.lockState = CursorLockMode.None;
 		Application.Quit();
 	}
 
 	public void Continue()
 	{
+		//
+		// Relock the cursor
+		Cursor.lockState = CursorLockMode.Locked;
 		GameManager.GetInstance().StartMusic();
 		Hide();
 	}

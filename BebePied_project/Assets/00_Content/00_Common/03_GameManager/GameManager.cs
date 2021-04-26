@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     public string FirstSceneToLoad;
     public Player Player;
     public TMP_Text TutoTextGameObject;
+    public TMP_Text TutoTitleTextGameObject;
     public AudioSource m_musicAudioSource;
     public BonusManager m_bonusManager;
     public LevelBase CurrentLevel; 
