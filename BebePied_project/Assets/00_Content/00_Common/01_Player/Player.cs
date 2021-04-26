@@ -298,9 +298,9 @@ public class Player : MonoBehaviour
 		m_currentWave++;
 	}
 
-	public void ResetWave()
+	public void ResetWave(bool bMainMenu)
 	{
-		m_currentWave = 2;
+		m_currentWave = bMainMenu ? 1 : 2;
 	}
 	
 	public void OnTriggerEnter(Collider other)
