@@ -48,10 +48,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FirstSceneToLoad: 
   Player: {fileID: 3562258092518903819}
-  TutoTextGameObject: {fileID: 0}
+  TutoTextGameObject: {fileID: 2521843530610564087}
+  TutoTitleTextGameObject: {fileID: 9127750440910900007}
   m_musicAudioSource: {fileID: 718804433944472283}
   m_bonusManager: {fileID: 3565706202556958517}
   CurrentLevel: {fileID: 0}
+  bIsPaused: 0
 --- !u!114 &3565706202556958517
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -216,7 +218,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4360345385578029666, guid: 91074692f0fe8a140a323d85724f5d74, type: 3}
       propertyPath: m_Lens.m_SensorSize.x
-      value: 1.3333334
+      value: 1.0478548
       objectReference: {fileID: 0}
     - target: {fileID: 4360345386271947655, guid: 91074692f0fe8a140a323d85724f5d74, type: 3}
       propertyPath: m_Name
@@ -286,5 +288,27 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 17fef8b3826899442a5e275d4c482bb5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &9127750440910900007 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8304894380535308449, guid: 91074692f0fe8a140a323d85724f5d74, type: 3}
+  m_PrefabInstance: {fileID: 1003354776216873862}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2521843530610564087 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3392268860306616433, guid: 91074692f0fe8a140a323d85724f5d74, type: 3}
+  m_PrefabInstance: {fileID: 1003354776216873862}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
