@@ -15,14 +15,7 @@ public class ChainLogic : MonoBehaviour
     }
 
     private void OnTriggerEnter(Collider other)
-    {
-        if (AlreadyCollided)
-        {
-            return;
-        }
-
-        AlreadyCollided = true;
-        
+    {        
         transform.parent.GetComponent<LevelLogic>().TriggerEndChainCollision();
     }
 

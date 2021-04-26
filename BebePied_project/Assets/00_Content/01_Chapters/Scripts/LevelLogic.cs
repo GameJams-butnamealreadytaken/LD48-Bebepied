@@ -56,7 +56,7 @@ public class LevelLogic : MonoBehaviour
             Animator.SetTrigger("ChainHit");
             
             //
-            // Repaly the music
+            // Replay the music
             GameManager.GetInstance().StartMusic();
         }
     }
