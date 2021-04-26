@@ -24,11 +24,9 @@ public class ChainLogic : MonoBehaviour
         AlreadyCollided = true;
         
         transform.parent.GetComponent<LevelLogic>().TriggerEndChainCollision();
-        
-        Invoke(nameof(DestroyEffect), 1.3f);
     }
 
-    private void DestroyEffect()
+    public void DestroyEffect()
     {
         GameObject instantiatedObject = Instantiate(ExplosionPrefab, transform.position, transform.rotation, null);
         ParticleSystem instantiatedParticleSystem = instantiatedObject.GetComponentInChildren<ParticleSystem>();
