@@ -47,7 +47,8 @@ public class GameManager : MonoBehaviour
 
     public void StartMusic()
     {
-        m_musicAudioSource.Play();
+        if (!m_musicAudioSource.isPlaying)
+            m_musicAudioSource.Play();
     }
 
     public void StopMusic()
