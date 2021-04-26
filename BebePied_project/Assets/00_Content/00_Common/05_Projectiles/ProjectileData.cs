@@ -52,6 +52,9 @@ public class ProjectileData : ScriptableObject
 	[Tooltip("Is this projectile a sausage ? Needed for the stats")]
 	private bool m_isSausage = false;
 
+	[Header("Sound")] [SerializeField] [Tooltip("The sounds that this projectile emits")]
+	private List<AudioClip> m_sounds = new List<AudioClip>();
+
 
 	public int Damages => m_damages;
 	public float LifeTime => m_lifeTime;
@@ -71,4 +74,6 @@ public class ProjectileData : ScriptableObject
 	public bool DeactivatePhysics => m_deactivatePhysics;
 
 	public bool IsSausage => m_isSausage;
+
+	public List<AudioClip> Sounds => m_sounds;
 }

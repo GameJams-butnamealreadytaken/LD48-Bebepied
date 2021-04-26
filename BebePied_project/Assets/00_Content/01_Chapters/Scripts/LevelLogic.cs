@@ -60,4 +60,9 @@ public class LevelLogic : MonoBehaviour
             GameManager.GetInstance().StartMusic();
         }
     }
+
+    public void TriggerEndChainExplosion()
+    {
+        GetComponentInChildren<ChainLogic>().DestroyEffect();
+    }
 }

@@ -34,11 +34,11 @@ public abstract class PlayerWeapon : MonoBehaviour
 		// Reset the shooting boolean if we didn't shoot for too long
 		if (m_timeSinceLastShoot > m_timeToNextShoot)
 		{
-			m_isShooting = false;
 			if (m_isShooting)
 			{
 				StopShooting();
 			}
+			m_isShooting = false;
 		}
 	}
 
@@ -119,7 +119,7 @@ public abstract class PlayerWeapon : MonoBehaviour
 				
 				//
 				// Call the OnShoot method
-				OnShoot();
+				OnShoot(projectileData);
 			}
 		}
 	}
@@ -130,7 +130,10 @@ public abstract class PlayerWeapon : MonoBehaviour
 	
 	protected abstract void StopShooting();
 
-	protected abstract void OnShoot();
+	protected virtual void OnShoot(ProjectileData shotProjectile)
+	{
+		AudioSource.PlayClipAtPoint(shotProjectile.Sounds[Random.Range(0, shotProjectile.Sounds.Count)], transform.position, 0.5f);
+	}
 
 	private void OnDrawGizmos()
 	{

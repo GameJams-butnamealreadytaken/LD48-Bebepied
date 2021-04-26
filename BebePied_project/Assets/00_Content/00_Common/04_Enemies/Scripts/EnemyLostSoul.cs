@@ -55,7 +55,7 @@ public class EnemyLostSoul : EnemyBase
     {
         base.OnCollisionEnter(collision);
 
-        if (collision.collider.CompareTag(ObjectTags.Player))
+        if (collision.collider.CompareTag(ObjectTags.Player) && !Deflating)
         {
             Player playerComponent = collision.collider.GetComponent<Player>();
             playerComponent.Kill();
