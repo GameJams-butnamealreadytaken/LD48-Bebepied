@@ -12,6 +12,7 @@ public class UIInGamePause : MonoBehaviour
 {
 
 	public Selectable m_firstSelectedItem;
+	private bool m_musicWasPlaying = false;
 	
 	private void Start()
 	{
@@ -21,6 +22,10 @@ public class UIInGamePause : MonoBehaviour
 	public void Show()
 	{
 		Cursor.lockState = CursorLockMode.None;
+		if (GameManager.GetInstance().IsMusicPlaying())
+		{
+			m_musicWasPlaying = true;
+		}
 		GameManager.GetInstance().PauseMusic();
 		Time.timeScale = 0f;
 		gameObject.SetActive(true);
@@ -82,7 +87,7 @@ public class UIInGamePause : MonoBehaviour
 		//
 		// Relock the cursor
 		Cursor.lockState = CursorLockMode.Locked;
-		if (!GameManager.GetInstance().CurrentLevel.IsTuto)
+		if (m_musicWasPlaying)
 		{
 			GameManager.GetInstance().StartMusic();
 		}
