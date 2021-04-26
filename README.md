@@ -1,3 +1,3 @@
 # LD48-Bebepied
 
-Pissette en reprise sur un trimi.
+Saucisse ce soir, saucisse.
