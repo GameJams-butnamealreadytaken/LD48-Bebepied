@@ -123,7 +123,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: c2adcc73633d3d74d83c98c0864f53db, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.4
+  m_Volume: 0.6
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -216,7 +216,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4360345385578029666, guid: 91074692f0fe8a140a323d85724f5d74, type: 3}
       propertyPath: m_Lens.m_SensorSize.x
-      value: 2.062977
+      value: 1.3333334
       objectReference: {fileID: 0}
     - target: {fileID: 4360345386271947655, guid: 91074692f0fe8a140a323d85724f5d74, type: 3}
       propertyPath: m_Name
