@@ -16,6 +16,7 @@ public class UIScoreScreen : MonoBehaviour
 	[SerializeField] private TMP_Text m_ennemiesKilledScoreText;
 	[SerializeField] private TMP_Text m_bulletsShotScoreText;
 	[SerializeField] private TMP_Text m_sausagesShotScoreText;
+	[SerializeField] private TMP_Text m_accuracyText;
 
 	[SerializeField] private Selectable m_firstSelected;
 
@@ -52,6 +53,7 @@ public class UIScoreScreen : MonoBehaviour
 		m_ennemiesKilledScoreText.text = "" + enemyKilled;
 		m_bulletsShotScoreText.text = "" + bulletsShot;
 		m_sausagesShotScoreText.text = "" + sausagesShot;
+		m_accuracyText.text = "" + ((float) enemyKilled / (bulletsShot + sausagesShot));
 		
 		//
 		// Show the background image (and texts because they are children)
