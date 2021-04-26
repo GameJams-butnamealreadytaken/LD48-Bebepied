@@ -117,15 +117,21 @@ public class Player : MonoBehaviour
 		m_killCountForBonus++;
 		if (m_killCountForBonus >= m_killCountToNextBonus)
 		{
-			// Spawn Bonus
-			int bonusID = UnityEngine.Random.Range(0, GameManager.GetInstance().m_bonusManager.m_ennemyBonusData.Count);
-			GameObject  go = Instantiate(GameManager.GetInstance().m_bonusManager.m_ennemyBonusData[bonusID].Prefab, enemyPosition.position, Quaternion.identity);
-			go.transform.position = enemyPosition.position;
-			BonusBehavior bonusBehaviour = go.AddComponent<BonusBehavior>();
-			bonusBehaviour.m_bonusData = GameManager.GetInstance().m_bonusManager.m_ennemyBonusData[bonusID];
+			RaycastHit hit;
+			if (Physics.Raycast(enemyPosition.position + Vector3.up * 5.0f, Vector3.down, out hit, 1000.0f, LayerMask.GetMask(ObjectTags.Ground)))
+			{
+				Vector3 bonusPosition = new Vector3(enemyPosition.position.x, hit.point.y + 0.5f, enemyPosition.position.z);
 
-			m_killCountForBonus = 0;
-			m_killCountToNextBonus = UnityEngine.Random.Range(20, 30);
+				// Spawn Bonus
+				int bonusID = UnityEngine.Random.Range(0, GameManager.GetInstance().m_bonusManager.m_ennemyBonusData.Count);
+				GameObject  go = Instantiate(GameManager.GetInstance().m_bonusManager.m_ennemyBonusData[bonusID].Prefab, bonusPosition, Quaternion.identity);
+				go.transform.position = bonusPosition;
+				BonusBehavior bonusBehaviour = go.AddComponent<BonusBehavior>();
+				bonusBehaviour.m_bonusData = GameManager.GetInstance().m_bonusManager.m_ennemyBonusData[bonusID];
+
+				m_killCountForBonus = 0;
+				m_killCountToNextBonus = UnityEngine.Random.Range(20, 30);
+			}
 		}
 		m_ennemiesKilled++;
 	}
