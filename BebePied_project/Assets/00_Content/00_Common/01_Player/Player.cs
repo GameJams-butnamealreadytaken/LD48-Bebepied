@@ -17,6 +17,12 @@ public class Player : MonoBehaviour
 	[SerializeField]
 	[Tooltip("The projectile that the player has at the beginning of the game")]
 	public ProjectileData m_defaultProjectile;
+
+	[SerializeField] [Tooltip("The audio source to emit the bonus pick up sound")]
+	private AudioSource m_audioSourceBonusPickUp;
+	
+	[SerializeField] [Tooltip("The clip played when a bonus ends")]
+	private AudioClip m_bonusEndClip;
 	
 
 	private bool m_isActive = false;	//< Is the player active (can shoot mainly)
@@ -195,7 +201,7 @@ public class Player : MonoBehaviour
 	{
 		//
 		// Start by removing the effect of the current bonus
-		RemoveBonus();
+		RemoveBonus(true);
 		
 		//
 		// Set bonus text in ui
@@ -228,11 +234,15 @@ public class Player : MonoBehaviour
 		}
 		
 		//
+		// Play the sound of the bonus pickup
+		m_audioSourceBonusPickUp.PlayOneShot(data.Clip, 1f);
+		
 		//
+		// Reset the duration of the current bonus
 		m_currentBonusDuration = 0f;
 	}
 
-	public void RemoveBonus()
+	public void RemoveBonus(bool withNextBonus = false)
 	{
 		//
 		// We do nothing if we don't have an active bonus
@@ -241,6 +251,13 @@ public class Player : MonoBehaviour
 			return;
 		}
 		
+		//
+		// If there is no next bonus, we play the sound
+		if (!withNextBonus)
+		{
+			m_audioSourceBonusPickUp.PlayOneShot(m_bonusEndClip, 0.3f);
+		}
+
 		//
 		// Reset bonus text in ui
 		GetComponentInChildren<UIInGame>().ResetBonus();

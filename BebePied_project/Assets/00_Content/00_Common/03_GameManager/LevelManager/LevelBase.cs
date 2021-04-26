@@ -102,7 +102,7 @@ public class LevelBase : MonoBehaviour
                     
                     EnemyPylon Pylon = enemyInstance.GetComponentInChildren<EnemyPylon>();
                     Pylon.EnemyCounter = EnemyCounter;
-                    Pylon.MaxHealth += GameManager.GetInstance().Player.GetCurrentWave() * 2; 
+                    Pylon.MaxHealth += GameManager.GetInstance().Player.GetCurrentWave() * 8; 
 
                     EnemyBase enemy = enemyInstance.GetComponent<EnemyBase>();
                     if (!enemy)

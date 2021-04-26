@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Cinemachine;
@@ -9,7 +10,13 @@ public class PlayerWeaponMinigun : PlayerWeapon
 
 	public List<AudioClip> m_shotAudioClips = new List<AudioClip>();
 	public GameObject m_barrelGun;
+	public Light m_muzzleFlashLight;
 	private float m_currentSpeed = 0;
+
+	private void Start()
+	{
+		m_muzzleFlashLight.gameObject.SetActive(false);
+	}
 
 
 	protected override void InternalUpdate()
@@ -40,17 +47,19 @@ public class PlayerWeaponMinigun : PlayerWeapon
 
 	protected override void StartShooting()
 	{
+		m_muzzleFlashLight.gameObject.SetActive(true);
 		// throw new System.NotImplementedException();
 	}
 
 	protected override void StopShooting()
 	{
+		m_muzzleFlashLight.gameObject.SetActive(false);
 		// throw new System.NotImplementedException();
 	}
 	float LastEventTime = 0;
-	protected override void OnShoot()
+	protected override void OnShoot(ProjectileData shotProjectile)
 	{
-		AudioSource.PlayClipAtPoint(m_shotAudioClips[Random.Range(0, m_shotAudioClips.Count)], transform.position, 0.5f);
+		base.OnShoot(shotProjectile);
 		
 		//
 		// Beurk, shake the camera by accessing the player, can be done in a much more beautiful way
