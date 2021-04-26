@@ -117,21 +117,24 @@ public class LevelBase : MonoBehaviour
         }
 
         m_timeSinceStart += Time.deltaTime;
-        
+
         //
         // I know this is horrible
-        if (SceneManager.GetActiveScene().name != "MainMenu")
+        if (!LevelLogic.bEndAnimIsTriggered)
         {
-            if (EnemyCounter.GetRemainingEnemyCount() <= 0 && m_timeSinceStart >= 12f)   //< Wait 6 seconds before being able to win the wave
+            if (SceneManager.GetActiveScene().name != "MainMenu")
             {
-                GameManager.GetInstance().Player.RemoveBonus();
-                GameManager.GetInstance().Player.GetComponentInChildren<UIInGame>().SetMessage("Wave cleared! Shoot the red blinking chain");
+                if (EnemyCounter.GetRemainingEnemyCount() <= 0 && m_timeSinceStart >= 12f)   //< Wait 6 seconds before being able to win the wave
+                {
+                    GameManager.GetInstance().Player.RemoveBonus();
+                    GameManager.GetInstance().Player.GetComponentInChildren<UIInGame>().SetMessage("Wave cleared! Shoot the red blinking chain");
+                    LevelLogic.TriggerEndLevel();
+                }
+            }
+            else
+            {
                 LevelLogic.TriggerEndLevel();
             }
-        }
-        else
-        {
-            LevelLogic.TriggerEndLevel();
         }
     }
 }
