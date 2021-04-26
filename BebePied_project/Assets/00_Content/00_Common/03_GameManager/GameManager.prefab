@@ -217,7 +217,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4360345385578029666, guid: 91074692f0fe8a140a323d85724f5d74, type: 3}
       propertyPath: m_Lens.m_SensorSize.x
-      value: 2.062977
+      value: 1.4221388
       objectReference: {fileID: 0}
     - target: {fileID: 4360345386271947655, guid: 91074692f0fe8a140a323d85724f5d74, type: 3}
       propertyPath: m_Name
@@ -267,9 +267,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5153449554307574323, guid: 91074692f0fe8a140a323d85724f5d74, type: 3}
+      propertyPath: m_accuracyResultText
+      value: 
+      objectReference: {fileID: 7248820356838768841}
     - target: {fileID: 6152766472407409506, guid: 91074692f0fe8a140a323d85724f5d74, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0.97099996
+      objectReference: {fileID: 0}
+    - target: {fileID: 7598797904973130575, guid: 91074692f0fe8a140a323d85724f5d74, type: 3}
+      propertyPath: m_text
+      value: You Is Bad :(
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 91074692f0fe8a140a323d85724f5d74, type: 3}
@@ -307,6 +315,17 @@ MonoBehaviour:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7248820356838768841 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7598797904973130575, guid: 91074692f0fe8a140a323d85724f5d74, type: 3}
+  m_PrefabInstance: {fileID: 1003354776216873862}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 

@@ -133,6 +133,7 @@ public abstract class PlayerWeapon : MonoBehaviour
 	protected virtual void OnShoot(ProjectileData shotProjectile)
 	{
 		GetComponentInParent<Player>().ShootAudioSource.PlayOneShot(shotProjectile.Sounds[Random.Range(0, shotProjectile.Sounds.Count)]);
+		GetComponentInParent<Player>().OnWeaponShoot();
 	}
 
 	private void OnDrawGizmos()
