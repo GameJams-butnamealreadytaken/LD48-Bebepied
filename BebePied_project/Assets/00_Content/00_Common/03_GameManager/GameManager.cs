@@ -51,6 +51,11 @@ public class GameManager : MonoBehaviour
             m_musicAudioSource.Play();
     }
 
+    public void PauseMusic()
+    {
+        m_musicAudioSource.Pause();
+    }
+
     public void StopMusic()
     {
         m_musicAudioSource.Stop();
