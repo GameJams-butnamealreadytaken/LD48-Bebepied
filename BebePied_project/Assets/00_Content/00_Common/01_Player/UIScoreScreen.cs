@@ -17,6 +17,7 @@ public class UIScoreScreen : MonoBehaviour
 	[SerializeField] private TMP_Text m_bulletsShotScoreText;
 	[SerializeField] private TMP_Text m_sausagesShotScoreText;
 	[SerializeField] private TMP_Text m_accuracyText;
+	[SerializeField] private TMP_Text m_accuracyResultText;
 
 	[SerializeField] private Selectable m_firstSelected;
 
@@ -51,10 +52,15 @@ public class UIScoreScreen : MonoBehaviour
 		// Set the data
 		m_reachedLevelText.text = "" + reachedLevel;
 		m_ennemiesKilledScoreText.text = "" + enemyKilled;
-		m_bulletsShotScoreText.text = "" + bulletsShot + " / " + bulletHit;
+		m_bulletsShotScoreText.text = "" + bulletsShot;
 		m_sausagesShotScoreText.text = "" + sausagesShot;
-		m_accuracyText.text = "" + Math.Round(((float)bulletHit / (bulletsShot + sausagesShot )) * 100.0f, 2) + "%";
-		
+		double fAccuracy = Math.Round(((float)bulletHit / (bulletsShot + sausagesShot)) * 100.0f, 2);
+		m_accuracyText.text = "" + fAccuracy + "%";
+		if (fAccuracy >= 50.0f)
+		{
+			m_accuracyResultText.enabled = false;
+		}
+
 		//
 		// Show the background image (and texts because they are children)
 		m_backgroundImage.gameObject.SetActive(true);
