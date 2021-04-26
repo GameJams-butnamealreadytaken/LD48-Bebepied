@@ -2635,7 +2635,7 @@ MonoBehaviour:
   m_crouchingAndStandUpDuration: 1.7
   m_canJump: 1
   m_additionalJumps: 1
-  m_jumpForce: 6
+  m_jumpForce: 4
   m_enableAirControl: 1
   m_limitCharacterSpeedBackward: 0
   m_characterSpeedReductionFactorBackward: 1

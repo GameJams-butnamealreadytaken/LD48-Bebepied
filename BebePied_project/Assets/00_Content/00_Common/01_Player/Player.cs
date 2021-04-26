@@ -7,6 +7,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using CharacterController = DissidentStudio.Toolkit.FPSController.CharacterController;
+using Random = System.Random;
 
 public class Player : MonoBehaviour
 {
@@ -32,8 +33,9 @@ public class Player : MonoBehaviour
 	private int m_currentWave = 1;
 	private ProjectileData m_currentProjectileData;
 	private BonusData m_currentBonusData = null;	//< The current bonus
+	private float m_currentBonusDuration = 0f;	//< The duration of the current active bonus (random)
 	private int m_additionalDamages = 0;
-	private float m_currentBonusDuration = 0f;
+	private float m_currentBonusElapsedTime = 0f;
 	private int m_killCountForBonus = 0;
 	private int m_killCountToNextBonus = 0;
 	
@@ -72,8 +74,8 @@ public class Player : MonoBehaviour
 		// Update duration and remove bonus if duration has finished
 		if (m_currentBonusData)
 		{
-			m_currentBonusDuration += Time.deltaTime;
-			if (m_currentBonusDuration >= m_currentBonusData.Duration)
+			m_currentBonusElapsedTime += Time.deltaTime;
+			if (m_currentBonusElapsedTime >= m_currentBonusDuration)
 			{
 				RemoveBonus();
 			}
@@ -160,6 +162,10 @@ public class Player : MonoBehaviour
 		}
 		
 		//
+		// Remove the current bonus
+		RemoveBonus();
+		
+		//
 		// Show the UI
 		m_scoreScreenUI.Show(m_currentWave - 1, m_ennemiesKilled, m_bulletsShot, m_sausagesShot);
 		
@@ -202,11 +208,7 @@ public class Player : MonoBehaviour
 		//
 		// Start by removing the effect of the current bonus
 		RemoveBonus(true);
-		
-		//
-		// Set bonus text in ui
-		GetComponentInChildren<UIInGame>().StartBonus(data.Text, data.Duration);
-		
+
 		//
 		// Add the effect of the new bonus
 		m_currentBonusData = data;
@@ -235,11 +237,19 @@ public class Player : MonoBehaviour
 		
 		//
 		// Play the sound of the bonus pickup
-		m_audioSourceBonusPickUp.PlayOneShot(data.Clip, 1f);
-		
+		if (!m_audioSourceBonusPickUp.isPlaying)
+		{
+			m_audioSourceBonusPickUp.PlayOneShot(data.Clip, 1f);
+		}
+
 		//
 		// Reset the duration of the current bonus
-		m_currentBonusDuration = 0f;
+		m_currentBonusElapsedTime = 0f;
+		m_currentBonusDuration = UnityEngine.Random.Range(m_currentBonusData.Duration, m_currentBonusData.Duration * 1.75f);
+		
+		//
+		// Set bonus text in ui
+		GetComponentInChildren<UIInGame>().StartBonus(data.Text, (int)m_currentBonusDuration);
 	}
 
 	public void RemoveBonus(bool withNextBonus = false)
@@ -255,7 +265,10 @@ public class Player : MonoBehaviour
 		// If there is no next bonus, we play the sound
 		if (!withNextBonus)
 		{
-			m_audioSourceBonusPickUp.PlayOneShot(m_bonusEndClip, 0.3f);
+			if (!m_audioSourceBonusPickUp.isPlaying)
+			{
+				m_audioSourceBonusPickUp.PlayOneShot(m_bonusEndClip, 0.3f);
+			}
 		}
 
 		//

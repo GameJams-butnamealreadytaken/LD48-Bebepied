@@ -44,7 +44,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98189c053559aa2448ff31ce5c88ae56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnemyList: []
+  EnemyList:
+  - Type: {fileID: 2661381203738439214, guid: c9ebfc17973a27347bfb3c34b2f79c16, type: 3}
+    Count: 0
+    DelayFromPrevious: 1
   Width: 200
   Height: 200
   LevelCenter: {x: 0, y: 0, z: 0}

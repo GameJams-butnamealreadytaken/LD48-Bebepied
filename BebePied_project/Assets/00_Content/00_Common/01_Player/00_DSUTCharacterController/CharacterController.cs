@@ -414,7 +414,7 @@ namespace DissidentStudio.Toolkit.FPSController
 				{
 					//
 					// TODO: Add a parameter for the move factor ? ?
-					m_rigidbody.velocity = new Vector3(move.x / 2f, m_rigidbody.velocity.y, move.z / 2f);
+					m_rigidbody.velocity = new Vector3(move.x, m_rigidbody.velocity.y, move.z);
 				}
 			}
 		}
