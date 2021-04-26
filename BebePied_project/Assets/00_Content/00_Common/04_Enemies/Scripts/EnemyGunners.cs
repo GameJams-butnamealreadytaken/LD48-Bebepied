@@ -39,7 +39,7 @@ public class EnemyGunners : EnemyBase
             SetDestination(CurrentDestination);
         }
         
-        if (distanceToPlayer > MinDistanceToPlayer && TimeSinceLastShot >= TimeBetweenShots)
+        if (distanceToPlayer >= MinDistanceToPlayer && TimeSinceLastShot >= TimeBetweenShots)
         {
             if (RotateTowardPlayer(1.0f, 10.0f))
             {

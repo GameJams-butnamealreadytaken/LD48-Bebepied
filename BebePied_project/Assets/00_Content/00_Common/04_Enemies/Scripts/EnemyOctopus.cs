@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyOctopus : EnemyBase
 {
-    private float VerticalMaxSpeed = 0.02f;
+    private float VerticalMaxSpeed = 1.0f;
     private float VerticalMaxSpeedDescentToPlayer = 1f;
     private float CurrentHeightObjective;
 
@@ -29,10 +29,13 @@ public class EnemyOctopus : EnemyBase
     protected override void Update()
     {
         base.Update();
-        
+
+        if (Time.timeScale < 1.0f)
+            return;
+
         if (InitialDescent)
         {
-            NavigationAgent.baseOffset -= VerticalMaxSpeed;
+            NavigationAgent.baseOffset -= VerticalMaxSpeed * Time.deltaTime;
             if (NavigationAgent.baseOffset < -1.0f)
             {
                 // Avoid going too low and colliding with walking enemies
