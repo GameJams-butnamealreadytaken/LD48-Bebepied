@@ -84,7 +84,7 @@ MonoBehaviour:
   EnemyCounter: {fileID: 0}
   EnemyType: 1
   MunitionType: {fileID: 11400000, guid: 0e2ef8b45f1b1eb40aa553a90c54048f, type: 2}
-  MinDistanceToPlayer: 15
+  MinDistanceToPlayer: 50
   TimeBetweenShots: 10
   ShotPoint: {fileID: 3104006547212122225}
 --- !u!65 &56069078244911270
