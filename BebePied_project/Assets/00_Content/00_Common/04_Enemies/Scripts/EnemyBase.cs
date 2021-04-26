@@ -32,8 +32,6 @@ public class EnemyBase : MonoBehaviour
 
     [Header("Spawn")] 
     public List<SoundEffect> SpawnSounds = new List<SoundEffect>();
-
-    [SerializeField] private AudioSource m_soundAudioSource;
     
     protected Rigidbody Body;
 
@@ -193,18 +191,18 @@ public class EnemyBase : MonoBehaviour
         if (soundArray.Count > 0)
         {
             SoundEffect soundEffect = soundArray[Random.Range(0, soundArray.Count)];
-
-            GameObject go = new GameObject();
-            AudioSource audioSource = go.AddComponent<AudioSource>();
+            
+            GameObject gameObjectToCreate = new GameObject("One shot audio");
+            gameObjectToCreate.transform.position = position;
+            AudioSource audioSource = (AudioSource) gameObjectToCreate.AddComponent(typeof (AudioSource));
+            audioSource.clip = soundEffect.Clip;
             audioSource.spatialBlend = 1f;
             audioSource.minDistance = soundEffect.AttenuationMinDistance;
             audioSource.maxDistance = soundEffect.AttenuationMaxDistance;
             audioSource.rolloffMode = soundEffect.AttenuationRollofMode;
             audioSource.volume = soundEffect.Volume;
-            audioSource.outputAudioMixerGroup = m_soundAudioSource.outputAudioMixerGroup;
-            audioSource.PlayOneShot(soundEffect.Clip);
-            
-            Destroy(go, soundEffect.Clip.length * (Time.timeScale < 0.00999999977648258 ? 0.01f : Time.timeScale));
+            audioSource.Play();
+            Destroy(gameObjectToCreate, soundEffect.Clip.length * (Time.timeScale < 0.00999999977648258 ? 0.01f : Time.timeScale));
         }
     }
 
@@ -300,7 +298,6 @@ public class EnemyBase : MonoBehaviour
     
     protected virtual void OnCollisionEnter(Collision collision)
     {
-
     }
 
     protected void OnTriggerEnter(Collider other)
@@ -309,6 +306,8 @@ public class EnemyBase : MonoBehaviour
         {
             Projectile projectile = other.GetComponent<Projectile>();
             TakeDamage(projectile.Damages);
+
+            GameManager.GetInstance().Player.m_bulletHit++;
         }
     }
 

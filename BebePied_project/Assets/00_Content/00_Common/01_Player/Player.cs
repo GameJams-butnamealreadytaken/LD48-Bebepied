@@ -37,6 +37,7 @@ public class Player : MonoBehaviour
 	private bool m_isActive = false;	//< Is the player active (can shoot mainly)
 	private int m_ennemiesKilled;	//< The number of ennemies killed
 	private int m_bulletsShot;	//< The number of bullets shot
+	public int m_bulletHit;	//< The number of bullet that hit an enemy
 	private int m_sausagesShot;	//< The number of sausages shot
 	private int m_currentWave = 1;
 	private ProjectileData m_currentProjectileData;
@@ -104,10 +105,17 @@ public class Player : MonoBehaviour
 			//
 			// Shoot with the weapon
 			GetComponentInChildren<PlayerWeaponHolder>().Shoot(m_currentProjectileData, m_additionalDamages);
-			
-			//
-			// Update the stats
+		}
+	}
+
+	public void OnWeaponShoot()
+    {
+		//
+		// Update the stats if not in tuto
+		if (m_currentWave > 1)
+		{
 			m_bulletsShot += m_currentProjectileData.FireProjectilesCount;
+
 			if (m_currentProjectileData.IsSausage)
 			{
 				m_sausagesShot += m_currentProjectileData.FireProjectilesCount;
@@ -133,6 +141,7 @@ public class Player : MonoBehaviour
 	{
 		m_ennemiesKilled = 0;
 		m_bulletsShot = 0;
+		m_bulletHit = 0;
 		m_sausagesShot = 0;
 	}
 
@@ -183,7 +192,7 @@ public class Player : MonoBehaviour
 		
 		//
 		// Show the UI
-		m_scoreScreenUI.Show(m_currentWave - 1, m_ennemiesKilled, m_bulletsShot, m_sausagesShot);
+		m_scoreScreenUI.Show(m_currentWave - 1, m_ennemiesKilled, m_bulletsShot, m_bulletHit, m_sausagesShot);
 		
 		//
 		// Deactivate the player
