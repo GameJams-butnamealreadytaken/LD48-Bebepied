@@ -63,6 +63,10 @@ public class LevelLogic : MonoBehaviour
 
     public void TriggerEndChainExplosion()
     {
+        GameManager.GetInstance().TutoTextGameObject.enabled = false;
+        GameManager.GetInstance().Player.GetComponentInChildren<UIInGame>().ResetBonus();
+
+
         GetComponentInChildren<ChainLogic>().DestroyEffect();
     }
 }
