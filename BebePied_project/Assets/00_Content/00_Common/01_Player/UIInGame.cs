@@ -30,6 +30,12 @@ public class UIInGame : MonoBehaviour
 		m_messageText.text = "";
 		m_durationText.text = "";
 	}
+
+	public void SetMessage(string message)
+	{
+		m_messageText.text = message;
+		m_durationText.text = "";
+	}
 	
 	public IEnumerator AutomaticRemoveMessage(float duration)
 	{

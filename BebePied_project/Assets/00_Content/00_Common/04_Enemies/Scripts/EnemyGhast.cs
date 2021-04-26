@@ -64,6 +64,7 @@ public class EnemyGhast : EnemyBase
             }
         }
     }
+
     public void OnShootFromAnimation()
     {
         ShotTowardPlayer(MunitionType, ShotPoint.transform.position);
@@ -87,16 +88,5 @@ public class EnemyGhast : EnemyBase
     {
         base.OnDeath();
         EnemyCounter.UpdateSpawnStats(EnemyType, true);
-    }
-
-    protected override void OnCollisionEnter(Collision collision)
-    {
-        base.OnCollisionEnter(collision);
-
-        if (collision.collider.CompareTag(ObjectTags.Player))
-        {
-            Player playerComponent = collision.collider.GetComponent<Player>();
-            playerComponent.Kill();
-        }
     }
 }

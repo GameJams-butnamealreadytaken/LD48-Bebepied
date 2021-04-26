@@ -122,10 +122,10 @@ public class LevelBase : MonoBehaviour
         // I know this is horrible
         if (SceneManager.GetActiveScene().name != "MainMenu")
         {
-            if (EnemyCounter.GetRemainingEnemyCount() <= 0 && m_timeSinceStart >= 6f)   //< Wait 6 seconds before being able to win the wave
+            if (EnemyCounter.GetRemainingEnemyCount() <= 0 && m_timeSinceStart >= 12f)   //< Wait 6 seconds before being able to win the wave
             {
                 GameManager.GetInstance().Player.RemoveBonus();
-                GameManager.GetInstance().Player.GetComponentInChildren<UIInGame>().StartBonus("Wave cleared! Shoot the red blinking chain", 4);
+                GameManager.GetInstance().Player.GetComponentInChildren<UIInGame>().SetMessage("Wave cleared! Shoot the red blinking chain");
                 LevelLogic.TriggerEndLevel();
             }
         }
